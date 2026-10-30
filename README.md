@@ -4,6 +4,8 @@
 **GitHub repository:** https://github.com/fathom-web/wowforge  
 **Purpose:** Standalone showcase for original World of Warcraft addon projects, with LifeForge first.
 
+**LifeForge visual identity (30 October 2026):** The user-provided Arcane LF Bronze Emblem has been optimized to `assets/lifeforge-arcane-emblem.webp` and featured in the LifeForge project card, LifeForge spotlight and the illustrative addon UI preview. A dedicated responsive `lifeforge-brand.css` supplies tasteful arcane blue-gold integration, while keeping the parent WoW Forge logo and hero unchanged. The artwork is presented as an independent LifeForge project emblem, not a game publisher mark.
+
 **Veteran Forge redesign v9 (30 October 2026):** A complete sitewide war-camp direction is implemented in `forge-grit.css`, loaded after all legacy stylesheets. The dark, battle-worn brass-and-iron treatment unifies the hero transition, veteran dads story, archive, bridge, LifeForge preview, relic cards, release route, FAQ and footer. The original cinematic landscape remains. A distinctive hammered WF/blacksmith emblem is introduced at `assets/novyx-wf-relic.svg`, with subtle original grain at `assets/forge-grain.svg`. Only `wow.novyxforge.com` is affected. No official publisher artwork or logo is used.
 
 **Our Story (30 October 2026):** Added the personal `#story` section directly beneath the cinematic hero, with a dedicated `forge-story.css` parchment-and-guild-journal presentation and an accessible navigation link. The narrative is about veteran WoW players, now fathers, after twenty years in Azeroth. It explains why we are building practical, time-saving addons for World of Warcraft: Forever. No claim is made that unreleased features already work.

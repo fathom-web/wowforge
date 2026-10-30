@@ -1,0 +1,114 @@
+/* LIFE FORGE | ARCANE EMBLEM
+   User-supplied original image, displayed only with the LifeForge project.
+   This layer follows the veteran Forge styling without changing WoW Forge branding. */
+.lifeforge-registry-icon{
+  padding:3px;
+  border:3px ridge #9e7a45!important;
+  background:radial-gradient(circle,#16242c,#080c11 74%)!important;
+  overflow:hidden;
+  isolation:isolate;
+}
+.lifeforge-registry-icon img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  -webkit-mask-image:radial-gradient(circle,#000 54%,rgba(0,0,0,.75) 72%,transparent 91%);
+  mask-image:radial-gradient(circle,#000 54%,rgba(0,0,0,.75) 72%,transparent 91%);
+  filter:drop-shadow(0 1px 8px rgba(43,122,246,.3));
+  transition:transform .3s ease,filter .3s ease;
+}
+.registry-item.featured:hover .lifeforge-registry-icon img{
+  transform:scale(1.07);
+  filter:drop-shadow(0 0 15px rgba(56,146,255,.52));
+}
+.lifeforge-intro{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:minmax(0,1.8fr) minmax(230px,.7fr);
+  align-items:center;
+  gap:clamp(16px,4vw,45px);
+  margin:-9px 0 24px;
+}
+.lifeforge-intro .spotlight-lead{
+  position:relative;
+  z-index:1;
+  margin:0;
+  max-width:780px;
+  color:#d4d2be!important;
+}
+.lifeforge-relic-art{
+  position:relative;
+  margin:0;
+  padding:0 0 27px;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.lifeforge-relic-art:before{
+  content:"";
+  position:absolute;
+  inset:6% 4% 12%;
+  pointer-events:none;
+  background:radial-gradient(circle,rgba(32,98,173,.19),transparent 68%);
+  filter:blur(15px);
+}
+.lifeforge-relic-art img{
+  position:relative;
+  display:block;
+  width:min(100%,280px);
+  height:auto;
+  aspect-ratio:1;
+  object-fit:contain;
+  -webkit-mask-image:radial-gradient(circle,#000 57%,rgba(0,0,0,.89) 73%,transparent 94%);
+  mask-image:radial-gradient(circle,#000 57%,rgba(0,0,0,.89) 73%,transparent 94%);
+  filter:drop-shadow(0 8px 16px rgba(0,0,0,.65));
+}
+.lifeforge-relic-art figcaption{
+  position:relative;
+  max-width:300px;
+  margin:-6px auto 0;
+  color:#cfb17b;
+  font:800 9px/1.6 "Outfit",sans-serif;
+  letter-spacing:.13em;
+  text-align:center;
+}
+.lifeforge-relic-art figcaption span{color:#538fef;margin:0 5px}
+.lifeforge-preview-mark{
+  padding:0!important;
+  background:radial-gradient(circle,#1a2430,#080e12 80%)!important;
+  border:2px ridge #b48b52!important;
+  overflow:hidden;
+}
+.lifeforge-preview-mark img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  -webkit-mask-image:radial-gradient(circle,#000 50%,transparent 91%);
+  mask-image:radial-gradient(circle,#000 50%,transparent 91%);
+}
+@media(max-width:880px){
+  .lifeforge-intro{grid-template-columns:minmax(0,1fr) 220px;gap:12px}
+  .lifeforge-relic-art img{width:220px}
+  .lifeforge-relic-art figcaption{font-size:8px}
+}
+@media(max-width:620px){
+  .lifeforge-intro{
+    grid-template-columns:1fr;
+    gap:8px;
+    margin:0 0 22px;
+  }
+  .lifeforge-intro .spotlight-lead{order:2;font-size:14px}
+  .lifeforge-relic-art{order:1;padding:0 0 13px}
+  .lifeforge-relic-art img{width:min(62vw,228px)}
+  .lifeforge-registry-icon img{width:100%;height:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  .lifeforge-registry-icon img{transition:none!important}
+}

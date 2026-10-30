@@ -43,7 +43,8 @@ assert.ok(html.includes('./cinematic-hero.css?v=4'),"Missing approved cinematic 
 assert.ok(html.includes('./forge-story.css?v=1'),"Missing separate personal story theme");
 assert.ok(html.includes('./brand-original.css?v=1'),"Original brand safety CSS missing");
 assert.ok(html.indexOf('forge-story.css?v=1')<html.indexOf('brand-original.css?v=1'),"Brand safety after story");
-assert.ok(html.includes('forge-grit.css?v=9')&&html.indexOf('brand-original.css?v=1')<html.indexOf('forge-grit.css?v=9'),"War-camp design loaded last");
+assert.ok(html.includes('forge-grit.css?v=9')&&html.indexOf('brand-original.css?v=1')<html.indexOf('forge-grit.css?v=9'),"War-camp design follows the base brand");
+assert.ok(html.includes('lifeforge-brand.css?v=1')&&html.indexOf('lifeforge-brand.css?v=1')>html.indexOf('forge-grit.css?v=9'),"LifeForge visual identity is final CSS layer");
 assert.ok(html.includes('id="story"'),"Missing veteran dads story");
 assert.ok(html.indexOf('cinematic-hero.css?v=4')<html.indexOf('forge-story.css?v=1'),"New story styles come after cinematic hero");
 assert.ok(html.includes('src="./assets/novyx-wf-relic.svg"'),"Original NOVYX WF emblem required");
