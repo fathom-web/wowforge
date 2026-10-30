@@ -11,7 +11,7 @@ a{color:inherit;text-decoration:none}
 button{font:inherit}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #b7761c;outline-offset:4px}
 .skip{position:fixed;top:-100px;left:12px;z-index:999;padding:12px 18px;background:#fff2c2;color:#13271d;font-weight:800}.skip:focus{top:12px}
-.global-atmosphere{position:absolute;inset:0 0 auto;z-index:0;height:940px;pointer-events:none;background-image:linear-gradient(180deg,#e9edf0aa 0%,#ecede91c 22%,#f6e9bc05 58%,#32472914 79%,#243824bb 95%,#172e22 100%),url("./assets/azeroth-expanse.svg"),url("./assets/azeroth-landscape.svg");background-position:center,50% 52%,center;background-size:cover}
+.global-atmosphere{position:absolute;inset:0 0 auto;z-index:0;height:940px;pointer-events:none;background-image:linear-gradient(180deg,#e9edf0aa 0%,#ecede91c 22%,#f6e9bc05 58%,#32472914 79%,#243824bb 95%,#172e22 100%),url("./assets/novyx-realm-hero.webp"),url("./assets/azeroth-landscape.svg");background-position:center,50% 52%,center;background-size:cover}
 .global-atmosphere:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#c2d1c827,transparent 25%,transparent 75%,#c4ba9c2b),linear-gradient(180deg,#f3f2e855,transparent 41%);pointer-events:none}
 .global-atmosphere:after{content:"";position:absolute;inset:auto 0 0;height:220px;background:linear-gradient(0deg,#f4edda 0%,#23412a88 42%,transparent 100%)}
 .topbar{position:relative;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;width:min(1440px,calc(100% - 70px));height:98px;margin:0 auto;padding:0 12px;border-bottom:1px solid #3b513e49}
@@ -155,7 +155,7 @@ h1 em,h2 em{font-style:normal;color:#e9be70}
 .faq-list summary:after{content:"+";position:absolute;right:10px;top:18px;color:#a07a40;font-size:27px}
 .faq-list details[open] summary:after{content:"−"}
 .faq-list details p{max-width:850px;margin:0 0 25px;color:#65745d;font-size:14px;line-height:1.9}
-.outro{position:relative;overflow:hidden;width:min(1370px,calc(100% - 36px));margin:55px auto 95px;padding:88px 24px 95px;text-align:center;background-image:linear-gradient(180deg,#1d402ebf,#132f23d9),url("./assets/azeroth-expanse.svg"),url("./assets/azeroth-landscape.svg");background-position:center,center 70%,center;background-size:cover;border:1px solid #af9e75;box-shadow:0 20px 70px #3249363b,inset 0 0 0 6px #173324}
+.outro{position:relative;overflow:hidden;width:min(1370px,calc(100% - 36px));margin:55px auto 95px;padding:88px 24px 95px;text-align:center;background-image:linear-gradient(180deg,#1d402ebf,#132f23d9),url("./assets/novyx-realm-hero.webp"),url("./assets/azeroth-landscape.svg");background-position:center,center 70%,center;background-size:cover;border:1px solid #af9e75;box-shadow:0 20px 70px #3249363b,inset 0 0 0 6px #173324}
 .outro:before{content:"";position:absolute;inset:19px;border:1px solid #e1c4866f;pointer-events:none}
 .outro-sigil{position:relative;color:#ffe8aa;font:700 62px Cinzel,serif;text-shadow:0 0 20px #f5d78b80}
 .outro .kicker{position:relative;color:#e9c98e}

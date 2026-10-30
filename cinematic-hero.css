@@ -17,7 +17,7 @@
   background-image:
     linear-gradient(180deg,rgba(10,20,17,.04) 0%,rgba(8,20,18,.10) 19%,rgba(8,23,18,.37) 41%,rgba(9,24,18,.55) 70%,rgba(8,23,17,.85) 100%),
     radial-gradient(ellipse 48% 49% at 50% 47%,rgba(7,25,19,.45) 0%,rgba(8,24,19,.23) 55%,transparent 100%),
-    url("./assets/azeroth-cinematic.webp")!important;
+    url("./assets/novyx-realm-hero.webp")!important;
   background-size:cover,cover,cover!important;
   background-position:center,center,center 48%!important;
   background-repeat:no-repeat!important;

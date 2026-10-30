@@ -30,7 +30,7 @@ try {
    const portalBox=im.getBoundingClientRect();
    return {
     scrollWidth:document.documentElement.scrollWidth,viewport:vp,
-    forestBackground:css.includes("azeroth-cinematic.webp"),
+    forestBackground:css.includes("novyx-realm-hero.webp"),
     stonePortal:im.complete&&im.naturalWidth>0,
     artInside:portalBox.width===0 || (portalBox.left>=-2&&portalBox.right<=vp+2),
     reducedAnimation:getComputedStyle(im).animationDuration,

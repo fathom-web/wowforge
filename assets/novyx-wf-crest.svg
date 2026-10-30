@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" role="img" aria-labelledby="logoTitle logoDesc">
+<title id="logoTitle">NOVYX Forge — original WF emblem</title>
+<desc id="logoDesc">An original dark-forged hexagonal shield with a WF monogram, a smithing anvil, copper rivets, teal inlays and a ring of golden sparks. Not affiliated with any game publisher.</desc>
+<defs>
+ <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c1b7a1"/><stop offset=".2" stop-color="#4c4c48"/><stop offset=".51" stop-color="#1d2629"/><stop offset=".8" stop-color="#52514b"/><stop offset="1" stop-color="#b09a72"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2=".77" y2="1"><stop stop-color="#fff1c0"/><stop offset=".18" stop-color="#dcb470"/><stop offset=".52" stop-color="#a76b32"/><stop offset=".76" stop-color="#f3d299"/><stop offset="1" stop-color="#a77639"/></linearGradient>
+ <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#325b63"/><stop offset=".5" stop-color="#152e33"/><stop offset="1" stop-color="#0d1b22"/></linearGradient>
+ <linearGradient id="fire" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffa568"/><stop offset="1" stop-color="#673323"/></linearGradient>
+ <radialGradient id="core"><stop stop-color="#4c7166"/><stop offset=".42" stop-color="#244341"/><stop offset="1" stop-color="#0a171c"/></radialGradient>
+ <filter id="shadow" x="-55%" y="-60%" width="210%" height="220%"><feGaussianBlur stdDeviation="7"/></filter>
+</defs>
+<g transform="translate(320 207)">
+ <ellipse cx="0" cy="169" rx="137" ry="20" fill="#000" opacity=".42" filter="url(#shadow)"/>
+ <!-- Original forge tools: square-headed smithing hammers, not weapon insignia -->
+ <g stroke="#322a25" stroke-width="5" stroke-linejoin="round">
+  <g transform="rotate(-30)">
+   <path d="M-13 -171h26v286h-26z" fill="#68513e"/>
+   <path d="M-69 -184h138l-14 33h-110z" fill="url(#steel)"/>
+   <path d="M-11 -150h22v260h-22z" fill="url(#gold)" opacity=".35"/>
+  </g>
+  <g transform="rotate(30)">
+   <path d="M-13 -170h26v284h-26z" fill="#6c4d33"/>
+   <path d="M-57 -184h114v38h-114z" fill="url(#steel)"/>
+   <path d="M-10 -146h20v256h-20z" fill="url(#gold)" opacity=".35"/>
+  </g>
+ </g>
+ <path d="M0 -173L120 -130L163 -33L132 109L0 179L-132 109L-163 -33L-120 -130Z" fill="#172025" stroke="#201913" stroke-width="13"/>
+ <path d="M0 -165L113 -123L155 -32L125 103L0 170L-125 103L-155 -32L-113 -123Z" fill="url(#gold)" stroke="#d3a565" stroke-width="4"/>
+ <path d="M0 -145L100 -108L136 -29L110 88L0 150L-110 88L-136 -29L-100 -108Z" fill="url(#steel)" stroke="#322a22" stroke-width="5"/>
+ <path d="M0 -128L89 -93L116 -23L95 74L0 130L-95 74L-116 -23L-89 -93Z" fill="url(#core)" stroke="#ba935a" stroke-width="2.7"/>
+ <path d="M0 -123L83 -88L108 -20L88 66L0 119L-88 66L-108 -20L-83 -88Z" fill="none" stroke="#d6b57a" opacity=".5" stroke-width="1.5"/>
+ <g fill="#fff0b8" stroke="#583d22" stroke-width="2">
+  <circle cx="0" cy="-151" r="7"/><circle cx="119" cy="-31" r="7"/><circle cx="0" cy="147" r="7"/><circle cx="-119" cy="-31" r="7"/>
+  <circle cx="94" cy="91" r="6"/><circle cx="-94" cy="91" r="6"/><circle cx="95" cy="-111" r="6"/><circle cx="-95" cy="-111" r="6"/>
+ </g>
+ <path d="M-88 -51h176M-87 60h174" stroke="#ab8451" stroke-width="1.6" opacity=".6"/>
+ <!-- Small anvil and glint: independent blacksmith visual -->
+ <path d="M-23 103H23V91H38V81H-38V91h15Z" fill="url(#gold)" stroke="#463321" stroke-width="2"/>
+ <path d="M-34 78h68v-8l21-8H-54l20 8Z" fill="url(#steel)" stroke="#ae8f5e" stroke-width="2"/>
+ <text x="0" y="45" fill="#170f09" stroke="#120f0c" stroke-width="8" paint-order="stroke" text-anchor="middle" font-family="Georgia,serif" font-size="102" font-weight="bold" letter-spacing="-12">WF</text>
+ <text x="0" y="45" fill="url(#gold)" stroke="#e6ce92" stroke-width="1.2" paint-order="stroke" text-anchor="middle" font-family="Georgia,serif" font-size="102" font-weight="bold" letter-spacing="-12">WF</text>
+ <path d="M0 -176l8 -16l8 16l-8 17Z M-191 -29l11 -8l11 8l-11 8Z M169 12l7 -11l7 11l-7 11Z" fill="#f7c778"/>
+ <circle cx="-187" cy="42" r="3" fill="#f7b665"/><circle cx="183" cy="-59" r="4" fill="#f7b665"/><circle cx="181" cy="65" r="3" fill="#d8cc8b"/>
+</g>
+</svg>

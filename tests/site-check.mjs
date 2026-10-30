@@ -7,7 +7,7 @@ const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const get=f=>readFileSync(resolve(root,f),"utf8");
 const html=get("index.html"),css=get("site.css"),js=get("site.js");
 const count=(text,regex)=>[...text.matchAll(regex)].length;
-for(const href of ["./site.css?v=4","./site.js?v=4","./assets/wowforge-header-first.webp"])
+for(const href of ["./site.css?v=4","./site.js?v=4","./assets/novyx-wf-crest.svg"])
  assert.ok(html.includes(href),"Missing root-relative asset: "+href);
 assert.ok(html.includes('rel="canonical" href="https://wow.novyxforge.com/"'));
 assert.ok(html.includes("<title>WoW Forge — NOVYX FORGE</title>"));
@@ -25,37 +25,40 @@ assert.ok(html.includes('href="https://novyxforge.com/"'));
 assert.equal(count(css,/\{/g),count(css,/\}/g),"CSS braces must balance");
 assert.ok(css.includes("@media(max-width:620px)"));
 assert.ok(css.includes("prefers-reduced-motion:reduce"));
-assert.ok(css.includes("./assets/azeroth-landscape.svg"), "Fantasy landscape must be used");
-assert.ok(html.includes('class="hero-seal wowforge-identity"'), "Distinct WoW Forge crest must replace generic hero type");
-assert.ok(html.includes("THE NOVYX REALMS PRESENT"),"Original first mockup subtitle must appear");
-assert.ok(html.includes("WORLD OF WARCRAFT ADDONS"), "Header subtitle matches first mockup");
-assert.ok(html.includes('id="story"'), "Our Story section must exist");
-assert.ok(html.includes('href="#story">Our Story</a>'), "Our Story accessible from top navigation");
-assert.ok(html.includes('./forge-story.css?v=1'), "Story stylesheet must load");
-assert.ok(html.includes("Older heroes.") && html.includes("Same world."), "Veteran gamer story heading");
-assert.ok(html.includes("We became fathers.") && html.includes("Twenty years ago, we had all night."), "Story must be about veteran dads");
-assert.ok(html.includes("We're building addons for World of Warcraft: Forever"), "Story connects to the addon mission");
-assert.ok(html.includes("less time fighting menus"), "Time-saving addon promise");
-assert.ok(html.indexOf('id="story"')<html.indexOf('id="addons"'), "Story should lead into the addon archive");
-const storyCss=get("forge-story.css");
-assert.equal(storyCss.split("{").length,storyCss.split("}").length,"Story CSS braces must balance");
-assert.ok(storyCss.includes("@media(max-width:620px)") && storyCss.includes("prefers-reduced-motion:reduce"),"Story mobile and motion access");
+assert.ok(css.includes("./assets/azeroth-landscape.svg"), "Non-trademark fantasy fallback retained");
+assert.ok(html.includes('class="hero-seal wowforge-identity"'),"Independent hero emblem should exist");
+assert.ok(html.includes('class="brand wow-brand"'),"Independent brand");
+assert.ok(html.includes("INDEPENDENT GAME ADDONS"),"Independent publisher branding");
+assert.ok(html.includes("AN INDEPENDENT NOVYX FORGE PROJECT"),"No claim of official endorsement");
+for(const oldAsset of ["wowforge-crest-original.webp","wowforge-header-first.webp","wowforge-logo.webp","novyx-realm-hero.webp"]){
+ assert.ok(!html.includes(oldAsset),"Legacy brand imagery must not appear in HTML: "+oldAsset);
+}
+assert.ok(html.includes("./assets/novyx-wf-crest.svg"),"Original logo loaded");
+assert.ok(html.includes("./assets/novyx-realm-hero.webp"),"Original fantasy image preloaded");
+assert.ok(html.includes("./brand-original.css?v=1"),"Trademark-safe styles loaded last");
+const brandSvg=get("assets/novyx-wf-crest.svg");
+assert.ok(brandSvg.includes("<svg") && brandSvg.includes("blacksmith emblem") && !brandSvg.includes("Blizzard"),"Our logo must be original");
+const legalHero=readFileSync(resolve(root,"assets/novyx-realm-hero.webp"));
+assert.ok(legalHero.length>100000&&legalHero.toString("ascii",0,4)==="RIFF"&&legalHero.toString("ascii",8,12)==="WEBP","Original hero art must be valid");
+const brandCss=get("brand-original.css");
+assert.ok(brandCss.includes("novyx-realm-hero.webp"),"Original image used in outro");
+assert.equal(brandCss.split("{").length,brandCss.split("}").length,"Brand CSS balanced");
 assert.ok(!html.includes("AN ADVENTURE THROUGH AZEROTH"),"Remove duplicate hero eyebrow");
 assert.ok(html.includes('class="brand wow-brand"'), "Dedicated WoW header brand required");
 assert.ok(html.includes('./assets/wowforge-crest-original.webp'), "Dedicated crest image required");
-assert.ok(html.includes('./assets/wowforge-header-first.webp'), "Dedicated header crest required");
+assert.ok(html.includes('./assets/novyx-wf-crest.svg'), "Dedicated header crest required");
 const navCrest=readFileSync(resolve(root,"assets/wowforge-header-first.webp"));
 assert.ok(navCrest.length>4000 && navCrest.toString("ascii",0,4)==="RIFF" && navCrest.toString("ascii",8,12)==="WEBP","A valid header W emblem is required");
 const crest=readFileSync(resolve(root,"assets/wowforge-crest-original.webp"));
 assert.ok(crest.length>30000 && crest.toString("ascii",0,4)==="RIFF" && crest.toString("ascii",8,12)==="WEBP","Optimized original WoW Forge logo must be a real WebP");
 
-assert.ok(html.includes('./cinematic-hero.css?v=3'), "Cinematic hero stylesheet must load last");
-assert.ok(html.includes('./assets/azeroth-cinematic.webp'), "Cinematic image must be preloaded");
+assert.ok(html.includes('./cinematic-hero.css?v=4'), "Cinematic hero stylesheet must load last");
+assert.ok(html.includes('./assets/novyx-realm-hero.webp'), "Cinematic image must be preloaded");
 const cinematic=get("cinematic-hero.css");
-assert.ok(cinematic.includes('url("./assets/azeroth-cinematic.webp")'), "Use approved cinematic fantasy image");
-const webp=readFileSync(resolve(root,"assets/azeroth-cinematic.webp"));
+assert.ok(cinematic.includes('url("./assets/novyx-realm-hero.webp")'), "Use approved cinematic fantasy image");
+const webp=readFileSync(resolve(root,"assets/novyx-realm-hero.webp"));
 assert.ok(webp.length>100000 && webp.toString("ascii",0,4)==="RIFF" && webp.toString("ascii",8,12)==="WEBP","Valid optimized original artwork");
-assert.ok(css.includes("./assets/azeroth-expanse.svg"), "Original Azeroth-inspired scene should support the hero");
+assert.ok(css.includes("./assets/novyx-realm-hero.webp"),"Original hero used in fallback");
 assert.ok(!css.includes("images.unsplash.com"), "No borrowed ordinary landscape photography");
 const panorama=get("assets/azeroth-expanse.svg");
 for(const iconic of ["citadel", "airship", "orcish frontier", "dragon"]){
@@ -70,4 +73,4 @@ for(const tag of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)){
  assert.ok(tag[0].includes('rel="noopener noreferrer"'),"Unprotected external tab");
 }
 execFileSync(process.execPath,["--check",resolve(root,"site.js")]);
-console.log("PASS WoW Forge v7: landscape, UI, links, addon status, mobile, accessibility and distribution.");
+console.log("PASS WoW Forge v8: landscape, UI, links, addon status, mobile, accessibility and distribution.");
