@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="scene-title">
+<title id="scene-title">Original fantasy landscape with an enchanted emerald woodland merging into rust-red frontier cliffs</title>
+<defs>
+<linearGradient id="sky" x2="0" y2="1"><stop stop-color="#17282d"/><stop offset=".32" stop-color="#6a6b51"/><stop offset=".63" stop-color="#be9361"/><stop offset="1" stop-color="#3f4c35"/></linearGradient>
+<radialGradient id="sun"><stop stop-color="#fff6be" stop-opacity=".94"/><stop offset=".22" stop-color="#efcd87" stop-opacity=".6"/><stop offset="1" stop-color="#f4c36a" stop-opacity="0"/></radialGradient>
+<linearGradient id="left" x2=".3" y2="1"><stop stop-color="#345445"/><stop offset="1" stop-color="#0c211b"/></linearGradient>
+<linearGradient id="red" x2=".45" y2="1"><stop stop-color="#b86b42"/><stop offset=".45" stop-color="#8d442f"/><stop offset="1" stop-color="#381d1c"/></linearGradient>
+<linearGradient id="ground" x2="0" y2="1"><stop stop-color="#4f5735"/><stop offset=".4" stop-color="#293b29"/><stop offset="1" stop-color="#0b1916"/></linearGradient>
+<linearGradient id="mist"><stop stop-color="#e9dfad" stop-opacity="0"/><stop offset=".52" stop-color="#e8d0a0" stop-opacity=".14"/><stop offset="1" stop-color="#f0cb82" stop-opacity="0"/></linearGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="13"/></filter>
+<filter id="glow"><feGaussianBlur stdDeviation="4"/></filter>
+<g id="pine"><path d="M0 -155L-53 -62h22L-77 -2h31L-94 69H94L46 -2h31L31 -62h22Z" fill="#16362c"/><rect x="-9" y="47" width="18" height="77" fill="#27291e"/></g>
+<g id="bigtree"><path d="M-17 165Q-10 74 -26 27Q-45 -10 -67 -39L-52 -44Q-27 -25 -9 3Q-13 -53 19 -104L29 -98Q9 -50 12 -8Q36 -46 66 -50L75 -35Q37 -24 15 19Q15 89 24 165Z" fill="#221f16"/><g fill="#213d29"><ellipse cx="-42" cy="-89" rx="87" ry="55"/><ellipse cx="56" cy="-107" rx="86" ry="53"/><ellipse cx="12" cy="-152" rx="94" ry="60"/><ellipse cx="-100" cy="-134" rx="48" ry="39"/></g><g fill="#34583a" opacity=".7"><ellipse cx="-42" cy="-118" rx="76" ry="42"/><ellipse cx="31" cy="-162" rx="85" ry="44"/></g></g>
+</defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<circle cx="617" cy="280" r="360" fill="url(#sun)"/>
+<path d="M0 204Q200 142 356 185T720 174T1102 219T1600 172" fill="none" stroke="#e9d0ab" stroke-opacity=".12" stroke-width="43" filter="url(#blur)"/>
+<path d="M0 380L155 313L230 345L362 270L521 350L620 299L756 374L925 285L1090 360L1237 283L1396 325L1600 250V900H0Z" fill="#4c6451" opacity=".6"/>
+<path d="M0 480L155 359L300 427L461 338L584 432L743 363L842 463L980 402L1100 470V900H0Z" fill="#2f5841" opacity=".72"/>
+<path d="M835 459L944 351L1013 408L1114 252L1191 338L1288 189L1375 284L1445 213L1600 308V900H835Z" fill="#794838"/>
+<path d="M1000 484L1095 376L1157 402L1246 245L1298 291L1366 183L1421 290L1513 251L1600 342V900H1000Z" fill="url(#red)"/>
+<path d="M1177 446l69 -201l29 67l-35 8l21 84Zm176 -148l13 -115l55 107l-31 -13Z" fill="#dc9460" opacity=".56"/>
+<path d="M1014 511L1130 411L1169 459L1260 354L1313 428L1410 334L1600 409V900H1000Z" fill="#713f2f" opacity=".8"/>
+<path d="M0 535Q400 476 767 535Q972 467 1600 554V900H0Z" fill="url(#ground)"/>
+<path d="M260 552Q500 525 733 558Q867 598 1090 560Q1278 533 1600 574V659Q1174 614 974 668Q665 636 441 649Q159 645 0 693V609Q137 584 260 552Z" fill="#cbb988" opacity=".18" filter="url(#blur)"/>
+<path d="M0 645Q244 574 507 651Q707 703 903 627Q1117 572 1600 651V900H0Z" fill="#1b3028"/>
+<path d="M0 712Q278 642 503 741Q785 686 1019 733Q1327 681 1600 725V900H0Z" fill="#11241d"/>
+<path d="M871 588q61 15 95 48q-136 -9 -216 41q-50 35 -163 33q-54 -6 -124 21q118 -5 189 17q128 16 203 -29q78 -42 189 -43q149 -4 209 -47q-122 29 -203 3q-79 -31 -179 -44" fill="#b7a577" opacity=".22"/>
+<g opacity=".7"><use href="#pine" transform="translate(131 555) scale(1.1)"/><use href="#pine" transform="translate(230 530) scale(.75)"/><use href="#pine" transform="translate(352 565) scale(.95)"/><use href="#pine" transform="translate(479 540) scale(.67)"/><use href="#pine" transform="translate(608 568) scale(1.02)"/><use href="#pine" transform="translate(724 553) scale(.73)"/><use href="#pine" transform="translate(823 550) scale(.56)"/></g>
+<g transform="translate(66 585) scale(1.45)"><use href="#bigtree"/></g>
+<g transform="translate(385 626) scale(1.04)"><use href="#bigtree"/></g>
+<g transform="translate(682 593) scale(.75)"><use href="#bigtree"/></g>
+<g transform="translate(1565 625)"><path d="M-75 130l15 -162l-17 -75l58 57l32 -97l14 116l55 -44l-37 80l-8 125Z" fill="#241b17"/><path d="M-100 -104l88 35l-29 15Z" fill="#a45036"/></g>
+<path d="M1270 582l0 -150l14 -15l14 15v150Zm32 0l0 -133l10 -14l11 14v133Zm-44 -132h78v16h-78Z" fill="#241e19"/>
+<path d="M1210 582l15 -115l30 -31l30 31l15 115ZM1264 535l22 -146l28 -14l28 20l23 140" fill="#2c211c" opacity=".94"/>
+<path d="M1205 460l50 -48l53 48H1205Zm82 -76l25 -63l29 65Z" fill="#563226"/>
+<path d="M1310 414q-26 3 -39 -8l24 -37l22 14Z" fill="#a75c3b"/>
+<path d="M1238 430q-26 14 -45 0l23 -52l22 6Z" fill="#b96b49"/>
+<path d="M1257 514h19v68h-19Zm47 -12h17v80h-17Z" fill="#120f0e"/>
+<path d="M1242 521h8v17h-8Zm107 -37h9v17h-9Z" fill="#ef8e4b"/>
+<path d="M0 768Q234 723 454 779Q590 817 737 769Q1122 714 1600 791V900H0Z" fill="#0a1815"/>
+<g fill="#20402c" opacity=".65"><path d="M0 800l46 -60l38 60l30 -45l35 45l50 -45l27 45h150l27 -51l34 51l40 -70l36 70Z"/><path d="M600 823l40 -60l42 60l60 -80l35 80l47 -58l42 58h80Z"/></g>
+<path d="M0 0h1600v900H0Z" fill="url(#mist)"/>
+<g fill="#e8d998" opacity=".75"><circle cx="202" cy="438" r="2.8"/><circle cx="254" cy="355" r="1.8"/><circle cx="531" cy="467" r="2.2"/><circle cx="491" cy="406" r="1.5"/><circle cx="723" cy="485" r="2"/><circle cx="861" cy="456" r="1.5"/></g>
+<rect width="1600" height="900" fill="#060e0a" opacity=".12"/>
+</svg>
