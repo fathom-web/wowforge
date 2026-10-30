@@ -1,0 +1,113 @@
+/* WoW Forge — Campfire Chronicles / Our Story.
+   A warm, readable personal founder story, scoped to wow.novyxforge.com.
+   Does not change the approved hero image, crest, or LifeForge showcase. */
+.forge-story{
+  position:relative;
+  width:min(1320px,calc(100% - 48px));
+  margin:78px auto 105px;
+  scroll-margin-top:100px;
+  isolation:isolate;
+}
+.forge-story:before{
+  content:"";
+  position:absolute;
+  inset:-50px -14px;
+  pointer-events:none;
+  z-index:-1;
+  background:radial-gradient(ellipse 52% 65% at 9% 35%,rgba(186,111,53,.14),transparent 78%),
+             radial-gradient(ellipse 48% 80% at 91% 75%,rgba(97,140,84,.16),transparent 83%);
+}
+.story-frame{
+  display:grid;
+  grid-template-columns:minmax(255px,.78fr) minmax(0,1.5fr);
+  border:1px solid rgba(223,177,102,.6);
+  padding:10px;
+  background:linear-gradient(145deg,#684d2b,#1e2920 15%,#17291f 85%,#69502d);
+  box-shadow:0 24px 75px rgba(0,0,0,.33),inset 0 0 0 3px #15251c;
+  gap:0;
+}
+.story-keepsake{
+  position:relative;
+  align-self:stretch;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  min-height:480px;
+  padding:44px 28px;
+  border:1px solid rgba(242,208,135,.44);
+  background:radial-gradient(ellipse 70% 40% at 50% 30%,rgba(146,94,48,.25),transparent 90%),
+             repeating-linear-gradient(0deg,transparent 0 31px,rgba(228,188,115,.025) 32px),
+             linear-gradient(155deg,#354638,#1b2f26 52%,#15271f);
+}
+.story-corner{position:absolute;color:#bca170;font-size:24px;line-height:1;opacity:.85}
+.story-corner.top-left{top:15px;left:17px}.story-corner.top-right{top:15px;right:17px}
+.story-corner.bottom-left{bottom:15px;left:17px}.story-corner.bottom-right{bottom:15px;right:17px}
+.story-crest{width:76px;height:auto;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(0,0,0,.7))}
+.story-mini{margin:19px 0 17px;font:800 10px "Outfit",sans-serif;letter-spacing:.18em;color:#e9c68e}
+.story-years{display:flex;align-items:center;justify-content:center;gap:13px}
+.story-years strong{font:800 clamp(88px,10vw,146px)/.86 "Cinzel",Georgia,serif;letter-spacing:-.08em;color:#f2d29a;text-shadow:0 3px 0 #674928,0 11px 23px #070c09}
+.story-years span{text-align:left;color:#eacb8f;font:800 clamp(12px,1.3vw,17px)/1.5 "Cinzel",serif;letter-spacing:.08em}
+.story-rule{display:flex;align-items:center;gap:14px;width:78%;margin:29px auto;color:#dcaf65}
+.story-rule:before,.story-rule:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(225,179,102,.78))}
+.story-rule:after{transform:rotate(180deg)}
+.story-aside{font:600 clamp(15px,1.6vw,19px)/1.85 "Outfit",sans-serif;color:#d6d6c5;margin:6px 0 23px}
+.story-aside strong{color:#f3d3a0}
+.story-ribbon{padding:10px 20px;border-top:1px solid rgba(212,176,109,.42);border-bottom:1px solid rgba(212,176,109,.42);font:800 10px "Outfit",sans-serif;letter-spacing:.2em;color:#e7c58b}
+.story-aside-link{margin-top:23px;color:#ffe0a3;font:800 11px "Outfit",sans-serif;letter-spacing:.11em;text-transform:uppercase;text-underline-offset:5px;text-decoration:underline}
+.story-aside-link:hover{color:#fff2d4}
+.story-manuscript{
+  position:relative;
+  padding:57px clamp(25px,5vw,79px) 59px;
+  border:1px solid rgba(203,176,113,.38);
+  border-left:0;
+  background:radial-gradient(ellipse 75% 50% at 90% 20%,rgba(120,81,42,.13),transparent 84%),
+             linear-gradient(145deg,#202f25,#15241d 75%,#14221d);
+}
+.story-manuscript:before{content:"";position:absolute;inset:15px;border:1px solid rgba(206,176,113,.12);pointer-events:none}
+.story-kicker{font:800 10px "Outfit",sans-serif;letter-spacing:.23em;color:#d8ae70;margin:0 0 12px}
+.story-kicker span{color:#7c997c;padding:0 7px}
+.story-manuscript h2{font:700 clamp(38px,4.4vw,64px)/1.09 "Cinzel",serif;letter-spacing:-.052em;color:#f8edd1;margin:13px 0 30px}
+.story-manuscript h2 em{font-style:normal;color:#eac282}
+.story-manuscript p:not(.story-kicker){position:relative;max-width:730px;color:#cdd1bd;font:400 15px/1.95 "Outfit",sans-serif;margin:0 0 14px}
+.story-manuscript .story-opening{color:#f6dfae!important;font:700 clamp(20px,2vw,26px)/1.55 "Cinzel",serif!important;margin-bottom:22px!important}
+.story-manuscript .story-callout{font:700 clamp(18px,2vw,23px)/1.6 "Cinzel",serif!important;color:#f4d39b!important;margin:26px 0 19px!important}
+.story-manuscript strong{color:#ffe5b8;font-weight:800}
+.story-manuscript .story-promise{font-weight:700!important;color:#eacb95!important}
+.story-manuscript .story-signoff{margin:32px 0 6px!important;color:#f0c27b!important;font:700 clamp(15px,1.7vw,19px)/1.65 "Cinzel",serif!important}
+.story-manuscript .story-welcome{color:#f4e9c6!important;font:700 14px/1.8 "Outfit",sans-serif!important;letter-spacing:.09em}
+@media(max-width:1060px){
+  .forge-story{width:calc(100% - 40px)}
+  .story-frame{grid-template-columns:minmax(215px,.72fr) minmax(0,1.6fr)}
+  .story-keepsake{padding:30px 20px}
+  .story-manuscript{padding:45px 32px}
+  .topbar nav{gap:11px}
+  .topbar nav a{font-size:10px}
+}
+@media(max-width:800px){
+  .forge-story{margin:52px auto 75px;scroll-margin-top:85px}
+  .story-frame{grid-template-columns:1fr}
+  .story-keepsake{min-height:0;padding:26px 20px 32px}
+  .story-years strong{font-size:100px}
+  .story-years span{font-size:14px}
+  .story-crest{width:60px}
+  .story-aside{margin:0 0 15px}
+  .story-mini{margin:10px 0}
+  .story-rule{margin:18px auto}
+  .story-manuscript{border-left:1px solid rgba(203,176,113,.38);border-top:0}
+  .topbar nav{gap:13px}
+}
+@media(max-width:620px){
+  .forge-story{width:calc(100% - 24px);margin:40px auto 64px}
+  .story-frame{padding:6px}
+  .story-keepsake{padding:25px 16px 28px}
+  .story-years strong{font-size:82px}
+  .story-years span{font-size:11px}
+  .story-manuscript{padding:35px 23px 36px}
+  .story-manuscript h2{font-size:clamp(32px,8.2vw,44px)}
+  .story-manuscript p:not(.story-kicker){font-size:14px;line-height:1.85}
+  .story-manuscript .story-opening{font-size:18px!important}
+  .story-mini,.story-kicker{font-size:9px;letter-spacing:.12em}
+}
+@media(prefers-reduced-motion:reduce){.forge-story{scroll-behavior:auto}}

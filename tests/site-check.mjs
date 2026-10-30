@@ -29,6 +29,17 @@ assert.ok(css.includes("./assets/azeroth-landscape.svg"), "Fantasy landscape mus
 assert.ok(html.includes('class="hero-seal wowforge-identity"'), "Distinct WoW Forge crest must replace generic hero type");
 assert.ok(html.includes("THE NOVYX REALMS PRESENT"),"Original first mockup subtitle must appear");
 assert.ok(html.includes("WORLD OF WARCRAFT ADDONS"), "Header subtitle matches first mockup");
+assert.ok(html.includes('id="story"'), "Our Story section must exist");
+assert.ok(html.includes('href="#story">Our Story</a>'), "Our Story accessible from top navigation");
+assert.ok(html.includes('./forge-story.css?v=1'), "Story stylesheet must load");
+assert.ok(html.includes("Older heroes.") && html.includes("Same world."), "Veteran gamer story heading");
+assert.ok(html.includes("We became fathers.") && html.includes("Twenty years ago, we had all night."), "Story must be about veteran dads");
+assert.ok(html.includes("We're building addons for World of Warcraft: Forever"), "Story connects to the addon mission");
+assert.ok(html.includes("less time fighting menus"), "Time-saving addon promise");
+assert.ok(html.indexOf('id="story"')<html.indexOf('id="addons"'), "Story should lead into the addon archive");
+const storyCss=get("forge-story.css");
+assert.equal(count(storyCss,/\\{/g),count(storyCss,/\\}/g),"Story CSS braces must balance");
+assert.ok(storyCss.includes("@media(max-width:620px)") && storyCss.includes("prefers-reduced-motion:reduce"),"Story mobile and motion access");
 assert.ok(!html.includes("AN ADVENTURE THROUGH AZEROTH"),"Remove duplicate hero eyebrow");
 assert.ok(html.includes('class="brand wow-brand"'), "Dedicated WoW header brand required");
 assert.ok(html.includes('./assets/wowforge-crest-original.webp'), "Dedicated crest image required");

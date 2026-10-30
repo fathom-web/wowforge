@@ -4,6 +4,8 @@
 **GitHub repository:** https://github.com/fathom-web/wowforge  
 **Purpose:** Standalone showcase for original World of Warcraft addon projects, with LifeForge first.
 
+**Our Story (30 October 2026):** Added the personal `#story` section directly beneath the cinematic hero, with a dedicated `forge-story.css` parchment-and-guild-journal presentation and an accessible navigation link. The narrative is about veteran WoW players, now fathers, after twenty years in Azeroth. It explains why we are building practical, time-saving addons for World of Warcraft: Forever. No claim is made that unreleased features already work.
+
 **Design boundary:** The Warcraft-inspired fantasy panorama and website style belong **only** to `wow.novyxforge.com` and this `wowforge` repository. No changes to `novyxforge.com`, other subdomains or the main six-sphere universe are involved. No Blizzard artwork or logos are copied.
 
 **Design v7 (30 October 2026):** Corrected the v6 logo mismatch by extracting the **exact crest from the first design impression**, retaining the crossed weapons, blue and red hanging banners and luminous medallion. Assets: `assets/wowforge-crest-original.webp` and matching `assets/wowforge-header-first.webp` for the round W navigation emblem/fav icon. Restored the first impression's single "THE NOVYX REALMS PRESENT" subtitle. This is a pixel-derived asset extraction from the previously generated original design, not a substituted AI remix. Only `wow.novyxforge.com` is modified.

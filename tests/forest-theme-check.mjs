@@ -40,6 +40,9 @@ assert.ok(js.includes("aria-expanded"),"Preserve original accessible navigation"
 assert.ok(theme.includes('.realm-durotar .hero'),"Durotar realm theme must respond to toggle");
 assert.ok(html.includes('./forest-effects.js?v=1'),"Missing separate effects script");
 assert.ok(html.includes('./cinematic-hero.css?v=3'),"Missing approved cinematic hero styling");
+assert.ok(html.includes('./forge-story.css?v=1'),"Missing separate personal story theme");
+assert.ok(html.includes('id="story"'),"Missing veteran dads story");
+assert.ok(html.indexOf('cinematic-hero.css?v=3')<html.indexOf('forge-story.css?v=1'),"New story styles come after cinematic hero");
 assert.ok(html.includes('src="./assets/wowforge-crest-original.webp"'),"Must use exact first impression emblem");
 assert.ok(html.includes('src="./assets/wowforge-header-first.webp"'),"Must use matching circular W emblem");
 assert.ok(file("cinematic-hero.css").includes('azeroth-cinematic.webp'),"Cinematic background must reference approved image");
