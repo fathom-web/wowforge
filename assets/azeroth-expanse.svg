@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1300" role="img" aria-labelledby="worldtitle">
 <title id="worldtitle">An original high-fantasy world: emerald ancient forest and silver citadel on the left, sunlit valley and a fiery orcish frontier on the right</title>
+<desc>Original artwork evokes an epic game world, featuring a silver citadel, an airborne airship, a dragon silhouette, emerald woodland, an orcish frontier with red spires, and a winding river.</desc>
 <defs>
 <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#639eb7"/><stop offset=".3" stop-color="#9dcbcc"/><stop offset=".64" stop-color="#f4d39a"/><stop offset="1" stop-color="#efd18c"/></linearGradient>
 <linearGradient id="skyshade"><stop stop-color="#72c2ce" stop-opacity=".5"/><stop offset=".52" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#d48c50" stop-opacity=".5"/></linearGradient>
