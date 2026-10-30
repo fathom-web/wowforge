@@ -6,7 +6,9 @@
 
 **Design boundary:** The Warcraft-inspired fantasy panorama and website style belong **only** to `wow.novyxforge.com` and this `wowforge` repository. No changes to `novyxforge.com`, other subdomains or the main six-sphere universe are involved. No Blizzard artwork or logos are copied.
 
-**Design v4 (30 October 2026):** The travel-photo look was replaced by an original, locally hosted vector landscape in `assets/azeroth-expanse.svg`: silver human citadel, enchanted forest, dragon silhouette, airship, rusty red cliffs, and an orcish frontier. This is a fantasy homage, not an official Blizzard image, and no official artwork or game logo is bundled. No tracking or external imagery is needed. The previous Unsplash photography has been removed.
+**Design v5 (30 October 2026):** The hero now uses the exact user-approved cinematic fantasy artwork, stored locally as `assets/azeroth-cinematic.webp` (original generated image, optimized at native 1672×941 WebP). The separate `cinematic-hero.css` loads after both existing stylesheets, centers text and buttons over the painting, and hides the older rune-gate overlay so it does not compete with the scene. This affects this website only; lower sections and addon release claims remain intact.
+
+**Historical design v4 (30 October 2026):** The travel-photo look was replaced by an original, locally hosted vector landscape in `assets/azeroth-expanse.svg`: silver human citadel, enchanted forest, dragon silhouette, airship, rusty red cliffs, and an orcish frontier. This is a fantasy homage, not an official Blizzard image, and no official artwork or game logo is bundled. No tracking or external imagery is needed. The previous Unsplash photography has been removed.
 
 ## Deployment with MijnHost / DirectAdmin
 

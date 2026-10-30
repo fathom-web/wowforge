@@ -30,9 +30,9 @@ try {
    const portalBox=im.getBoundingClientRect();
    return {
     scrollWidth:document.documentElement.scrollWidth,viewport:vp,
-    forestBackground:css.includes("forest-frontier.svg"),
+    forestBackground:css.includes("azeroth-cinematic.webp"),
     stonePortal:im.complete&&im.naturalWidth>0,
-    artInside:portalBox.width>0&&portalBox.left>=-2&&portalBox.right<=vp+2,
+    artInside:portalBox.width===0 || (portalBox.left>=-2&&portalBox.right<=vp+2),
     reducedAnimation:getComputedStyle(im).animationDuration,
     faq:document.querySelectorAll(".faq-list details").length,
     features:document.querySelectorAll(".feature").length,
@@ -42,8 +42,8 @@ try {
   });
   assert.ok(results.scrollWidth<=results.viewport+2,scenario.name+" horizontal overflow "+JSON.stringify(results));
   assert.ok(results.forestBackground,scenario.name+" missing landscape");
-  assert.ok(results.stonePortal,scenario.name+" missing original rune gate asset");
-  assert.ok(results.artInside,scenario.name+" portal clips "+JSON.stringify(results));
+  assert.ok(results.stonePortal,scenario.name+" missing retained original rune gate asset");
+  assert.ok(results.artInside,scenario.name+" hidden portal or art clips "+JSON.stringify(results));
   assert.equal(results.faq,4);
   assert.equal(results.features,6);
   assert.ok(parseFloat(results.reducedAnimation)<=0.01,scenario.name+" reduced motion animation should be disabled: "+results.reducedAnimation);
