@@ -20,3 +20,5 @@ jobs:
         run: node --check site.js
       - name: Check website content and assets
         run: node tests/site-check.mjs
+      - name: Verify Forest Frontier assets and scene toggle
+        run: node tests/forest-theme-check.mjs
