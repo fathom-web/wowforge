@@ -7,7 +7,7 @@ const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const get=f=>readFileSync(resolve(root,f),"utf8");
 const html=get("index.html"),css=get("site.css"),js=get("site.js");
 const count=(text,regex)=>[...text.matchAll(regex)].length;
-for(const href of ["./site.css?v=4","./site.js?v=4","./assets/wowforge-arcane-wf.webp"])
+for(const href of ["./site.css?v=4","./site.js?v=4","./assets/wf-shield-dadbods.webp","./assets/wf-shield-icon.webp"])
  assert.ok(html.includes(href),"Missing root-relative asset: "+href);
 assert.ok(html.includes('rel="canonical" href="https://wow.novyxforge.com/"'));
 assert.ok(html.includes("<title>WoW Forge — NOVYX FORGE</title>"));
@@ -33,12 +33,33 @@ assert.ok(html.includes("AN INDEPENDENT NOVYX FORGE PROJECT"),"No claim of offic
 for(const oldAsset of ["wowforge-crest-original.webp","wowforge-header-first.webp","wowforge-logo.webp","azeroth-cinematic.webp"]){
  assert.ok(!html.includes(oldAsset),"Legacy brand imagery must not appear in HTML: "+oldAsset);
 }
-assert.ok(html.includes("./assets/wowforge-arcane-wf.webp"),"Matching WF arcane-gold emblem must load");
-assert.equal(count(html,/src="\.\/assets\/wowforge-arcane-wf\.webp"/g),3,"WF logo used in header, hero and story");
-assert.ok(html.includes('rel="icon" href="./assets/wowforge-arcane-wf.webp" type="image/webp"'),"WF favicon should use matching artwork");
-const wfLogo=readFileSync(resolve(root,"assets/wowforge-arcane-wf.webp"));
-assert.ok(wfLogo.length>100000&&wfLogo.toString("ascii",0,4)==="RIFF"&&wfLogo.toString("ascii",8,12)==="WEBP","WF logo must be a valid original optimized WebP");
-assert.ok(html.includes("wowforge-arcane.css?v=1")&&html.indexOf("wowforge-arcane.css?v=1")>html.indexOf("lifeforge-brand.css?v=1"),"WF style overrides must load last");
+assert.ok(html.includes("./assets/wf-shield-dadbods.webp"),"Forged shield image must load");
+assert.equal(count(html,/src="\.\/assets\/wf-shield-dadbods\.webp"/g),1,"Hero shield used once");
+assert.equal(count(html,/src="\.\/assets\/wf-shield-icon\.webp"/g),2,"Compact shield in navbar and story");
+assert.ok(html.includes('rel="icon" href="./assets/wf-shield-icon.webp" type="image/webp"'),"Matching shield favicon");
+for(const name of ["wf-shield-dadbods.webp","wf-shield-icon.webp","dadbod-human.webp","dadbod-orc.webp"]){
+ const bytes=readFileSync(resolve(root,"assets",name));
+ assert.ok(bytes.length>25000 && bytes.toString("ascii",0,4)==="RIFF" && bytes.toString("ascii",8,12)==="WEBP","Valid original WebP "+name);
+}
+assert.ok(html.includes('id="veterans"')&&html.includes("Two factions.")&&html.includes("One dadbod."),"Two Factions chapter");
+assert.ok(html.includes("ALLIANCE DAD")&&html.includes("HORDE DAD"),"Both veteran factions");
+assert.ok(html.indexOf('id="veterans"')<html.indexOf('id="story"'),"Dadbod cards precede founders story");
+assert.ok(html.includes('href="#veterans">The Dads</a>'),"Dads linked from navigation");
+assert.equal(count(html,/class="faction-pennants"/g),3,"Repeated banners in three chapters");
+for(const banner of ["banner-azure.svg","banner-ember.svg"]){
+ const artwork=get("assets/"+banner);
+ assert.ok(artwork.includes("<svg")&&artwork.includes("</svg>"),"Original custom heraldry "+banner);
+ assert.ok(!/Blizzard|Warcraft.*logo/i.test(artwork),"No official faction marks");
+}
+assert.ok(html.includes("faction-dads.css?v=1"),"Dad and faction styles");
+assert.ok(html.indexOf("faction-dads.css?v=1")>html.indexOf("wowforge-arcane.css?v=1"),"Faction styles must be last");
+const faction=get("faction-dads.css");
+for(const cls of [".veteran-duo",".dad-card",".dad-photo",".dad-flag",".forge-story",".section.spotlight",".systems .feature",".release-rail",".faq-list",".outro"]){
+ assert.ok(faction.includes(cls),"Full page theme missing "+cls);
+}
+assert.equal(faction.split("{").length,faction.split("}").length,"Faction CSS syntax");
+assert.ok(faction.includes("@media(max-width:620px)")&&faction.includes("prefers-reduced-motion:reduce"),"Mobile and reduced-motion handling");
+assert.ok(html.includes("wowforge-arcane.css?v=1")&&html.indexOf("wowforge-arcane.css?v=1")>html.indexOf("lifeforge-brand.css?v=1"),"Previous arcane styling retained under final faction layer");
 const wfCss=get("wowforge-arcane.css");
 assert.ok(wfCss.includes(".hero .wowforge-crest")&&wfCss.includes(".topbar")&&wfCss.includes(".story-keepsake"),"All three WF logo placements must be styled");
 assert.equal(wfCss.split("{").length,wfCss.split("}").length,"Arcane WF stylesheet balanced");
@@ -61,8 +82,7 @@ assert.equal(grit.split("{").length,grit.split("}").length,"Grunge CSS brace bal
 for(const key of [".story-frame",".section.spotlight",".preview-shell",".systems .feature",".release-rail",".faq-list",".outro"]){assert.ok(grit.includes(key),"Missing styling for "+key)}
 assert.ok(grit.includes("@media(max-width:620px)")&&grit.includes("prefers-reduced-motion:reduce"),"Mobile accessibility");
 assert.ok(html.indexOf("brand-original.css?v=1")>html.indexOf("forge-story.css?v=1"),"Legal-safe overrides must be last");
-const brandSvg=get("assets/wowforge-arcane-wf.webp");
-assert.ok(brandSvg.includes("<svg") && brandSvg.includes("smithing anvil") && !brandSvg.includes("Blizzard"),"Our logo must be original");
+assert.ok(!html.includes("novyx-wf-relic.svg"),"Old modern logo not used in HTML");
 const legalHero=readFileSync(resolve(root,"assets/novyx-realm-hero.webp"));
 assert.ok(legalHero.length>100000&&legalHero.toString("ascii",0,4)==="RIFF"&&legalHero.toString("ascii",8,12)==="WEBP","Original hero art must be valid");
 const brandCss=get("brand-original.css");
@@ -70,7 +90,7 @@ assert.ok(brandCss.includes("novyx-realm-hero.webp"),"Original image used in out
 assert.equal(brandCss.split("{").length,brandCss.split("}").length,"Brand CSS balanced");
 assert.ok(!html.includes("AN ADVENTURE THROUGH AZEROTH"),"Remove duplicate hero eyebrow");
 assert.ok(html.includes('class="brand wow-brand"'), "Dedicated WoW header brand required");
-assert.ok(html.includes('./cinematic-hero.css?v=4'), "Cinematic hero stylesheet must load last");
+assert.ok(html.includes('./cinematic-hero.css?v=4'), "Cinematic hero base stylesheet retained");
 assert.ok(html.includes('./assets/novyx-realm-hero.webp'), "Cinematic image must be preloaded");
 const cinematic=get("cinematic-hero.css");
 assert.ok(cinematic.includes('url("./assets/novyx-realm-hero.webp")'), "Use approved cinematic fantasy image");
@@ -91,4 +111,4 @@ for(const tag of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)){
  assert.ok(tag[0].includes('rel="noopener noreferrer"'),"Unprotected external tab");
 }
 execFileSync(process.execPath,["--check",resolve(root,"site.js")]);
-console.log("PASS WoW Forge v9: landscape, UI, links, addon status, mobile, accessibility and distribution.");
+console.log("PASS WoW Forge v11: landscape, UI, links, addon status, mobile, accessibility and distribution.");
