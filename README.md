@@ -6,6 +6,21 @@
 
 **Design boundary:** The original forest-and-ember frontier fantasy theme, animated rune crest and optional landscape switcher belong **only** to `wow.novyxforge.com` and this `wowforge` repository. No changes to `novyxforge.com`, other subdomains or the main six-sphere universe are involved. The SVG landscape in `assets/azeroth-landscape.svg` is an original illustration, not Blizzard artwork.
 
+## Forest Frontier 2.0 — original illustrated fantasy world
+
+WoW Forge now combines **emerald woodland and ochre wilderness** without copying Blizzard images or user data.
+
+- Original panorama: `assets/forest-frontier.svg` (forest, light beams, outpost, red-rock frontier).
+- Original carved rune portal: `assets/ancient-runegate.svg` and crest `favicon.svg`.
+- Full story-led reskin in `forest-theme.css` layered over the existing `site.css`.
+- Quest-board archive, carved wooden top navigation, original fantasy codex UI, six magical relic panels, release path marked with waystones, and forest/firelit outro.
+- The **Emerald Forest / Ember Frontier selector from the previous theme remains functional** and now changes both scenery and portal lighting. It is managed by `site.js`.
+- `forest-effects.js` only adds optional scroll reveal, keeping navigation and theme controls independent.
+- `prefers-reduced-motion`, keyboard focus, original source links and client alpha warnings remain respected.
+- Source-level and desktop/tablet/mobile browser checks are in GitHub Actions. Screenshots can be viewed in workflow artifacts.
+
+The entire site is an **independent fan project**. All landscape and portal artwork is original; no game textures or official WoW logos are bundled. A LifeForge alpha is **not** a validated or publicly released CurseForge addon.
+
 ## Deployment with MijnHost / DirectAdmin
 
 This is a **standalone static website**: no PHP, database, hosting backend, build command or paid API is needed.
