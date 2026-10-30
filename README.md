@@ -14,7 +14,7 @@ WoW Forge now combines **emerald woodland and ochre wilderness** without copying
 - Original carved rune portal: `assets/ancient-runegate.svg` and crest `favicon.svg`.
 - Full story-led reskin in `forest-theme.css` layered over the existing `site.css`.
 - Quest-board archive, carved wooden top navigation, original fantasy codex UI, six magical relic panels, release path marked with waystones, and forest/firelit outro.
-- The **Emerald Forest / Ember Frontier selector from the previous theme remains functional** and now changes both scenery and portal lighting. It is managed by `site.js`.
+- The current v3 navigation and accessibility script remain unchanged. The new design naturally combines woodland and ochre frontier scenery; optional realm-specific CSS is future-ready without adding an unwanted toggle.
 - `forest-effects.js` only adds optional scroll reveal, keeping navigation and theme controls independent.
 - `prefers-reduced-motion`, keyboard focus, original source links and client alpha warnings remain respected.
 - Source-level and desktop/tablet/mobile browser checks are in GitHub Actions. Screenshots can be viewed in workflow artifacts.
