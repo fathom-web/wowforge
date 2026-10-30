@@ -7,7 +7,7 @@ const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const get=f=>readFileSync(resolve(root,f),"utf8");
 const html=get("index.html"),css=get("site.css"),js=get("site.js");
 const count=(text,regex)=>[...text.matchAll(regex)].length;
-for(const href of ["./site.css?v=2","./site.js?v=2","./favicon.svg"])
+for(const href of ["./site.css?v=3","./site.js?v=3","./favicon.svg"])
  assert.ok(html.includes(href),"Missing root-relative asset: "+href);
 assert.ok(html.includes('rel="canonical" href="https://wow.novyxforge.com/"'));
 assert.ok(html.includes("<title>WoW Forge — NOVYX FORGE</title>"));
@@ -26,7 +26,9 @@ assert.equal(count(css,/\{/g),count(css,/\}/g),"CSS braces must balance");
 assert.ok(css.includes("@media(max-width:620px)"));
 assert.ok(css.includes("prefers-reduced-motion:reduce"));
 assert.ok(css.includes("./assets/azeroth-landscape.svg"), "Fantasy landscape must be used");
-assert.ok(js.includes("aria-pressed") && js.includes("realm-durotar"), "Realm switcher must be accessible");
+assert.ok(html.includes('class="hero-seal"'), "New World of Warcraft-inspired title treatment must exist");
+assert.ok(css.includes("photo-1646404464819-523c6fef3707"), "Scenic photography should support the hero");
+assert.ok(!js.includes("realm-durotar"), "Previous dark fantasy switcher should be removed");
 assert.ok(get("assets/azeroth-landscape.svg").includes("<svg"), "Original fantasy illustration must exist");
 assert.ok(js.includes('event.key === "Escape"') && js.includes('aria-expanded'));
 assert.ok(!html.includes("download.zip")&&!html.includes('href="./download'),"No fake website downloads");
@@ -35,4 +37,4 @@ for(const tag of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)){
  assert.ok(tag[0].includes('rel="noopener noreferrer"'),"Unprotected external tab");
 }
 execFileSync(process.execPath,["--check",resolve(root,"site.js")]);
-console.log("PASS WoW Forge: links, assets, addon status, mobile, accessibility and distribution.");
+console.log("PASS WoW Forge v3: landscape, UI, links, addon status, mobile, accessibility and distribution.");
