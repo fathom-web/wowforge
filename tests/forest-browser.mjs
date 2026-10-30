@@ -46,7 +46,7 @@ try {
   assert.ok(results.artInside,scenario.name+" portal clips "+JSON.stringify(results));
   assert.equal(results.faq,4);
   assert.equal(results.features,6);
-  assert.equal(results.reducedAnimation,"1e-05s"===results.reducedAnimation?"1e-05s":results.reducedAnimation); // animation short/none in reduced motion
+  assert.ok(parseFloat(results.reducedAnimation)<=0.01,scenario.name+" reduced motion animation should be disabled: "+results.reducedAnimation);
   if(scenario.width<880){
    const toggle=page.locator(".menu-toggle");
    await toggle.click();
