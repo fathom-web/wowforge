@@ -247,3 +247,93 @@
 @media(prefers-reduced-motion:reduce){
   .hero .wowforge-crest{animation:none!important}
 }
+
+/* v7 · MATCH THE FIRST CONCEPT — the actual original crest artwork.
+   Original medallion, crossed weapons, blue and red banners; no redraw. */
+.topbar .wow-brand .brand-mark{
+  width:60px!important;height:58px!important;
+  border:0!important;border-radius:0!important;
+  padding:0!important;
+  background:transparent!important;
+}
+.topbar .wow-brand .brand-mark img{
+  display:block;
+  width:60px!important;height:53px!important;
+  object-fit:contain!important;
+  filter:drop-shadow(0 3px 6px rgba(0,0,0,.8));
+}
+.topbar .brand.wow-brand{gap:10px}
+.topbar .wow-brand .brand-wordmark{font-size:20px;line-height:1.12}
+.topbar .wow-brand .brand-wordmark small{
+  margin-top:6px;
+  font-size:9px;
+  letter-spacing:.12em;
+}
+.hero{
+  min-height:820px!important;
+  padding:24px 24px 89px!important;
+  justify-content:flex-start!important;
+}
+.hero .hero-copy{max-width:960px!important}
+.hero .hero-seal.wowforge-identity{
+  width:min(100%,550px)!important;
+  margin:0 auto 0!important;
+}
+.hero .wowforge-crest{
+  width:min(100%,500px)!important;
+  height:auto!important;
+  aspect-ratio:497/363;
+  filter:drop-shadow(0 8px 8px rgba(12,12,9,.55)) drop-shadow(0 14px 22px rgba(7,12,9,.25))!important;
+  animation:forge-crest-drift 9s ease-in-out infinite;
+}
+.hero .wowforge-identity-subline{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  width:100%;
+  margin:0 auto 6px!important;
+  color:#f4e1b8;
+  font:800 11px "Cinzel",Georgia,serif;
+  letter-spacing:.35em;
+}
+.hero .wowforge-identity-subline:before,
+.hero .wowforge-identity-subline:after{
+  content:"";
+  flex:1;
+  max-width:82px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(241,203,128,.72));
+}
+.hero .wowforge-identity-subline:after{transform:rotate(180deg)}
+.hero h1{
+  margin:18px auto 12px!important;
+  font-size:clamp(44px,5.15vw,74px);
+  line-height:1.08;
+}
+.hero .hero-description{margin:10px auto 0!important}
+.hero .hero-actions{margin-top:22px!important}
+.hero .hero-metrics{margin-top:30px!important}
+@media(max-width:880px){
+  .hero{min-height:760px!important;padding:22px 21px 100px!important}
+  .hero .hero-seal.wowforge-identity{width:min(100%,480px)!important}
+  .hero .wowforge-crest{width:min(100%,450px)!important}
+  .hero h1{font-size:clamp(43px,7vw,66px)}
+}
+@media(max-width:620px){
+  .topbar .wow-brand .brand-mark{width:43px!important;height:45px!important}
+  .topbar .wow-brand .brand-mark img{width:43px!important;height:40px!important}
+  .topbar .wow-brand .brand-wordmark{font-size:16px}
+  .topbar .wow-brand .brand-wordmark small{font-size:7px;letter-spacing:.05em}
+  .hero{min-height:690px!important;padding:21px 14px 93px!important}
+  .hero .hero-seal.wowforge-identity{width:min(100%,325px)!important}
+  .hero .wowforge-crest{width:min(100%,315px)!important}
+  .hero .wowforge-identity-subline{font-size:8px;letter-spacing:.11em;gap:7px}
+  .hero .wowforge-identity-subline:before,
+  .hero .wowforge-identity-subline:after{max-width:30px}
+  .hero h1{margin:13px auto 10px!important;font-size:clamp(36px,9vw,56px)}
+  .hero .hero-description{font-size:12px}
+  .hero .hero-actions{margin-top:17px!important}
+  .hero .hero-metrics{margin-top:23px!important}
+}
+@media(prefers-reduced-motion:reduce){.hero .wowforge-crest{animation:none!important}}

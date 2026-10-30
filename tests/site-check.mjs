@@ -7,7 +7,7 @@ const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const get=f=>readFileSync(resolve(root,f),"utf8");
 const html=get("index.html"),css=get("site.css"),js=get("site.js");
 const count=(text,regex)=>[...text.matchAll(regex)].length;
-for(const href of ["./site.css?v=4","./site.js?v=4","./assets/wowforge-shield.svg"])
+for(const href of ["./site.css?v=4","./site.js?v=4","./assets/wowforge-header-first.webp"])
  assert.ok(html.includes(href),"Missing root-relative asset: "+href);
 assert.ok(html.includes('rel="canonical" href="https://wow.novyxforge.com/"'));
 assert.ok(html.includes("<title>WoW Forge — NOVYX FORGE</title>"));
@@ -27,13 +27,15 @@ assert.ok(css.includes("@media(max-width:620px)"));
 assert.ok(css.includes("prefers-reduced-motion:reduce"));
 assert.ok(css.includes("./assets/azeroth-landscape.svg"), "Fantasy landscape must be used");
 assert.ok(html.includes('class="hero-seal wowforge-identity"'), "Distinct WoW Forge crest must replace generic hero type");
+assert.ok(html.includes("THE NOVYX REALMS PRESENT"),"Original first mockup subtitle must appear");
+assert.ok(!html.includes("AN ADVENTURE THROUGH AZEROTH"),"Remove duplicate hero eyebrow");
 assert.ok(html.includes('class="brand wow-brand"'), "Dedicated WoW header brand required");
-assert.ok(html.includes('./assets/wowforge-logo.webp'), "Dedicated crest image required");
-assert.ok(html.includes('./assets/wowforge-shield.svg'), "Dedicated header crest required");
-const crest=readFileSync(resolve(root,"assets/wowforge-logo.webp"));
+assert.ok(html.includes('./assets/wowforge-crest-original.webp'), "Dedicated crest image required");
+assert.ok(html.includes('./assets/wowforge-header-first.webp'), "Dedicated header crest required");
+const crest=readFileSync(resolve(root,"assets/wowforge-crest-original.webp"));
 assert.ok(crest.length>30000 && crest.toString("ascii",0,4)==="RIFF" && crest.toString("ascii",8,12)==="WEBP","Optimized original WoW Forge logo must be a real WebP");
-assert.ok(get("assets/wowforge-shield.svg").includes("<svg"),"Standalone scalable identity shield must exist");
-assert.ok(html.includes('./cinematic-hero.css?v=2'), "Cinematic hero stylesheet must load last");
+
+assert.ok(html.includes('./cinematic-hero.css?v=3'), "Cinematic hero stylesheet must load last");
 assert.ok(html.includes('./assets/azeroth-cinematic.webp'), "Cinematic image must be preloaded");
 const cinematic=get("cinematic-hero.css");
 assert.ok(cinematic.includes('url("./assets/azeroth-cinematic.webp")'), "Use approved cinematic fantasy image");
@@ -54,4 +56,4 @@ for(const tag of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)){
  assert.ok(tag[0].includes('rel="noopener noreferrer"'),"Unprotected external tab");
 }
 execFileSync(process.execPath,["--check",resolve(root,"site.js")]);
-console.log("PASS WoW Forge v3: landscape, UI, links, addon status, mobile, accessibility and distribution.");
+console.log("PASS WoW Forge v7: landscape, UI, links, addon status, mobile, accessibility and distribution.");
