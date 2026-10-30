@@ -39,7 +39,7 @@ assert.ok(effects.includes('prefers-reduced-motion: reduce'));
 assert.ok(js.includes("aria-expanded"),"Preserve original accessible navigation");
 assert.ok(theme.includes('.realm-durotar .hero'),"Durotar realm theme must respond to toggle");
 assert.ok(html.includes('./forest-effects.js?v=1'),"Missing separate effects script");
-assert.ok(html.includes('./site.css?v=3')&&html.includes('./site.js?v=3'),"Keep latest v3 base asset versions");
+assert.ok(html.includes('./site.css?v=4')&&html.includes('./site.js?v=4'),"Keep latest v3 base asset versions");
 for(const id of ["main","addons","lifeforge","systems","development","questions"])assert.ok(html.includes('id="'+id+'"'));
 assert.equal(occurrences(html,/class="feature"/g),6);
 assert.equal(occurrences(html,/class="rail-step /g),4);
