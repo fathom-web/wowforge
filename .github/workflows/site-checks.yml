@@ -1,0 +1,22 @@
+name: WoW Forge quality checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  static-site:
+    name: Verify WoW Forge website
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check front-end JavaScript syntax
+        run: node --check site.js
+      - name: Check website content and assets
+        run: node tests/site-check.mjs
