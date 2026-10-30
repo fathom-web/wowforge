@@ -1,0 +1,53 @@
+/* WoW Forge brand v10 — custom WF arcane gold emblem
+   Derived from user's LifeForge visual identity, with distinctly WF lettering.
+   Only affects primary WoW Forge brand instances (header, hero and Story).
+   LifeForge retains its own LF emblem, and no other NOVYX websites change. */
+.topbar .wow-brand .brand-mark,
+.topbar .brand.wow-brand .brand-mark{
+  width:59px!important;
+  height:59px!important;
+  flex:none;
+  border:0!important;
+  box-shadow:none!important;
+  background:none!important;
+}
+.topbar .brand.wow-brand .brand-mark img,
+.topbar .wow-brand .brand-mark img{
+  display:block;
+  width:59px!important;
+  height:59px!important;
+  object-fit:contain!important;
+  filter:drop-shadow(0 4px 7px rgba(0,0,0,.8)) drop-shadow(0 0 9px rgba(31,108,255,.3))!important;
+}
+.hero .hero-seal.wowforge-identity{
+  width:min(100%,435px)!important;
+  margin:0 auto 5px!important;
+}
+.hero .wowforge-crest{
+  display:block;
+  width:min(100%,365px)!important;
+  height:auto!important;
+  aspect-ratio:1/1!important;
+  object-fit:contain!important;
+  filter:drop-shadow(0 7px 10px rgba(0,0,0,.74)) drop-shadow(0 0 25px rgba(18,86,202,.2))!important;
+}
+.story-keepsake .story-crest{
+  width:87px!important;
+  height:87px!important;
+  object-fit:contain!important;
+  aspect-ratio:1/1!important;
+}
+.hero .wowforge-identity-subline{margin-top:-5px!important}
+@media(max-width:880px){
+ .hero .wowforge-crest{width:min(100%,337px)!important}
+}
+@media(max-width:620px){
+ .hero .hero-seal.wowforge-identity{width:min(100%,310px)!important}
+ .hero .wowforge-crest{width:min(100%,258px)!important}
+ .topbar .brand.wow-brand .brand-mark{width:43px!important;height:43px!important}
+ .topbar .brand.wow-brand .brand-mark img{width:43px!important;height:43px!important}
+ .story-keepsake .story-crest{width:75px!important;height:75px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero .wowforge-crest{animation:none!important}
+}
