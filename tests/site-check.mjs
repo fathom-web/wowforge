@@ -7,7 +7,7 @@ const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const get=f=>readFileSync(resolve(root,f),"utf8");
 const html=get("index.html"),css=get("site.css"),js=get("site.js");
 const count=(text,regex)=>[...text.matchAll(regex)].length;
-for(const href of ["./site.css?v=4","./site.js?v=4","./assets/novyx-wf-crest.svg"])
+for(const href of ["./site.css?v=4","./site.js?v=4","./assets/novyx-wf-relic.svg"])
  assert.ok(html.includes(href),"Missing root-relative asset: "+href);
 assert.ok(html.includes('rel="canonical" href="https://wow.novyxforge.com/"'));
 assert.ok(html.includes("<title>WoW Forge — NOVYX FORGE</title>"));
@@ -33,11 +33,17 @@ assert.ok(html.includes("AN INDEPENDENT NOVYX FORGE PROJECT"),"No claim of offic
 for(const oldAsset of ["wowforge-crest-original.webp","wowforge-header-first.webp","wowforge-logo.webp","azeroth-cinematic.webp"]){
  assert.ok(!html.includes(oldAsset),"Legacy brand imagery must not appear in HTML: "+oldAsset);
 }
-assert.ok(html.includes("./assets/novyx-wf-crest.svg"),"Original logo loaded");
+assert.ok(html.includes("./assets/novyx-wf-relic.svg"),"Original logo loaded");
 assert.ok(html.includes("./assets/novyx-realm-hero.webp"),"Original fantasy image preloaded");
-assert.ok(html.includes("./brand-original.css?v=1"),"Trademark-safe styles loaded last");
+assert.ok(html.includes("./brand-original.css?v=1"),"Brand-safe base styles retained");
+assert.ok(html.includes("./forge-grit.css?v=9"),"War-camp design patch must be present");
+assert.ok(html.indexOf("forge-grit.css?v=9")>html.indexOf("brand-original.css?v=1"),"War-camp patch must override legacy CSS");
+const grit=get("forge-grit.css");
+assert.equal(grit.split("{").length,grit.split("}").length,"Grunge CSS brace balance");
+for(const key of [".story-frame",".section.spotlight",".preview-shell",".systems .feature",".release-rail",".faq-list",".outro"]){assert.ok(grit.includes(key),"Missing styling for "+key)}
+assert.ok(grit.includes("@media(max-width:620px)")&&grit.includes("prefers-reduced-motion:reduce"),"Mobile accessibility");
 assert.ok(html.indexOf("brand-original.css?v=1")>html.indexOf("forge-story.css?v=1"),"Legal-safe overrides must be last");
-const brandSvg=get("assets/novyx-wf-crest.svg");
+const brandSvg=get("assets/novyx-wf-relic.svg");
 assert.ok(brandSvg.includes("<svg") && brandSvg.includes("smithing anvil") && !brandSvg.includes("Blizzard"),"Our logo must be original");
 const legalHero=readFileSync(resolve(root,"assets/novyx-realm-hero.webp"));
 assert.ok(legalHero.length>100000&&legalHero.toString("ascii",0,4)==="RIFF"&&legalHero.toString("ascii",8,12)==="WEBP","Original hero art must be valid");
@@ -67,4 +73,4 @@ for(const tag of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)){
  assert.ok(tag[0].includes('rel="noopener noreferrer"'),"Unprotected external tab");
 }
 execFileSync(process.execPath,["--check",resolve(root,"site.js")]);
-console.log("PASS WoW Forge v8: landscape, UI, links, addon status, mobile, accessibility and distribution.");
+console.log("PASS WoW Forge v9: landscape, UI, links, addon status, mobile, accessibility and distribution.");

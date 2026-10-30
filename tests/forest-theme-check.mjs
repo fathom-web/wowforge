@@ -42,11 +42,12 @@ assert.ok(html.includes('./forest-effects.js?v=1'),"Missing separate effects scr
 assert.ok(html.includes('./cinematic-hero.css?v=4'),"Missing approved cinematic hero styling");
 assert.ok(html.includes('./forge-story.css?v=1'),"Missing separate personal story theme");
 assert.ok(html.includes('./brand-original.css?v=1'),"Original brand safety CSS missing");
-assert.ok(html.indexOf('forge-story.css?v=1')<html.indexOf('brand-original.css?v=1'),"Brand safety must be last");
+assert.ok(html.indexOf('forge-story.css?v=1')<html.indexOf('brand-original.css?v=1'),"Brand safety after story");
+assert.ok(html.includes('forge-grit.css?v=9')&&html.indexOf('brand-original.css?v=1')<html.indexOf('forge-grit.css?v=9'),"War-camp design loaded last");
 assert.ok(html.includes('id="story"'),"Missing veteran dads story");
 assert.ok(html.indexOf('cinematic-hero.css?v=4')<html.indexOf('forge-story.css?v=1'),"New story styles come after cinematic hero");
-assert.ok(html.includes('src="./assets/novyx-wf-crest.svg"'),"Original NOVYX WF emblem required");
-assert.ok(html.includes('src="./assets/novyx-wf-crest.svg"'),"Matching WF logo required");
+assert.ok(html.includes('src="./assets/novyx-wf-relic.svg"'),"Original NOVYX WF emblem required");
+assert.ok(html.includes('src="./assets/novyx-wf-relic.svg"'),"Matching WF logo required");
 assert.ok(file("cinematic-hero.css").includes('novyx-realm-hero.webp'),"Cinematic background must reference approved image");
 assert.ok(html.includes('./site.css?v=4')&&html.includes('./site.js?v=4'),"Keep latest v3 base asset versions");
 for(const id of ["main","addons","lifeforge","systems","development","questions"])assert.ok(html.includes('id="'+id+'"'));

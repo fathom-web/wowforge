@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 560" role="img" aria-labelledby="forgelogo-title forgelogo-desc">
+<title id="forgelogo-title">NOVYX Forge — The Veteran's Mark</title>
+<desc id="forgelogo-desc">An original battle-worn smithing anvil emblem, with a rough forged-iron plate, copper rivets, crossed blacksmith hammers, and oversized WF initials. No publisher-owned game marks.</desc>
+<defs>
+<linearGradient id="iron" x1=".1" y1="0" x2=".8" y2="1"><stop stop-color="#958671"/><stop offset=".14" stop-color="#423b32"/><stop offset=".42" stop-color="#1a211f"/><stop offset=".68" stop-color="#45413b"/><stop offset="1" stop-color="#161d1c"/></linearGradient>
+<linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a2a69a"/><stop offset=".26" stop-color="#444d4c"/><stop offset=".53" stop-color="#1a2324"/><stop offset=".72" stop-color="#686a5b"/><stop offset="1" stop-color="#272b27"/></linearGradient>
+<linearGradient id="copper" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#ffe1a1"/><stop offset=".18" stop-color="#ac8148"/><stop offset=".43" stop-color="#553a2c"/><stop offset=".64" stop-color="#c39b5f"/><stop offset="1" stop-color="#6d4b30"/></linearGradient>
+<linearGradient id="ember" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fff0b4"/><stop offset=".45" stop-color="#f1a653"/><stop offset="1" stop-color="#8f3d24"/></linearGradient>
+<radialGradient id="deep"><stop stop-color="#37423b"/><stop offset=".52" stop-color="#1e2724"/><stop offset="1" stop-color="#0b1312"/></radialGradient>
+<filter id="relief" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur stdDeviation="5"/></filter>
+<filter id="hammered" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency=".052" numOctaves="3" seed="37" result="t"/><feColorMatrix in="t" type="saturate" values="0" result="gray"/><feComponentTransfer in="gray"><feFuncA type="linear" slope=".20"/></feComponentTransfer></filter>
+<filter id="rough" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence baseFrequency=".018" numOctaves="2" seed="16" result="t"/><feDisplacementMap in="SourceGraphic" in2="t" scale="3"/></filter>
+<clipPath id="plate"><path d="M354 74L426 87L502 111L548 160L569 251L537 351L467 417L350 486L232 433L160 358L137 262L166 168L221 125L301 86Z"/></clipPath>
+</defs>
+<g transform="translate(350 277)">
+<ellipse cx="0" cy="232" rx="174" ry="24" fill="#050806" opacity=".64" filter="url(#relief)"/>
+<g opacity=".94" stroke="#191c1a" stroke-width="8" stroke-linejoin="round">
+  <g transform="rotate(-31)"><path d="M-11 -213L14 -213L12 195L-14 195Z" fill="#66503a"/><path d="M-16 -180H15M-16 -35H14M-14 93H12" stroke="#a17c4b" stroke-width="3"/><path d="M-91 -229L64 -231L72 -202L51 -186L-74 -188L-91 -204Z" fill="url(#steel)"/><path d="M-74 -224L-60 -209L61 -215" fill="none" stroke="#d5b88b" stroke-width="4" opacity=".55"/></g>
+  <g transform="rotate(28)"><path d="M-13 -209H13L9 196L-12 196Z" fill="#55412f"/><path d="M-63 -239L63 -235L75 -200L61 -186L-61 -190L-75 -204Z" fill="url(#steel)"/><path d="M-53 -227L-41 -214L58 -217" fill="none" stroke="#b8b6a1" stroke-width="3" opacity=".6"/></g>
+</g>
+<path d="M-6 -207L80 -196L154 -170L205 -118L223 -26L201 82L137 154L2 219L-125 174L-199 109L-223 8L-201 -97L-144 -155L-70 -188Z" fill="#090e0d" stroke="#0b0e0c" stroke-width="18"/>
+<path d="M-6 -203L79 -190L151 -166L198 -114L217 -25L196 79L134 149L2 210L-122 168L-192 102L-214 7L-195 -94L-138 -150L-70 -181Z" fill="url(#iron)" stroke="#ae8650" stroke-width="7" filter="url(#rough)"/>
+<path d="M-8 -180L73 -169L133 -146L176 -99L192 -24L177 64L120 131L0 186L-108 149L-173 85L-191 6L-171 -82L-124 -134L-62 -165Z" fill="url(#copper)" stroke="#171b18" stroke-width="5"/>
+<path d="M-9 -162L66 -151L117 -129L154 -86L171 -24L155 52L103 112L1 163L-95 130L-154 73L-172 7L-152 -70L-111 -116L-56 -149Z" fill="url(#deep)" stroke="#514532" stroke-width="5"/>
+<g clip-path="url(#plate)"><rect x="-240" y="-220" width="480" height="460" filter="url(#hammered)" opacity=".9"/><path d="M-179 -54L-90 -66L-60 -77M-149 98L-57 62L-18 74M64 -137L129 -97L168 -86M99 105L154 59" stroke="#c7b28a" stroke-width="3" fill="none" opacity=".24"/><path d="M-158 -83l37 21l-14 31M116 -122l-18 29l29 17M-131 122l31 -21l21 9" stroke="#090d0d" stroke-width="5" fill="none" opacity=".62"/></g>
+<g fill="url(#copper)" stroke="#2e231b" stroke-width="3"><circle cx="-151" cy="-112" r="9"/><circle cx="135" cy="-122" r="10"/><circle cx="-185" cy="8" r="9"/><circle cx="185" cy="-20" r="9"/><circle cx="-114" cy="144" r="8"/><circle cx="121" cy="128" r="9"/><circle cx="-5" cy="-190" r="10"/><circle cx="4" cy="194" r="11"/></g>
+<g fill="#f1bf76" opacity=".77"><circle cx="-153" cy="-115" r="2.6"/><circle cx="135" cy="-125" r="2.8"/><circle cx="-188" cy="5" r="2.4"/><circle cx="184" cy="-22" r="2.6"/></g>
+<text x="4" y="41" font-family="Georgia,'Times New Roman',serif" font-weight="bold" letter-spacing="-17" font-size="166" text-anchor="middle" stroke="#10100e" stroke-width="16" stroke-linejoin="round" paint-order="stroke" fill="#0b1110">WF</text>
+<text x="2" y="34" font-family="Georgia,'Times New Roman',serif" font-weight="bold" letter-spacing="-17" font-size="166" text-anchor="middle" stroke="#39291d" stroke-width="9" stroke-linejoin="round" paint-order="stroke" fill="url(#copper)">WF</text>
+<path d="M-43 -112l24 -37l4 30l23 -16l-7 43l25 -18l-14 42l-26 13l-34 -17Z" fill="url(#ember)" opacity=".9" stroke="#342419" stroke-width="3"/>
+<g transform="translate(0 113)"><path d="M-48 -8H45L53 2L23 12H-24L-55 2Z" fill="url(#steel)" stroke="#9e7850" stroke-width="3"/><path d="M-18 12h37v26h-37Z" fill="url(#copper)"/><path d="M-35 35h70v10h-70Z" fill="url(#steel)"/></g>
+<g fill="#d49f5c"><path d="M-219 -30l-19 -12l20 -4l11 -24l6 27l17 8l-19 4l-8 20Z"/><path d="M213 70l-9 -16l16 -2l9 -19l5 18l14 8l-16 2l-5 18Z"/></g>
+</g>
+</svg>
