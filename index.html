@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#090d15">
-  <meta name="description" content="NOVYX FORGE WoW Forge: original World of Warcraft addon experiments, beginning with LifeForge. Public downloads will be through CurseForge when approved.">
+  <meta name="theme-color" content="#14261b">
+  <meta name="description" content="Enter WoW Forge, an enchanted frontier for original World of Warcraft addon projects. Explore LifeForge, its memories and its development journey.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="WoW Forge | NOVYX FORGE">
   <meta property="og:description" content="Every hero leaves a legacy. Explore our World of Warcraft addon projects.">
@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./site.css?v=1">
+  <link rel="stylesheet" href="./forest-theme.css?v=2">
   <script src="./site.js?v=1" defer></script>
   <title>WoW Forge — NOVYX FORGE</title>
 </head>
@@ -27,7 +28,7 @@
       <span>NOVYX <strong>FORGE</strong><small>WORLD OF WARCRAFT / WOW FORGE</small></span>
     </a>
     <nav id="navigation" aria-label="Forge navigation">
-      <a href="#addons">The Addons</a><a href="#lifeforge">LifeForge</a><a href="#systems">Features</a><a href="#development">Development</a><a href="#questions">FAQ</a>
+      <a href="#addons">The Archive</a><a href="#lifeforge">LifeForge</a><a href="#systems">Relics</a><a href="#development">The Journey</a><a href="#questions">Traveler’s Notes</a>
     </nav>
     <a class="return-link" href="https://novyxforge.com/">Forge Universe <span aria-hidden="true">↗</span></a>
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -35,12 +36,14 @@
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-grid" aria-hidden="true"></div>
+      <div class="forest-canopy" aria-hidden="true"></div>
+      <div class="forest-fireflies" aria-hidden="true"></div>
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span>NOVYX FORGE / WOW FORGE</p>
+        <p class="eyebrow"><span class="status-dot"></span>THE WILDS AWAIT · NOVYX WOW FORGE</p>
         <h1 id="hero-title">EVERY HERO<br>LEAVES A <em>LEGACY.</em></h1>
-        <p class="hero-description">A digital forge for adventures worth remembering. Original World of Warcraft addons built to capture the journey — not just the numbers.</p>
+        <p class="hero-description">Where golden forests meet the untamed frontier. Discover original World of Warcraft addons crafted to preserve the adventures, companions and stories that make a hero.</p>
         <div class="hero-actions">
-          <a class="button gold" href="#addons">Explore Addons <span aria-hidden="true">↗</span></a>
+          <a class="button gold" href="#addons">Enter the Archive <span aria-hidden="true">↗</span></a>
           <a class="button outline" href="#lifeforge">Discover LifeForge <span aria-hidden="true">↓</span></a>
         </div>
         <div class="hero-metrics" aria-label="Forge information">
@@ -49,33 +52,38 @@
           <div><b>CURSEFORGE</b><span>Planned release channel</span></div>
         </div>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="orbital-grid"></div>
-        <div class="orbital orbit-one"></div><div class="orbital orbit-two"></div><div class="orbital orbit-three"></div>
-        <div class="halo"></div>
-        <div class="reactor"><div class="reactor-sigil"><span>✦</span></div></div>
-        <i class="satellite satellite-one"></i><i class="satellite satellite-two"></i><i class="satellite satellite-three"></i>
-        <div class="coordinate top">CORE / AZEROTH SYSTEM</div><div class="coordinate bottom">LEGACY PROTOCOL — 001</div>
+      <div class="hero-art forest-portal" aria-hidden="true">
+        <div class="portal-aura"></div>
+        <div class="portal-rays"></div>
+        <img class="portal-illustration" src="./assets/ancient-runegate.svg" width="700" height="800" alt="" decoding="async" fetchpriority="high">
+        <span class="portal-particle p-one"></span><span class="portal-particle p-two"></span><span class="portal-particle p-three"></span>
+        <div class="portal-caption"><span>✧</span> THE ANCIENT GATE <span>✧</span></div>
       </div>
-      <div class="edge"><span>THE ADVENTURE NEVER ENDS</span><span>ENTER THE FORGE ↓</span></div>
+      <div class="edge"><span>THROUGH FOREST AND FIRE</span><span>FOLLOW THE OLD PATH ↓</span></div>
     </section>
 
-    <div class="signal-seam" aria-hidden="true"><span>THE COLLECTION / 001</span></div>
+    <div class="signal-seam" aria-hidden="true"><span>THE ARCHIVE / CHAPTER 001</span></div>
     <section class="section collection" id="addons" aria-labelledby="collection-title">
-      <div class="section-heading"><div><p class="kicker">THE ADDON REGISTRY</p><h2 id="collection-title">Forged for the <em>journey.</em></h2></div><p>One addon currently being built, with room for more experiments. No fake downloads, no unfinished releases disguised as finished products.</p></div>
+      <div class="section-heading"><div><p class="kicker">THE GUILD ARCHIVE</p><h2 id="collection-title">Tales of the <em>forge.</em></h2></div><p>One addon currently being built, with room for more experiments. No fake downloads, no unfinished releases disguised as finished products.</p></div>
       <div class="registry">
         <a href="#lifeforge" class="registry-item featured">
           <div class="registry-icon" aria-hidden="true"><span>✦</span></div>
           <div class="registry-copy"><span class="micro">FORGE / 001 · WORLD OF WARCRAFT: FOREVER</span><h3>LifeForge</h3><p>Your character. Your journey. Your legend.</p><span class="pill alpha">0.8.0-alpha · Unverified client build</span></div>
           <span class="registry-arrow" aria-hidden="true">↗</span>
         </a>
-        <div class="registry-item future"><span class="plus" aria-hidden="true">+</span><div><span class="micro">FORGE / NEXT</span><h3>Another story awaits.</h3><p>Future addon concepts will join the Forge when they have real development work to show.</p></div></div>
+        <div class="registry-item future"><span class="plus" aria-hidden="true">+</span><div><span class="micro">FORGE / NEXT</span><h3>Another story awaits.</h3><p>More creations will appear on this quest board when their development is real and ready to share.</p></div></div>
       </div>
     </section>
 
-    <div class="signal-seam" aria-hidden="true"><span>PROJECT 001 / LIFE.FORGE</span></div>
+    <section class="realm-bridge" aria-label="A journey from enchanted forest to rugged frontier">
+      <div class="realm-marker forest-marker"><span class="realm-symbol" aria-hidden="true">❧</span><small>THE GREENWOOD</small><strong>Where stories take root.</strong><span>Ancient trees. Golden light. Quiet magic.</span></div>
+      <span class="realm-bridge-sigil" aria-hidden="true">✦</span>
+      <div class="realm-marker frontier-marker"><span class="realm-symbol" aria-hidden="true">✣</span><small>THE RED FRONTIER</small><strong>Where legends are forged.</strong><span>Weathered earth. Firelight. Boundless adventure.</span></div>
+    </section>
+
+    <div class="signal-seam" aria-hidden="true"><span>THE FIRST ARTIFACT / LIFE.FORGE</span></div>
     <section class="section spotlight" id="lifeforge" aria-labelledby="life-title">
-      <div class="spotlight-heading"><div><p class="kicker">THE FIRST CREATION / LIFE.FORGE</p><h2 id="life-title">Your character.<br><em>Your legend.</em></h2></div><div class="version"><span class="signal"></span><strong>BUILD 7</strong><small>0.8.0-alpha / Development</small></div></div>
+      <div class="spotlight-heading"><div><p class="kicker">ARTIFACT 001 / THE LEGACY CHRONICLE</p><h2 id="life-title">Your character.<br><em>Your legend.</em></h2></div><div class="version"><span class="signal"></span><strong>BUILD 7</strong><small>0.8.0-alpha / Development</small></div></div>
       <p class="spotlight-lead">LifeForge chronicles the story behind a character: adventures, goals, friendships, places explored and memories worth keeping. An original in-game addon, developed for World of Warcraft: Forever.</p>
       <div class="preview-shell">
         <div class="preview-toolbar"><span><i></i><i></i><i></i> LIFE.FORGE / UI PREVIEW</span><span>ILLUSTRATIVE CONCEPT · NOT A CLIENT SCREENSHOT</span></div>
@@ -91,7 +99,7 @@
     </section>
 
     <section class="section systems" id="systems" aria-labelledby="features-title">
-      <div class="section-heading"><div><p class="kicker">LIFE.FORGE / SYSTEMS</p><h2 id="features-title">More than a <em>counter.</em></h2></div><p>Experience modules designed around meaningful, locally recorded in-game history. Some client-specific capabilities remain provisional.</p></div>
+      <div class="section-heading"><div><p class="kicker">THE RELIC COLLECTION / LIFE.FORGE</p><h2 id="features-title">A world of <em>memories.</em></h2></div><p>Experience modules designed around meaningful, locally recorded in-game history. Some client-specific capabilities remain provisional.</p></div>
       <div class="feature-grid">
         <article class="feature"><span class="feature-id">01 / ARCHIVE</span><span class="feature-glyph" aria-hidden="true">◈</span><h3>Legacy Chronicle</h3><p>Follow your character's chapters, milestones and progression across recorded adventures.</p></article>
         <article class="feature"><span class="feature-id">02 / MEMORY</span><span class="feature-glyph" aria-hidden="true">✦</span><h3>Memory Museum</h3><p>Collect meaningful notes, favorite moments, letters and personal firsts in one place.</p></article>
@@ -103,7 +111,7 @@
     </section>
 
     <section class="section development" id="development" aria-labelledby="dev-title">
-      <div class="section-heading"><div><p class="kicker">ENGINEERING / RELEASE PATH</p><h2 id="dev-title">From source to <em>Azeroth.</em></h2></div><p>Development is visible on GitHub. Public addon downloads and updates are reserved for CurseForge once the addon passes real-client acceptance.</p></div>
+      <div class="section-heading"><div><p class="kicker">THE QUESTLINE / ROAD TO RELEASE</p><h2 id="dev-title">Every legend has <em>a path.</em></h2></div><p>Development is visible on GitHub. Public addon downloads and updates are reserved for CurseForge once the addon passes real-client acceptance.</p></div>
       <div class="release-rail">
         <div class="rail-step complete"><span class="rail-no">01</span><div><small>SOURCE & DESIGN</small><h3>Forge the idea</h3><p>Develop features, document decisions and maintain source on GitHub.</p></div></div>
         <div class="rail-step complete"><span class="rail-no">02</span><div><small>AUTOMATED TESTS</small><h3>Prove the logic</h3><p>Build 7 has 67 passing headless Lua tests; these do not validate the actual game client.</p></div></div>
@@ -114,7 +122,7 @@
     </section>
 
     <section class="section questions" id="questions" aria-labelledby="faq-title">
-      <div class="section-heading"><div><p class="kicker">THE FORGE / FIELD NOTES</p><h2 id="faq-title">Good to <em>know.</em></h2></div></div>
+      <div class="section-heading"><div><p class="kicker">THE TRAVELER’S JOURNAL</p><h2 id="faq-title">Notes for <em>travelers.</em></h2></div></div>
       <div class="faq-list">
         <details><summary>Where do I download NOVYX addons?</summary><p>Once an addon is tested and approved for public release, the official download and update link will point to CurseForge. No NOVYX-hosted addon ZIPs are offered here.</p></details>
         <details><summary>Does LifeForge already work in World of Warcraft?</summary><p>Build 7 is a development alpha. Automated Lua tests pass, but actual client compatibility, visual behavior and persistence have not yet been verified. It must not be treated as a released addon.</p></details>
@@ -124,8 +132,8 @@
     </section>
     <section class="outro" aria-labelledby="outro-title">
       <div class="outro-sigil" aria-hidden="true">✦</div>
-      <p class="kicker">NOVYX FORGE / THE STORY CONTINUES</p>
-      <h2 id="outro-title">Your next adventure<br><em>starts here.</em></h2>
+      <p class="kicker">THE CAMPFIRE / THE NEXT CHAPTER</p>
+      <h2 id="outro-title">The fires of adventure<br><em>never fade.</em></h2>
       <p>One addon today. More stories when they're ready. Follow the source and return to the Forge as the next chapter takes shape.</p>
       <a class="button gold" href="https://github.com/fathom-web/WoW-LifeForge" target="_blank" rel="noopener noreferrer">Follow LifeForge development ↗</a>
     </section>
