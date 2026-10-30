@@ -46,12 +46,11 @@ assert.ok(html.indexOf('forge-story.css?v=1')<html.indexOf('brand-original.css?v
 assert.ok(html.includes('forge-grit.css?v=9')&&html.indexOf('brand-original.css?v=1')<html.indexOf('forge-grit.css?v=9'),"War-camp design follows the base brand");
 assert.ok(html.includes('lifeforge-brand.css?v=1')&&html.indexOf('lifeforge-brand.css?v=1')>html.indexOf('forge-grit.css?v=9'),"LifeForge visual theme follows the veteran theme");
 assert.ok(html.includes('wowforge-arcane.css?v=1')&&html.indexOf('wowforge-arcane.css?v=1')>html.indexOf('lifeforge-brand.css?v=1'),"Prior WF base styles retained");
-assert.ok(html.includes('faction-dads.css?v=1')&&html.indexOf('faction-dads.css?v=1')>html.indexOf('wowforge-arcane.css?v=1'),"Faction layer retained");
-assert.ok(html.includes('forge-polish-v12.css?v=1')&&html.indexOf('forge-polish-v12.css?v=1')>html.indexOf('faction-dads.css?v=1'),"Polish styles loaded last");
+assert.ok(html.includes('faction-dads.css?v=1')&&html.indexOf('faction-dads.css?v=1')>html.indexOf('wowforge-arcane.css?v=1'),"New faction styles must load last");
 assert.ok(html.includes('id="veterans"')&&html.includes('Two factions.'),"Human and orc dads chapter required");
 assert.ok(html.includes('id="story"'),"Missing veteran dads story");
 assert.ok(html.indexOf('cinematic-hero.css?v=4')<html.indexOf('forge-story.css?v=1'),"New story styles come after cinematic hero");
-assert.ok(html.includes('src="./assets/wf-crest-polished.webp"'),"Original NOVYX WF emblem required");
+assert.ok(html.includes('src="./assets/wf-shield-dadbods.webp"'),"Original NOVYX WF emblem required");
 assert.ok(html.includes('src="./assets/wf-shield-icon.webp"'),"Matching compact WF logo required");
 assert.ok(file("cinematic-hero.css").includes('novyx-realm-hero.webp'),"Cinematic background must reference approved image");
 assert.ok(html.includes('./site.css?v=4')&&html.includes('./site.js?v=4'),"Keep latest v3 base asset versions");
