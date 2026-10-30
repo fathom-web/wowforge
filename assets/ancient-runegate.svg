@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 800" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="title"><title>Original ancient rune gate wrapped in forest roots</title>
+<defs>
+<linearGradient id="stone" x1="0" x2=".87" y1="0" y2="1"><stop stop-color="#b7a77a"/><stop offset=".16" stop-color="#756e53"/><stop offset=".45" stop-color="#3c463c"/><stop offset=".73" stop-color="#283b35"/><stop offset="1" stop-color="#111e1c"/></linearGradient>
+<linearGradient id="stoneSide"><stop stop-color="#182521"/><stop offset=".5" stop-color="#736f4d"/><stop offset="1" stop-color="#24352f"/></linearGradient>
+<radialGradient id="rift"><stop stop-color="#fcf3c6"/><stop offset=".17" stop-color="#c2f0c2"/><stop offset=".42" stop-color="#6bc4a8"/><stop offset=".68" stop-color="#1f766e"/><stop offset="1" stop-color="#0b302d"/></radialGradient>
+<radialGradient id="riftBlue"><stop stop-color="#e4ffb4" stop-opacity=".8"/><stop offset=".4" stop-color="#9dcfab" stop-opacity=".34"/><stop offset="1" stop-color="#8fcab7" stop-opacity="0"/></radialGradient>
+<linearGradient id="roots"><stop stop-color="#202b1f"/><stop offset=".55" stop-color="#59432d"/><stop offset="1" stop-color="#271e18"/></linearGradient>
+<filter id="glow" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="20"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="3" seed="8"/><feColorMatrix type="saturate" values=".1"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+</defs>
+<!-- Mystical inner rift -->
+<ellipse cx="354" cy="414" rx="201" ry="287" fill="#73cb9e" opacity=".34" filter="url(#glow)"/>
+<path d="M203 614L203 333Q218 179 352 175Q486 179 498 334V614Z" fill="#0b2d2b"/>
+<path d="M226 590V334Q232 207 352 205Q472 213 476 337V590Z" fill="url(#rift)" opacity=".89"/>
+<ellipse cx="348" cy="406" rx="166" ry="263" fill="url(#riftBlue)" opacity=".75"/>
+<path d="M343 212Q296 367 359 438Q302 528 354 602M254 305Q304 360 272 484M454 309Q398 397 428 540" fill="none" stroke="#e5fadd" stroke-width="3" opacity=".42"/>
+<g opacity=".44" stroke="#f7f0b0" stroke-width="2" fill="none"><path d="M280 297Q345 259 421 303M270 535Q359 573 437 520"/><path d="M350 234V574M251 414H459"/><circle cx="349" cy="407" r="106"/></g>
+<!-- Gate masonry shadow -->
+<path d="M117 720L128 344Q133 129 339 103Q554 117 573 343L584 720L499 707L499 347Q484 186 353 176Q207 186 204 347L201 707Z" fill="#111b1b" stroke="#1b2f2b" stroke-width="18"/>
+<!-- Stone arch with slightly asymmetrical ancient silhouette -->
+<path d="M112 728L124 333Q129 118 349 96Q563 111 581 337L592 728L503 714L502 342Q495 180 348 174Q211 181 202 345L203 715Z" fill="url(#stone)" stroke="#b4a377" stroke-width="7" stroke-linejoin="round"/>
+<!-- Stone chips and block joints -->
+<g fill="none" stroke="#1e302b" stroke-width="7" opacity=".82">
+<path d="M127 611L204 618M125 524L205 531M126 447L205 464M129 358L212 380M150 272L224 312M185 193L257 256M249 134L289 197M333 101L339 176M427 123L405 196M506 175L461 243M555 270L493 300M580 365L499 384M579 459L501 468M582 543L502 548M585 626L503 634"/>
+</g>
+<path d="M144 713L158 351Q171 172 342 142Q505 153 539 342L559 705" fill="none" stroke="#f3dfa3" opacity=".3" stroke-width="7"/>
+<path d="M112 729L125 332Q128 122 348 96Q563 111 580 337L592 729" fill="none" stroke="#111e1b" stroke-width="9" opacity=".65"/>
+<!-- Carved rune rows, distinct original shapes -->
+<g stroke="#b7d7a0" stroke-width="4" fill="none" stroke-linecap="round" opacity=".85">
+<path d="M151 409l18 -26 20 26 -20 27 -18 -27m18 -26v54"/>
+<path d="M153 486l31 -28 -26 58m-6 -29h31"/>
+<path d="M148 569l30 -26 -28 51 30 -26"/>
+<path d="M524 390l19 -26 16 29 -18 29zM531 439l24 -21m-16 27l18 20"/>
+<path d="M520 509l36 -24 -23 48 27 -16"/>
+<path d="M530 579l20 -17 -7 50 -21 -32z"/>
+<path d="M275 151l12 19 14 -19 -4 38M382 151l11 22 13 -20 -8 32"/>
+</g>
+<g fill="#a3f7b8" opacity=".8"><circle cx="165" cy="408" r="3.5"/><circle cx="539" cy="397" r="3.5"/><circle cx="352" cy="129" r="6"/></g>
+<!-- Broken headstone and bas-relief inset -->
+<path d="M318 100L333 72L365 67L385 108Z" fill="#736e55" stroke="#2f3a2f" stroke-width="6"/>
+<path d="M336 101l14 -14 15 14 -15 14z" fill="#76bf9e" stroke="#c6dfad" stroke-width="3"/>
+<!-- Overgrowing vines and massive wandering roots -->
+<g stroke="url(#roots)" stroke-width="18" fill="none" stroke-linecap="round" opacity=".98">
+<path d="M102 775Q171 713 165 606Q131 563 155 476Q186 398 163 314"/>
+<path d="M101 769Q166 716 250 736Q299 763 329 773"/>
+<path d="M607 780Q528 723 548 594Q566 507 541 420Q525 360 568 254"/>
+<path d="M607 771Q539 717 477 746Q428 772 395 779"/>
+</g>
+<g stroke="#506d44" stroke-width="7" fill="none" stroke-linecap="round">
+<path d="M139 653Q81 611 84 547Q91 495 59 470M152 552Q218 506 202 448"/>
+<path d="M551 653Q610 601 614 534Q600 493 637 456M541 515Q489 486 485 430"/>
+</g>
+<g fill="#3e6741" opacity=".96">
+<path d="M82 547Q32 541 43 505Q80 507 82 547ZM151 554Q211 553 214 515Q171 515 151 554ZM553 612Q600 603 606 563Q568 562 553 612ZM544 504Q485 493 470 455Q525 464 544 504Z"/>
+<path d="M164 325Q115 312 116 269Q147 277 164 325ZM571 253Q594 207 636 207Q623 249 571 253Z"/>
+</g>
+<g fill="#262b21" stroke="#918260" stroke-width="5">
+<path d="M65 729L132 684L207 718L214 793L45 799Z"/>
+<path d="M502 733L573 696L643 744L654 798L481 800Z"/>
+</g>
+<g stroke="#f4d3a0" stroke-width="3" fill="#e5b86b" opacity=".82"><circle cx="171" cy="300" r="4"/><circle cx="560" cy="314" r="4"/><circle cx="347" cy="236" r="3"/><circle cx="422" cy="557" r="2.7"/></g>
+</svg>
