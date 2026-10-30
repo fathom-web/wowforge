@@ -564,3 +564,57 @@ body.forest-ready [data-forest-reveal].is-revealed{opacity:1;transform:translate
  body.forest-ready [data-forest-reveal]{opacity:1!important;transform:none!important}
 }
 @media(hover:none){.feature:hover,.registry-item.featured:hover{transform:none}}
+
+
+/* Keep the original two-realm selector from the concurrent main-branch update.
+   The portal and actual forest background respond to the selected realm. */
+.realm-choice{
+ position:absolute;z-index:9;
+ bottom:74px;
+ left:max(34px,calc((100% - 1320px)/2));
+ right:auto;transform:none;
+ border:1px solid rgba(238,203,134,.68);
+ border-radius:4px;
+ padding:7px;
+ background:linear-gradient(160deg,rgba(24,41,27,.94),rgba(48,35,23,.94));
+ box-shadow:inset 0 0 0 2px rgba(27,27,16,.6),0 14px 40px rgba(0,0,0,.4)
+}
+.realm-choice button{
+ font:700 11px "Outfit",sans-serif;letter-spacing:.08em;
+ border-radius:3px;padding:12px 17px;
+ color:#d4d4b6;transition:color .2s ease,background .2s ease;
+}
+.realm-choice button[aria-pressed="true"]{
+ border-color:rgba(244,221,152,.68);
+ color:#fff0bd;
+ background:linear-gradient(120deg,#44633c,#2d4835);
+}
+.realm-choice button:focus-visible{outline:2px solid #ffeda7;outline-offset:3px}
+.realm-durotar .hero{
+ background:
+ linear-gradient(90deg,rgba(31,18,13,.93) 0%,rgba(47,24,18,.80) 28%,rgba(55,30,20,.35) 60%,rgba(68,33,22,.16)),
+ linear-gradient(180deg,rgba(24,15,12,.16),transparent 39%,#201b12 100%),
+ url("./assets/forest-frontier.svg") 94% center/cover no-repeat
+}
+.realm-durotar .hero:before{
+ inset:0;z-index:0;
+ background:radial-gradient(ellipse 34% 47% at 80% 38%,rgba(244,149,74,.15),transparent 81%)
+}
+.realm-durotar .hero:after{background:linear-gradient(180deg,transparent,#201b12)}
+.realm-durotar .portal-aura{background:radial-gradient(ellipse,rgba(251,171,86,.44),rgba(198,95,48,.16) 46%,transparent 75%)}
+.realm-durotar .portal-illustration{filter:hue-rotate(-62deg) saturate(.86) sepia(.19)}
+.realm-durotar .portal-particle{background:#ffe7a5;box-shadow:0 0 13px 5px rgba(253,164,76,.35)}
+.realm-durotar .forest-fireflies{filter:sepia(.8) hue-rotate(-38deg)}
+.realm-durotar .realm-choice button[aria-pressed="true"]{background:linear-gradient(120deg,#9b5933,#663722);border-color:#e9bb82}
+@media(max-width:880px){
+ .realm-choice{
+  position:relative;left:auto;right:auto;bottom:auto;top:auto;
+  transform:none;grid-column:1;justify-self:center;margin:8px auto 23px;
+  flex-wrap:wrap;justify-content:center;white-space:normal
+ }
+ .realm-choice button{padding:12px 14px}
+}
+@media(max-width:620px){
+ .realm-choice{bottom:auto;left:auto;right:auto;margin:9px auto 13px;max-width:100%}
+ .realm-choice button{padding:11px 9px;font-size:10px}
+}
