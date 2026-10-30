@@ -4,6 +4,8 @@
 **GitHub repository:** https://github.com/fathom-web/wowforge  
 **Purpose:** Standalone showcase for original World of Warcraft addon projects, with LifeForge first.
 
+**Design boundary:** The original forest-and-ember frontier fantasy theme, animated rune crest and optional landscape switcher belong **only** to `wow.novyxforge.com` and this `wowforge` repository. No changes to `novyxforge.com`, other subdomains or the main six-sphere universe are involved. The SVG landscape in `assets/azeroth-landscape.svg` is an original illustration, not Blizzard artwork.
+
 ## Deployment with MijnHost / DirectAdmin
 
 This is a **standalone static website**: no PHP, database, hosting backend, build command or paid API is needed.
