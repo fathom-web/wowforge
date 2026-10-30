@@ -20,3 +20,5 @@ jobs:
         run: node --check site.js
       - name: Check website content and assets
         run: node tests/site-check.mjs
+      - name: Check Forest Frontier original art and design contracts
+        run: node tests/forest-theme-check.mjs
