@@ -632,3 +632,38 @@ body.forest-ready [data-forest-reveal].is-revealed{opacity:1;transform:translate
  .realm-choice{bottom:auto;left:auto;right:auto;margin:9px auto 13px;max-width:100%}
  .realm-choice button{padding:11px 9px;font-size:10px}
 }
+
+
+/* Baseline compatibility: latest NOVYX WoW Forge v3 switched to an open-air
+   centered hero. Restore two-column geometry for the Forest Frontier portal. */
+.hero{display:grid!important;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr)!important;text-align:left!important}
+.hero-copy{width:100%;max-width:690px;justify-self:start}
+.hero-art.forest-portal{
+ position:relative!important;inset:auto!important;
+ display:grid!important;place-items:center!important;
+ width:100%;max-width:600px;aspect-ratio:700/800;
+ overflow:visible!important;opacity:1!important;
+ align-self:center;justify-self:center;pointer-events:none;
+}
+.hero-metrics{
+ margin:55px 0 0;max-width:600px;
+ border:0;box-shadow:none;backdrop-filter:none;
+ justify-content:flex-start;gap:0
+}
+.hero-metrics div{flex:0 1 auto;align-items:flex-start;padding:0 22px 0 0;margin:0 22px 0 0;border-right:1px solid rgba(230,190,119,.25)}
+.hero-metrics div+div{border-left:0}
+.hero-metrics div:last-child{margin-right:0;border-right:0}
+.preview-shell{position:relative}
+.forest-portal .portal-illustration{max-height:690px}
+@media(max-width:880px){
+ .hero{display:grid!important;grid-template-columns:1fr!important;text-align:center!important}
+ .hero-copy{max-width:680px;justify-self:center}
+ .hero-art.forest-portal{position:relative!important;inset:auto!important;width:min(100%,400px);max-width:400px;aspect-ratio:700/800}
+ .hero-metrics{margin:35px auto 0;justify-content:center}
+ .hero-metrics div{align-items:center;flex:1;padding:0 10px;margin:0;border-right:1px solid rgba(230,190,119,.25)}
+}
+@media(max-width:620px){
+ .hero-art.forest-portal{max-width:310px;width:min(100%,310px)}
+ .hero-metrics{justify-content:space-between}
+ .hero-metrics div{flex:1;align-items:center;padding:0 7px;margin:0;border:0}
+}
