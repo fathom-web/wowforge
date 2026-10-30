@@ -1,5 +1,5 @@
-/* WoW Forge — progressive enhancement for the standalone fantasy realm.
-   Content and navigation remain functional without JavaScript. */
+/* WoW Forge — lightweight navigation and accessibility.
+   All content remains available with JavaScript disabled. */
 (() => {
   "use strict";
   const button = document.querySelector(".menu-toggle");
@@ -30,35 +30,6 @@
       if (window.innerWidth > 880) close();
     }, {passive: true});
   }
-
-  const hero = document.querySelector(".hero");
-  if (hero) {
-    const choices = document.createElement("div");
-    choices.className = "realm-choice";
-    choices.setAttribute("role", "group");
-    choices.setAttribute("aria-label", "Choose a fantasy landscape");
-    const landscapes = [
-      {id:"forest", name:"Emerald Forest"},
-      {id:"durotar", name:"Ember Frontier"}
-    ];
-    const setRealm = realm => {
-      document.body.classList.toggle("realm-durotar", realm === "durotar");
-      choices.querySelectorAll("button").forEach(el => {
-        el.setAttribute("aria-pressed", String(el.dataset.realm === realm));
-      });
-    };
-    landscapes.forEach(({id,name}) => {
-      const control = document.createElement("button");
-      control.type = "button";
-      control.dataset.realm = id;
-      control.textContent = name;
-      control.setAttribute("aria-pressed", String(id === "forest"));
-      control.addEventListener("click", () => setRealm(id));
-      choices.appendChild(control);
-    });
-    hero.appendChild(choices);
-  }
-
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 })();
