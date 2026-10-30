@@ -1,50 +1,72 @@
-# WoW Addon Foundry — NOVYX FORGE
+# WoW Forge — NOVYX FORGE
 
-**Intended domain:** https://wow.novyxforge.com/  
-**Source:** \`fathom-web/novyxforge/wow/\`  
-**Type:** Static HTML / CSS / JavaScript site. No backend, login, database or build step required.
+**Website:** https://wow.novyxforge.com/  
+**GitHub repository:** https://github.com/fathom-web/wowforge  
+**Purpose:** Standalone showcase for original World of Warcraft addon projects, with LifeForge first.
 
-## Hosting on MijnHost
+## Deployment with MijnHost / DirectAdmin
 
-WoW Forge has its own standalone GitHub repository, independent from the NOVYX FORGE homepage.
+This is a **standalone static website**: no PHP, database, hosting backend, build command or paid API is needed.
 
-1. Create or select the subdomain **\`wow.novyxforge.com\`** (note the **v** in novyx).
-2. Set that subdomain's **document root** to a directory containing the contents of the GitHub **\`wow/\`** folder. If your sync tool checks out the whole \`novyxforge\` repository, point the subdomain document root at its \`wow/\` child directory, **not** the repository root.
-3. Make sure these files appear side by side in that directory: \`index.html\`, \`site.css\`, \`site.js\`, \`favicon.svg\`, \`robots.txt\`, and \`sitemap.xml\`.
-4. Confirm the correct DNS record for the subdomain in your hosting control panel, and enable HTTPS with the hosting provider's valid certificate. Do **not** guess DNS IPs or target hosts.
-5. Open \`https://wow.novyxforge.com/\` and test the desktop/mobile navigation and the external GitHub links.
+### 1. Create the Git mirror
+In DirectAdmin **Advanced Features → Git**, choose **Create Repository** under the account's main domain `novyxforge.com`:
 
-**Alternative:** If the main domain's document root is already a complete checkout of this repository, \`https://novyxforge.com/wow/\` can act as a preview, but it is not a replacement for configuring the requested subdomain.
+| Setting | Value |
+| --- | --- |
+| Name | `wowforge` |
+| Remote | `https://github.com/fathom-web/wowforge.git` |
+| Keyfile | blank; this is a public repository |
 
-## Distribution policy
+DirectAdmin uses a bare Git repository for syncing. This is separate from the NOVYX FORGE main website's Git repository.
 
-- NOVYX FORGE: marketing, project showcase and development status.
-- GitHub: source code, tests and history.
-- CurseForge: the only future public download/update channel for addons.
-- **Never** link directly to GitHub ZIPs or expose install buttons on the showcase.
-- Do not introduce a CurseForge link until a real approved project page exists.
+### 2. Choose the correct deployment directory
 
-## LifeForge status as of 30 October 2026
+Open the new `wowforge` entry, choose **Modify** and set:
 
-- Build 7, **0.8.0-alpha**
-- 67 headless Lua tests reported passing in the addon repository
-- Native Forever game-client testing **not yet verified**
-- No approved/public CurseForge release
-- Live screenshots are **not** available. The website's visual example is marked **illustrative concept**.
-- User data remains in local WoW SavedVariables; there is no website-based account or character-data sync.
+- Deploy branch: `main`.
+- Deploy directory: the **existing document root of `wow.novyxforge.com`**, **relative to the DirectAdmin account home directory**.
 
-The authoritative source for current status is https://github.com/fathom-web/WoW-LifeForge . Update the copy when verified releases are available; never automate a false "Live" or "Download" state.
+The actual document root must be confirmed in the hosting file manager before entering a path. Depending on the setup, it could be `domains/novyxforge.com/public_html/wow` or `domains/wow.novyxforge.com/public_html`; do not assume either is correct.
 
-## Design
+**Never deploy this repository into the root of `novyxforge.com`.** That would overwrite the main site's `index.html`.
 
-A related NOVYX FORGE sub-brand, with dark technical materials, a gold/amber fantasy accent, CSS-driven reactor artwork and a responsive native-layout proof of concept. No copyrighted Blizzard icons or screenshots are bundled.
+### 3. Fetch & Deploy
 
-## Security and accessibility
+Fetch the `main` branch, then click **Deploy** in DirectAdmin. Verify these files exist side by side in the **subdomain document root**:
 
-- External links use \`rel="noopener noreferrer"\` where they open a new window.
-- Mobile menu supports keyboard Escape and \`aria-expanded\`.
-- Motion respects \`prefers-reduced-motion\`.
-- No third-party scripts, trackers, ads or analytics.
-- Contact or feedback features require explicit future design; none are fabricated.
+- `index.html`
+- `site.css`
+- `site.js`
+- `favicon.svg`
+- `robots.txt`
+- `sitemap.xml`
 
-Test locally by serving the repository root using a static HTTP server and opening \`/wow/\`, or by using the existing NOVYX browser QA.
+Check `https://wow.novyxforge.com/`, mobile navigation, links, and SSL/HTTPS.
+
+Future changes: sync `main` and deploy. Automatic webhooks can be enabled later, but keep the webhook URL private because it is a credential-like deploy trigger.
+
+## Separation of responsibilities
+
+- **WoW Forge** (`fathom-web/wowforge`): the website, addon showcases and development updates.
+- **LifeForge** (`fathom-web/WoW-LifeForge`): actual in-game addon Lua code, its tests and history.
+- **CurseForge**: the only future public addon download and update channel, after an approved release.
+- **NOVYX FORGE** (`fathom-web/novyxforge`): central universe linking to this site.
+
+**Never** offer addon ZIP downloads from this website, invent a CurseForge download link, or claim a project is released without verification.
+
+## LifeForge as of 30 October 2026
+
+- Build 7: `0.8.0-alpha`.
+- 67 passing headless Lua tests according to the source repository.
+- In-client testing for World of Warcraft: Forever remains **unverified**.
+- No public CurseForge release or public addon download yet.
+- Visual website preview is explicitly **illustrative**, not an actual screenshot.
+- SavedVariables are local to the WoW installation; the website does not collect character data.
+
+Check https://github.com/fathom-web/WoW-LifeForge for accurate up-to-date development details.
+
+## Local validation
+
+Run `node tests/site-check.mjs` for site structure and source claims. GitHub Actions runs the same check on pushes and pull requests.
+
+This is an independent, unofficial fan project, not endorsed by Blizzard Entertainment. No Blizzard-owned artwork or screenshots are bundled. Respect `prefers-reduced-motion`; avoid adding tracking scripts or external runtime APIs.
