@@ -10,20 +10,21 @@
   <meta property="og:description" content="Independent NOVYX Forge fan project making game addons. Original art and emblems; not affiliated with Blizzard.">
   <meta property="og:url" content="https://wow.novyxforge.com/">
   <link rel="canonical" href="https://wow.novyxforge.com/">
-  <link rel="icon" href="./assets/wowforge-arcane-wf.webp" type="image/webp">
+  <link rel="icon" href="./assets/wf-shield-icon.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./site.css?v=4">
   <link rel="stylesheet" href="./forest-theme.css?v=2">
   <link rel="preload" href="./assets/novyx-realm-hero.webp" as="image" type="image/webp">
-  <link rel="preload" href="./assets/wowforge-arcane-wf.webp" as="image" type="image/webp">
+  <link rel="preload" href="./assets/wf-shield-dadbods.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="./cinematic-hero.css?v=4">
   <link rel="stylesheet" href="./forge-story.css?v=1">
   <link rel="stylesheet" href="./brand-original.css?v=1">
   <link rel="stylesheet" href="./forge-grit.css?v=9">
   <link rel="stylesheet" href="./lifeforge-brand.css?v=1">
   <link rel="stylesheet" href="./wowforge-arcane.css?v=1">
+  <link rel="stylesheet" href="./faction-dads.css?v=1">
   <script src="./site.js?v=4" defer></script>
   <script src="./forest-effects.js?v=1" defer></script>
   <title>WoW Forge — NOVYX FORGE</title>
@@ -33,11 +34,11 @@
   <div class="global-atmosphere" aria-hidden="true"></div>
   <header class="topbar">
     <a class="brand wow-brand" href="https://wow.novyxforge.com/" aria-label="WoW Forge homepage">
-      <span class="brand-mark" aria-hidden="true"><img src="./assets/wowforge-arcane-wf.webp" alt="" width="1100" height="1100"></span>
+      <span class="brand-mark" aria-hidden="true"><img src="./assets/wf-shield-icon.webp" alt="" width="360" height="360"></span>
       <span class="brand-wordmark">WoW <strong>FORGE</strong><small>INDEPENDENT GAME ADDONS</small></span>
     </a>
     <nav id="navigation" aria-label="Forge navigation">
-      <a href="#story">Our Story</a><a href="#addons">The Archive</a><a href="#lifeforge">LifeForge</a><a href="#systems">Relics</a><a href="#development">The Journey</a><a href="#questions">Traveler’s Notes</a>
+      <a href="#story">Our Story</a><a href="#veterans">The Dads</a><a href="#addons">The Archive</a><a href="#lifeforge">LifeForge</a><a href="#systems">Relics</a><a href="#development">The Journey</a><a href="#questions">Traveler’s Notes</a>
     </nav>
     <a class="return-link" href="https://novyxforge.com/">Forge Universe <span aria-hidden="true">↗</span></a>
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -49,7 +50,7 @@
       <div class="forest-fireflies" aria-hidden="true"></div>
       <div class="hero-copy">
         <div class="hero-seal wowforge-identity">
-          <img class="wowforge-crest" src="./assets/wowforge-arcane-wf.webp" width="700" height="560" alt="WoW Forge WF emblem with antique gold lettering and glowing blue arcane stone" fetchpriority="high" decoding="async">
+          <img class="wowforge-crest" src="./assets/wf-shield-dadbods.webp" width="650" height="410" alt="Weathered medieval WF shield with antique gold letters, blue gems and banners" fetchpriority="high" decoding="async">
           <span class="wowforge-identity-subline">AN INDEPENDENT NOVYX FORGE PROJECT</span>
         </div>
         <h1 id="hero-title">EVERY HERO<br>LEAVES A <em>LEGACY.</em></h1>
@@ -74,12 +75,34 @@
       <div class="edge"><span>THROUGH FOREST AND FIRE</span><span>FOLLOW THE OLD PATH ↓</span></div>
     </section>
 
+    <section class="veteran-duo" id="veterans" aria-labelledby="veterans-title">
+      <div class="dad-heading">
+        <p class="kicker">THE TAVERN OF THE DADS / TWENTY YEARS IN AZEROTH</p>
+        <h2 id="veterans-title">Two factions. <em>One dadbod.</em></h2>
+        <p>Once, we raided until sunrise. Now there are school runs, early meetings and an alarm clock that doesn't care about boss mechanics. The adventure never stopped — it just got a bedtime.</p>
+      </div>
+      <div class="dad-cards">
+        <article class="dad-card alliance-dad">
+          <div class="dad-visual"><img class="dad-photo" src="./assets/dadbod-human.webp" width="470" height="392" alt="Laughing bearded human fantasy warrior with a dadbod raising a tankard near a mountain fortress" loading="lazy" decoding="async"><img class="dad-flag" src="./assets/banner-azure.svg" width="320" height="650" alt="" aria-hidden="true" loading="lazy"></div>
+          <div class="dad-card-copy"><p class="dad-faction">ALLIANCE DAD · HUMAN WARRIOR</p><h3>The Last-Pull Legend</h3><p>Once a fearless frontline hero. Now a father who logs in after bedtime, carries the group and occasionally wakes the house laughing.</p><p class="dad-one-liner">“One last dungeon.” — famous last words since 2006.</p></div>
+        </article>
+        <article class="dad-card horde-dad">
+          <div class="dad-visual"><img class="dad-photo" src="./assets/dadbod-orc.webp" width="487" height="365" alt="Grinning broad green-skinned orc veteran with a dadbod raising a tankard in a fiery fantasy fortress" loading="lazy" decoding="async"><img class="dad-flag" src="./assets/banner-ember.svg" width="320" height="650" alt="" aria-hidden="true" loading="lazy"></div>
+          <div class="dad-card-copy"><p class="dad-faction">HORDE DAD · ORC WARRIOR</p><h3>The Bedtime Battle Chief</h3><p>Always ready for battle. He just needs five minutes to stretch — and maybe to check whether tomorrow is a school day.</p><p class="dad-one-liner">“For the Horde! Right after I put the bins out.”</p></div>
+        </article>
+      </div>
+      <div class="dad-reason"><span>DIFFERENT BANNERS. SAME GUILD.</span><a href="#story">Read our story</a></div>
+      <p style="font-size:10px;color:#b8ad92;text-align:center;margin:14px 0 0">Original fantasy art and custom heraldry. Independent fan project; not official faction insignia.</p>
+    </section>
+
+    <div class="faction-pennants" aria-hidden="true"><span class="pennant-rule"></span><img src="./assets/banner-azure.svg" alt="" width="320" height="650" loading="lazy"><b>THE TWO BANNERS</b><img src="./assets/banner-ember.svg" alt="" width="320" height="650" loading="lazy"><span class="pennant-rule last"></span></div>
+
     <section class="forge-story" id="story" aria-labelledby="story-title">
       <div class="story-frame">
         <aside class="story-keepsake" aria-label="Twenty years in Azeroth">
           <span class="story-corner top-left" aria-hidden="true">✧</span>
           <span class="story-corner top-right" aria-hidden="true">✧</span>
-          <img class="story-crest" src="./assets/wowforge-arcane-wf.webp" alt="" width="700" height="560" loading="lazy">
+          <img class="story-crest" src="./assets/wf-shield-icon.webp" alt="" width="360" height="360" loading="lazy">
           <p class="story-mini">THE PEOPLE BEHIND WOW FORGE</p>
           <div class="story-years"><strong>20</strong><span>YEARS<br>IN AZEROTH</span></div>
           <div class="story-rule" aria-hidden="true"><span>✦</span></div>
@@ -111,6 +134,8 @@
       </div>
     </section>
 
+    <div class="faction-pennants" aria-hidden="true"><span class="pennant-rule"></span><img src="./assets/banner-azure.svg" alt="" width="320" height="650" loading="lazy"><b>THE TWO BANNERS</b><img src="./assets/banner-ember.svg" alt="" width="320" height="650" loading="lazy"><span class="pennant-rule last"></span></div>
+
     <div class="signal-seam" aria-hidden="true"><span>THE ARCHIVE / CHAPTER 001</span></div>
     <section class="section collection" id="addons" aria-labelledby="collection-title">
       <div class="section-heading"><div><p class="kicker">THE GUILD ARCHIVE</p><h2 id="collection-title">Tales of the <em>forge.</em></h2></div><p>One addon currently being built, with room for more experiments. No fake downloads, no unfinished releases disguised as finished products.</p></div>
@@ -123,6 +148,8 @@
         <div class="registry-item future"><span class="plus" aria-hidden="true">+</span><div><span class="micro">FORGE / NEXT</span><h3>Another story awaits.</h3><p>More creations will appear on this quest board when their development is real and ready to share.</p></div></div>
       </div>
     </section>
+
+    <div class="faction-pennants" aria-hidden="true"><span class="pennant-rule"></span><img src="./assets/banner-azure.svg" alt="" width="320" height="650" loading="lazy"><b>THE TWO BANNERS</b><img src="./assets/banner-ember.svg" alt="" width="320" height="650" loading="lazy"><span class="pennant-rule last"></span></div>
 
     <section class="realm-bridge" aria-label="A journey from enchanted forest to rugged frontier">
       <div class="realm-marker forest-marker"><span class="realm-symbol" aria-hidden="true">❧</span><small>THE GREENWOOD</small><strong>Where stories take root.</strong><span>Ancient trees. Golden light. Quiet magic.</span></div>
