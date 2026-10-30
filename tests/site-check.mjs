@@ -7,7 +7,7 @@ const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const get=f=>readFileSync(resolve(root,f),"utf8");
 const html=get("index.html"),css=get("site.css"),js=get("site.js");
 const count=(text,regex)=>[...text.matchAll(regex)].length;
-for(const href of ["./site.css?v=3","./site.js?v=3","./favicon.svg"])
+for(const href of ["./site.css?v=4","./site.js?v=4","./favicon.svg"])
  assert.ok(html.includes(href),"Missing root-relative asset: "+href);
 assert.ok(html.includes('rel="canonical" href="https://wow.novyxforge.com/"'));
 assert.ok(html.includes("<title>WoW Forge — NOVYX FORGE</title>"));
@@ -27,7 +27,12 @@ assert.ok(css.includes("@media(max-width:620px)"));
 assert.ok(css.includes("prefers-reduced-motion:reduce"));
 assert.ok(css.includes("./assets/azeroth-landscape.svg"), "Fantasy landscape must be used");
 assert.ok(html.includes('class="hero-seal"'), "New World of Warcraft-inspired title treatment must exist");
-assert.ok(css.includes("photo-1646404464819-523c6fef3707"), "Scenic photography should support the hero");
+assert.ok(css.includes("./assets/azeroth-expanse.svg"), "Original Azeroth-inspired scene should support the hero");
+assert.ok(!css.includes("images.unsplash.com"), "No borrowed ordinary landscape photography");
+const panorama=get("assets/azeroth-expanse.svg");
+for(const iconic of ["citadel", "airship", "orcish frontier", "dragon"]){
+ assert.ok(panorama.toLowerCase().includes(iconic), "Hero panorama must show high-fantasy identity: "+iconic);
+}
 assert.ok(!js.includes("realm-durotar"), "Previous dark fantasy switcher should be removed");
 assert.ok(get("assets/azeroth-landscape.svg").includes("<svg"), "Original fantasy illustration must exist");
 assert.ok(js.includes('event.key === "Escape"') && js.includes('aria-expanded'));
