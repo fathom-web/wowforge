@@ -1,6 +1,6 @@
 /* WoW Forge v3 — The Wide World
    Original open-air adventure design for wow.novyxforge.com ONLY.
-   Photographic landscape by Matteo Baldan, Unsplash License.
+   Original fantasy landscape commissioned for NOVYX FORGE; self-contained SVG, no photo.
    Readable fallback: locally authored assets/azeroth-landscape.svg.
 */
 :root{color-scheme:light;--ink:#293a2c;--ink2:#3f4e37;--bark:#51402e;--gold:#c48d41;--goldlight:#f9e7ab;--parchment:#f4edda;--paper:#ebe0c6;--forest:#1d362a;--line:#bba378;--white:#fff9e7;--max:1220px}
@@ -11,7 +11,7 @@ a{color:inherit;text-decoration:none}
 button{font:inherit}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #b7761c;outline-offset:4px}
 .skip{position:fixed;top:-100px;left:12px;z-index:999;padding:12px 18px;background:#fff2c2;color:#13271d;font-weight:800}.skip:focus{top:12px}
-.global-atmosphere{position:absolute;inset:0 0 auto;z-index:0;height:940px;pointer-events:none;background-image:linear-gradient(180deg,#e9edf0aa 0%,#ecede91c 22%,#f6e9bc05 58%,#32472914 79%,#243824bb 95%,#172e22 100%),url("https://images.unsplash.com/photo-1646404464819-523c6fef3707?auto=format&fit=crop&w=2200&q=84"),url("./assets/azeroth-landscape.svg");background-position:center,50% 52%,center;background-size:cover}
+.global-atmosphere{position:absolute;inset:0 0 auto;z-index:0;height:940px;pointer-events:none;background-image:linear-gradient(180deg,#e9edf0aa 0%,#ecede91c 22%,#f6e9bc05 58%,#32472914 79%,#243824bb 95%,#172e22 100%),url("./assets/azeroth-expanse.svg"),url("./assets/azeroth-landscape.svg");background-position:center,50% 52%,center;background-size:cover}
 .global-atmosphere:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#c2d1c827,transparent 25%,transparent 75%,#c4ba9c2b),linear-gradient(180deg,#f3f2e855,transparent 41%);pointer-events:none}
 .global-atmosphere:after{content:"";position:absolute;inset:auto 0 0;height:220px;background:linear-gradient(0deg,#f4edda 0%,#23412a88 42%,transparent 100%)}
 .topbar{position:relative;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;width:min(1440px,calc(100% - 70px));height:98px;margin:0 auto;padding:0 12px;border-bottom:1px solid #3b513e49}
@@ -26,7 +26,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #b7
 .menu-toggle span{width:22px;height:2px;background:#2e4635}
 main{position:relative;isolation:isolate}
 .hero{position:relative;display:flex;align-items:flex-start;justify-content:center;min-height:805px;width:min(1490px,100%);margin:0 auto;padding:45px 30px 112px;text-align:center;isolation:isolate}
-.hero:before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 50% 21%,#e5e8c87a,transparent 40%),linear-gradient(0deg,#182d21d9 0%,#182c2112 28%,transparent 72%)}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 50% 22%,#edf9df5c,transparent 44%),linear-gradient(0deg,#16291ed3 0%,#1d30252b 30%,#1a251b10 69%,transparent 90%)}
 .hero:after{content:"";position:absolute;inset:auto 0 0;height:116px;z-index:0;pointer-events:none;background:linear-gradient(0deg,#f4edda 0%,#1a3425a6 45%,transparent)}
 .hero-grid{position:absolute;z-index:1;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 31%,#fff8d93d,transparent 39%)}
 .hero-copy{position:relative;z-index:4;width:min(960px,100%)}
@@ -56,7 +56,7 @@ h1 em,h2 em{font-style:normal;color:#e9be70}
 .hero-metrics b{color:#f5dda6;font:800 14px Cinzel,serif;letter-spacing:.035em}
 .hero-metrics span{color:#e2e8d6;font:600 10px "DM Sans",sans-serif}
 .hero-art{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.hero-mist{position:absolute;left:-35%;width:130%;height:115px;filter:blur(21px);opacity:.45;background:radial-gradient(ellipse,#fffce1a8 0%,#fdfcf22c 60%,transparent 82%);animation:cloudfloat 39s ease-in-out infinite alternate}
+.hero-mist{position:absolute;left:-35%;width:130%;height:115px;filter:blur(21px);opacity:.28;background:radial-gradient(ellipse,#fffce1a8 0%,#fdfcf22c 60%,transparent 82%);animation:cloudfloat 39s ease-in-out infinite alternate}
 .mist-one{top:44%}.mist-two{top:72%;left:12%;opacity:.28;animation-delay:-13s}
 .edge{position:absolute;z-index:3;left:7%;right:7%;bottom:43px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#f9e8c2;text-shadow:0 2px 8px #0b211b;font:800 10px Cinzel,serif;letter-spacing:.16em}
 .edge:before{content:"";position:absolute;top:-17px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#efdcb5b3,transparent)}
@@ -155,7 +155,7 @@ h1 em,h2 em{font-style:normal;color:#e9be70}
 .faq-list summary:after{content:"+";position:absolute;right:10px;top:18px;color:#a07a40;font-size:27px}
 .faq-list details[open] summary:after{content:"−"}
 .faq-list details p{max-width:850px;margin:0 0 25px;color:#65745d;font-size:14px;line-height:1.9}
-.outro{position:relative;overflow:hidden;width:min(1370px,calc(100% - 36px));margin:55px auto 95px;padding:88px 24px 95px;text-align:center;background-image:linear-gradient(180deg,#1d402ebf,#132f23d9),url("https://images.unsplash.com/photo-1646404464819-523c6fef3707?auto=format&fit=crop&w=1600&q=72"),url("./assets/azeroth-landscape.svg");background-position:center,center 70%,center;background-size:cover;border:1px solid #af9e75;box-shadow:0 20px 70px #3249363b,inset 0 0 0 6px #173324}
+.outro{position:relative;overflow:hidden;width:min(1370px,calc(100% - 36px));margin:55px auto 95px;padding:88px 24px 95px;text-align:center;background-image:linear-gradient(180deg,#1d402ebf,#132f23d9),url("./assets/azeroth-expanse.svg"),url("./assets/azeroth-landscape.svg");background-position:center,center 70%,center;background-size:cover;border:1px solid #af9e75;box-shadow:0 20px 70px #3249363b,inset 0 0 0 6px #173324}
 .outro:before{content:"";position:absolute;inset:19px;border:1px solid #e1c4866f;pointer-events:none}
 .outro-sigil{position:relative;color:#ffe8aa;font:700 62px Cinzel,serif;text-shadow:0 0 20px #f5d78b80}
 .outro .kicker{position:relative;color:#e9c98e}
