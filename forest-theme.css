@@ -77,6 +77,8 @@ main:after{opacity:.17;background-image:repeating-linear-gradient(110deg,transpa
  box-shadow:inset 0 0 0 3px rgba(33,33,25,.66),inset 0 0 16px rgba(220,154,74,.19),0 0 18px rgba(231,164,92,.09);
  transform:rotate(45deg);
 }
+.brand-mark{transform:none!important;display:grid;place-items:center;border:0;background:none;box-shadow:none;line-height:1}
+.brand-mark img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 7px rgba(0,0,0,.55))}
 .brand-mark::first-letter{color:#fbe2aa}
 .brand .brand-mark{font-size:19px}
 .brand-mark{line-height:49px;text-align:center;font-family:"Cinzel",serif}
