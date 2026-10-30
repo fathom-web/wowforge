@@ -30,14 +30,15 @@ assert.ok(html.includes('class="hero-seal wowforge-identity"'),"Independent hero
 assert.ok(html.includes('class="brand wow-brand"'),"Independent brand");
 assert.ok(html.includes("INDEPENDENT GAME ADDONS"),"Independent publisher branding");
 assert.ok(html.includes("AN INDEPENDENT NOVYX FORGE PROJECT"),"No claim of official endorsement");
-for(const oldAsset of ["wowforge-crest-original.webp","wowforge-header-first.webp","wowforge-logo.webp","novyx-realm-hero.webp"]){
+for(const oldAsset of ["wowforge-crest-original.webp","wowforge-header-first.webp","wowforge-logo.webp","azeroth-cinematic.webp"]){
  assert.ok(!html.includes(oldAsset),"Legacy brand imagery must not appear in HTML: "+oldAsset);
 }
 assert.ok(html.includes("./assets/novyx-wf-crest.svg"),"Original logo loaded");
 assert.ok(html.includes("./assets/novyx-realm-hero.webp"),"Original fantasy image preloaded");
 assert.ok(html.includes("./brand-original.css?v=1"),"Trademark-safe styles loaded last");
+assert.ok(html.indexOf("brand-original.css?v=1")>html.indexOf("forge-story.css?v=1"),"Legal-safe overrides must be last");
 const brandSvg=get("assets/novyx-wf-crest.svg");
-assert.ok(brandSvg.includes("<svg") && brandSvg.includes("blacksmith emblem") && !brandSvg.includes("Blizzard"),"Our logo must be original");
+assert.ok(brandSvg.includes("<svg") && brandSvg.includes("smithing anvil") && !brandSvg.includes("Blizzard"),"Our logo must be original");
 const legalHero=readFileSync(resolve(root,"assets/novyx-realm-hero.webp"));
 assert.ok(legalHero.length>100000&&legalHero.toString("ascii",0,4)==="RIFF"&&legalHero.toString("ascii",8,12)==="WEBP","Original hero art must be valid");
 const brandCss=get("brand-original.css");
@@ -45,13 +46,6 @@ assert.ok(brandCss.includes("novyx-realm-hero.webp"),"Original image used in out
 assert.equal(brandCss.split("{").length,brandCss.split("}").length,"Brand CSS balanced");
 assert.ok(!html.includes("AN ADVENTURE THROUGH AZEROTH"),"Remove duplicate hero eyebrow");
 assert.ok(html.includes('class="brand wow-brand"'), "Dedicated WoW header brand required");
-assert.ok(html.includes('./assets/wowforge-crest-original.webp'), "Dedicated crest image required");
-assert.ok(html.includes('./assets/novyx-wf-crest.svg'), "Dedicated header crest required");
-const navCrest=readFileSync(resolve(root,"assets/wowforge-header-first.webp"));
-assert.ok(navCrest.length>4000 && navCrest.toString("ascii",0,4)==="RIFF" && navCrest.toString("ascii",8,12)==="WEBP","A valid header W emblem is required");
-const crest=readFileSync(resolve(root,"assets/wowforge-crest-original.webp"));
-assert.ok(crest.length>30000 && crest.toString("ascii",0,4)==="RIFF" && crest.toString("ascii",8,12)==="WEBP","Optimized original WoW Forge logo must be a real WebP");
-
 assert.ok(html.includes('./cinematic-hero.css?v=4'), "Cinematic hero stylesheet must load last");
 assert.ok(html.includes('./assets/novyx-realm-hero.webp'), "Cinematic image must be preloaded");
 const cinematic=get("cinematic-hero.css");
