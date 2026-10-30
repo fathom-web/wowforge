@@ -4,7 +4,9 @@
 **GitHub repository:** https://github.com/fathom-web/wowforge  
 **Purpose:** Standalone showcase for original World of Warcraft addon projects, with LifeForge first.
 
-**Design boundary:** The original forest-and-ember frontier fantasy theme, animated rune crest and optional landscape switcher belong **only** to `wow.novyxforge.com` and this `wowforge` repository. No changes to `novyxforge.com`, other subdomains or the main six-sphere universe are involved. The SVG landscape in `assets/azeroth-landscape.svg` is an original illustration, not Blizzard artwork.
+**Design boundary:** The bright, spacious, cinematic mountain-and-valley style belongs **only** to `wow.novyxforge.com` and this `wowforge` repository. No changes to `novyxforge.com`, other subdomains or the main six-sphere universe are involved. No Blizzard artwork or logos are copied.
+
+**Design v3 (30 October 2026):** Inspired by the airy grandeur and open skies of the official World of Warcraft: Forever promotional imagery. The page uses a licensed landscape photograph by [Matteo Baldan on Unsplash](https://unsplash.com/photos/a-lush-green-valley-surrounded-by-mountains-under-a-cloudy-sky-q3tEIhozL3Y) with attribution in the footer (Unsplash License). The remote CDN image is a progressive enhancement; the original local SVG `assets/azeroth-landscape.svg` provides a fallback. No Blizzard image is hosted, hotlinked, or reused. The prior heavy dark fantasy theme and the Emerald Forest / Ember Frontier switcher have been retired.
 
 ## Deployment with MijnHost / DirectAdmin
 
