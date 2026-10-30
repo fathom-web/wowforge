@@ -22,7 +22,7 @@ assert.ok(html.includes('class="forest-canopy"'));
 assert.ok(html.includes('class="forest-fireflies"'));
 assert.ok(html.includes('class="realm-bridge"'));
 assert.ok(!html.includes('class="reactor"'),"Old tech reactor shouldn't be in the forest");
-for(const text of ["THE NOVYX REALMS PRESENT","THE GUILD ARCHIVE","THE GREENWOOD","THE RED FRONTIER","THE TRAVELER","THE QUESTLINE"]){
+for(const text of ["AN INDEPENDENT NOVYX FORGE PROJECT","THE GUILD ARCHIVE","THE GREENWOOD","THE RED FRONTIER","THE TRAVELER","THE QUESTLINE"]){
  assert.ok(html.includes(text),"Missing fantasy storytelling: "+text);
 }
 for(const selector of [".hero",".forest-portal",".portal-illustration",".registry-item",".preview-shell",".feature-grid",".release-rail",".faq-list",".outro",".realm-bridge",
@@ -45,8 +45,8 @@ assert.ok(html.includes('./brand-original.css?v=1'),"Original brand safety CSS m
 assert.ok(html.indexOf('forge-story.css?v=1')<html.indexOf('brand-original.css?v=1'),"Brand safety must be last");
 assert.ok(html.includes('id="story"'),"Missing veteran dads story");
 assert.ok(html.indexOf('cinematic-hero.css?v=4')<html.indexOf('forge-story.css?v=1'),"New story styles come after cinematic hero");
-assert.ok(html.includes('src="./assets/novyx-wf-crest.svg"'),"Must use exact first impression emblem");
-assert.ok(html.includes('src="./assets/novyx-wf-crest.svg"'),"Must use matching circular W emblem");
+assert.ok(html.includes('src="./assets/novyx-wf-crest.svg"'),"Original NOVYX WF emblem required");
+assert.ok(html.includes('src="./assets/novyx-wf-crest.svg"'),"Matching WF logo required");
 assert.ok(file("cinematic-hero.css").includes('novyx-realm-hero.webp'),"Cinematic background must reference approved image");
 assert.ok(html.includes('./site.css?v=4')&&html.includes('./site.js?v=4'),"Keep latest v3 base asset versions");
 for(const id of ["main","addons","lifeforge","systems","development","questions"])assert.ok(html.includes('id="'+id+'"'));
