@@ -16,13 +16,13 @@ for(const name of ["assets/forest-frontier.svg","assets/ancient-runegate.svg"]){
  assert.ok(!/<script\b|onload=|href=["']https?:/i.test(svg),"Original artwork must not load third parties or execute scripts");
 }
 assert.equal(occurrences(html,/forest-theme\.css\?v=2/g),1);
-assert.ok(html.indexOf("site.css?v=1")<html.indexOf("forest-theme.css?v=2"));
+assert.ok(html.indexOf("site.css?v=4")<html.indexOf("forest-theme.css?v=2") && html.indexOf("forest-theme.css?v=2")<html.indexOf("cinematic-hero.css?v=3"), "Stylesheet cascade must put cinematic overrides last");
 assert.ok(html.includes('src="./assets/ancient-runegate.svg"'));
 assert.ok(html.includes('class="forest-canopy"'));
 assert.ok(html.includes('class="forest-fireflies"'));
 assert.ok(html.includes('class="realm-bridge"'));
 assert.ok(!html.includes('class="reactor"'),"Old tech reactor shouldn't be in the forest");
-for(const text of ["THE WILDS AWAIT","THE GUILD ARCHIVE","THE GREENWOOD","THE RED FRONTIER","THE TRAVELER","THE QUESTLINE"]){
+for(const text of ["THE NOVYX REALMS PRESENT","THE GUILD ARCHIVE","THE GREENWOOD","THE RED FRONTIER","THE TRAVELER","THE QUESTLINE"]){
  assert.ok(html.includes(text),"Missing fantasy storytelling: "+text);
 }
 for(const selector of [".hero",".forest-portal",".portal-illustration",".registry-item",".preview-shell",".feature-grid",".release-rail",".faq-list",".outro",".realm-bridge",
@@ -40,6 +40,8 @@ assert.ok(js.includes("aria-expanded"),"Preserve original accessible navigation"
 assert.ok(theme.includes('.realm-durotar .hero'),"Durotar realm theme must respond to toggle");
 assert.ok(html.includes('./forest-effects.js?v=1'),"Missing separate effects script");
 assert.ok(html.includes('./cinematic-hero.css?v=3'),"Missing approved cinematic hero styling");
+assert.ok(html.includes('src="./assets/wowforge-crest-original.webp"'),"Must use exact first impression emblem");
+assert.ok(html.includes('src="./assets/wowforge-header-first.webp"'),"Must use matching circular W emblem");
 assert.ok(file("cinematic-hero.css").includes('azeroth-cinematic.webp'),"Cinematic background must reference approved image");
 assert.ok(html.includes('./site.css?v=4')&&html.includes('./site.js?v=4'),"Keep latest v3 base asset versions");
 for(const id of ["main","addons","lifeforge","systems","development","questions"])assert.ok(html.includes('id="'+id+'"'));
