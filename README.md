@@ -4,9 +4,9 @@
 **GitHub repository:** https://github.com/fathom-web/wowforge  
 **Purpose:** Standalone showcase for original World of Warcraft addon projects, with LifeForge first.
 
-**Design boundary:** The bright, spacious, cinematic mountain-and-valley style belongs **only** to `wow.novyxforge.com` and this `wowforge` repository. No changes to `novyxforge.com`, other subdomains or the main six-sphere universe are involved. No Blizzard artwork or logos are copied.
+**Design boundary:** The Warcraft-inspired fantasy panorama and website style belong **only** to `wow.novyxforge.com` and this `wowforge` repository. No changes to `novyxforge.com`, other subdomains or the main six-sphere universe are involved. No Blizzard artwork or logos are copied.
 
-**Design v3 (30 October 2026):** Inspired by the airy grandeur and open skies of the official World of Warcraft: Forever promotional imagery. The page uses a licensed landscape photograph by [Matteo Baldan on Unsplash](https://unsplash.com/photos/a-lush-green-valley-surrounded-by-mountains-under-a-cloudy-sky-q3tEIhozL3Y) with attribution in the footer (Unsplash License). The remote CDN image is a progressive enhancement; the original local SVG `assets/azeroth-landscape.svg` provides a fallback. No Blizzard image is hosted, hotlinked, or reused. The prior heavy dark fantasy theme and the Emerald Forest / Ember Frontier switcher have been retired.
+**Design v4 (30 October 2026):** The travel-photo look was replaced by an original, locally hosted vector landscape in `assets/azeroth-expanse.svg`: silver human citadel, enchanted forest, dragon silhouette, airship, rusty red cliffs, and an orcish frontier. This is a fantasy homage, not an official Blizzard image, and no official artwork or game logo is bundled. No tracking or external imagery is needed. The previous Unsplash photography has been removed.
 
 ## Deployment with MijnHost / DirectAdmin
 
