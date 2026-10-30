@@ -38,7 +38,7 @@ assert.ok(html.includes("We're building addons for World of Warcraft: Forever"),
 assert.ok(html.includes("less time fighting menus"), "Time-saving addon promise");
 assert.ok(html.indexOf('id="story"')<html.indexOf('id="addons"'), "Story should lead into the addon archive");
 const storyCss=get("forge-story.css");
-assert.equal(count(storyCss,/\\{/g),count(storyCss,/\\}/g),"Story CSS braces must balance");
+assert.equal(storyCss.split("{").length,storyCss.split("}").length,"Story CSS braces must balance");
 assert.ok(storyCss.includes("@media(max-width:620px)") && storyCss.includes("prefers-reduced-motion:reduce"),"Story mobile and motion access");
 assert.ok(!html.includes("AN ADVENTURE THROUGH AZEROTH"),"Remove duplicate hero eyebrow");
 assert.ok(html.includes('class="brand wow-brand"'), "Dedicated WoW header brand required");
