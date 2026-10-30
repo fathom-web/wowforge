@@ -135,3 +135,115 @@
   .edge{left:17px;right:17px;bottom:17px;font-size:8px}
 }
 @media(prefers-reduced-motion:reduce){.forest-fireflies{animation:none!important}}
+
+/* WOW FORGE / UNIQUE CREST IDENTITY (v6)
+   Retain cinematic background and all existing feature sections. */
+.topbar .brand.wow-brand {
+  gap:11px;
+  font-family:"Cinzel",Georgia,serif;
+  font-size:19px;
+  color:#f8e2b1;
+  text-shadow:0 2px 9px rgba(0,0,0,.9);
+}
+.topbar .wow-brand .brand-mark {
+  display:grid;
+  place-items:center;
+  flex:none;
+  width:52px;height:60px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:none!important;
+  box-shadow:none!important;
+}
+.topbar .wow-brand .brand-mark img {
+  width:50px;height:58px;
+  object-fit:contain;
+  filter:drop-shadow(0 3px 3px rgba(0,0,0,.73)) drop-shadow(0 0 9px rgba(217,163,76,.2));
+}
+.topbar .wow-brand .brand-wordmark {
+  display:block;
+  line-height:1.16;
+  white-space:nowrap;
+  letter-spacing:.025em;
+}
+.topbar .wow-brand .brand-wordmark strong {color:#f0c178;}
+.topbar .wow-brand .brand-wordmark small {
+  display:block;
+  margin-top:5px;
+  color:#c8b898;
+  font:700 8px "Outfit",sans-serif;
+  letter-spacing:.14em;
+}
+.hero {
+  min-height:890px;
+  padding:47px 24px 85px!important;
+}
+.hero .hero-copy {
+  max-width:1000px!important;
+}
+.hero .hero-seal.wowforge-identity {
+  display:flex!important;
+  flex-direction:column;
+  align-items:center!important;
+  justify-content:center;
+  width:min(100%,420px)!important;
+  min-height:0;
+  padding:0!important;
+  margin:0 auto 4px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:none!important;
+  box-shadow:none!important;
+  filter:none!important;
+}
+.hero .wowforge-crest {
+  display:block;
+  width:min(100%,390px);
+  height:auto;
+  aspect-ratio:488/344;
+  object-fit:contain;
+  filter:drop-shadow(0 7px 3px rgba(7,13,10,.53)) drop-shadow(0 14px 24px rgba(3,9,8,.67));
+  animation:forge-crest-drift 9s ease-in-out infinite;
+}
+.hero .wowforge-identity-subline {
+  display:block;
+  margin-top:-4px;
+  color:#f2d7a0;
+  font:800 9px "Outfit",sans-serif;
+  letter-spacing:.23em;
+  text-shadow:0 2px 10px #06110c;
+}
+.hero .eyebrow {margin-top:12px}
+.hero h1 {margin:17px auto 13px;font-size:clamp(45px,5.15vw,75px)}
+.hero .hero-description {margin:9px auto 0!important}
+.hero .hero-actions {margin-top:23px}
+.hero .hero-metrics {margin-top:29px!important}
+@keyframes forge-crest-drift {
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-5px)}
+}
+@media(max-width:880px){
+  .hero {min-height:840px;padding:50px 23px 97px!important}
+  .hero .wowforge-crest {width:min(100%,365px)}
+  .hero h1 {font-size:clamp(43px,6.4vw,67px)}
+  .topbar .brand.wow-brand {font-size:17px}
+}
+@media(max-width:620px){
+  .topbar .brand.wow-brand{font-size:15px;gap:7px}
+  .topbar .wow-brand .brand-mark{width:37px;height:44px}
+  .topbar .wow-brand .brand-mark img{width:36px;height:43px}
+  .topbar .wow-brand .brand-wordmark small{font-size:6px;letter-spacing:.07em}
+  .hero {min-height:790px;padding:37px 15px 93px!important}
+  .hero .hero-seal.wowforge-identity{width:min(100%,300px)!important}
+  .hero .wowforge-crest{width:min(100%,292px)}
+  .hero .wowforge-identity-subline{font-size:7px;letter-spacing:.11em}
+  .hero .eyebrow{margin-top:9px}
+  .hero h1{font-size:clamp(37px,9.3vw,56px);margin:14px auto 10px}
+  .hero .hero-description{font-size:13px}
+  .hero .hero-actions{margin-top:18px}
+  .hero .hero-metrics{margin-top:24px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero .wowforge-crest{animation:none!important}
+}

@@ -7,7 +7,7 @@ const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const get=f=>readFileSync(resolve(root,f),"utf8");
 const html=get("index.html"),css=get("site.css"),js=get("site.js");
 const count=(text,regex)=>[...text.matchAll(regex)].length;
-for(const href of ["./site.css?v=4","./site.js?v=4","./favicon.svg"])
+for(const href of ["./site.css?v=4","./site.js?v=4","./assets/wowforge-shield.svg"])
  assert.ok(html.includes(href),"Missing root-relative asset: "+href);
 assert.ok(html.includes('rel="canonical" href="https://wow.novyxforge.com/"'));
 assert.ok(html.includes("<title>WoW Forge — NOVYX FORGE</title>"));
@@ -26,8 +26,14 @@ assert.equal(count(css,/\{/g),count(css,/\}/g),"CSS braces must balance");
 assert.ok(css.includes("@media(max-width:620px)"));
 assert.ok(css.includes("prefers-reduced-motion:reduce"));
 assert.ok(css.includes("./assets/azeroth-landscape.svg"), "Fantasy landscape must be used");
-assert.ok(html.includes('class="hero-seal"'), "New World of Warcraft-inspired title treatment must exist");
-assert.ok(html.includes('./cinematic-hero.css?v=1'), "Cinematic hero stylesheet must load last");
+assert.ok(html.includes('class="hero-seal wowforge-identity"'), "Distinct WoW Forge crest must replace generic hero type");
+assert.ok(html.includes('class="brand wow-brand"'), "Dedicated WoW header brand required");
+assert.ok(html.includes('./assets/wowforge-logo.webp'), "Dedicated crest image required");
+assert.ok(html.includes('./assets/wowforge-shield.svg'), "Dedicated header crest required");
+const crest=readFileSync(resolve(root,"assets/wowforge-logo.webp"));
+assert.ok(crest.length>30000 && crest.toString("ascii",0,4)==="RIFF" && crest.toString("ascii",8,12)==="WEBP","Optimized original WoW Forge logo must be a real WebP");
+assert.ok(get("assets/wowforge-shield.svg").includes("<svg"),"Standalone scalable identity shield must exist");
+assert.ok(html.includes('./cinematic-hero.css?v=2'), "Cinematic hero stylesheet must load last");
 assert.ok(html.includes('./assets/azeroth-cinematic.webp'), "Cinematic image must be preloaded");
 const cinematic=get("cinematic-hero.css");
 assert.ok(cinematic.includes('url("./assets/azeroth-cinematic.webp")'), "Use approved cinematic fantasy image");
