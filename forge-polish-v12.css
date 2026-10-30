@@ -1,0 +1,352 @@
+/* WoW Forge / FINAL PASS v12 – The Veteran's Archive
+   New finishing layer only for wow.novyxforge.com.
+   Original heraldry; not affiliated with any game publisher.
+   Intentionally overrides legacy chapter layers without replacing their content. */
+:root{
+  --pol-iron:#101914;
+  --pol-steel:#1c251c;
+  --pol-copper:#9c784b;
+  --pol-edge:rgba(207,163,96,.47);
+  --pol-paper:#e8ddc3;
+  --pol-body:#d7d0bb;
+  --pol-blue:#8fb1d4;
+  --pol-ember:#d69a72;
+}
+html{scroll-padding-top:90px}
+body{font-kerning:normal;-webkit-font-smoothing:antialiased}
+/* Slightly less ink-heavy, less repetitive chapter framing */
+main{overflow:clip}
+main .section,main .forge-story,main .veteran-duo,main .realm-bridge{scroll-margin-top:102px}
+.section-heading,.spotlight-heading{position:relative}
+.section-heading h2,.spotlight-heading h2{letter-spacing:-.035em}
+.section-heading>p{max-width:390px;line-height:1.85}
+/* Give the navigation room at common laptop resolutions */
+.topbar{gap:15px!important}
+.topbar nav{gap:clamp(9px,1.3vw,22px)!important}
+.topbar nav a{font-size:clamp(9px,.75vw,11px)!important;white-space:nowrap}
+.topbar .brand.wow-brand .brand-wordmark{letter-spacing:0}
+.topbar .brand.wow-brand .brand-wordmark small{font-size:8px;letter-spacing:.07em}
+/* HERO — isolated shield, not a rectangular landscape embedded in a logo */
+.hero .hero-seal.wowforge-identity{
+  position:relative;
+  z-index:2;
+  width:min(100%,390px)!important;
+  margin:0 auto 0!important;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.hero .hero-seal.wowforge-identity:before{
+  content:"";
+  position:absolute;
+  width:70%;height:68%;top:14%;left:15%;z-index:-1;
+  border-radius:50%;
+  background:radial-gradient(ellipse,rgba(19,35,29,.28),rgba(7,18,15,.13) 57%,transparent 75%);
+  filter:blur(16px);
+  pointer-events:none;
+}
+.hero .wowforge-crest{
+  display:block;
+  width:min(100%,265px)!important;
+  height:auto!important;
+  aspect-ratio:278/296!important;
+  margin:0 auto!important;
+  object-fit:contain!important;
+  filter:drop-shadow(0 11px 9px rgba(0,0,0,.54)) drop-shadow(0 22px 20px rgba(0,0,0,.48))!important;
+  /* Sculpted original shield PNG/WebP, not the old sky-backed rectangle */
+  transform-origin:center center;
+  animation:polShield 9s ease-in-out infinite!important;
+}
+.hero .wowforge-identity-subline{
+  margin:7px auto 4px!important;
+  width:100%;
+  font-size:10px!important;
+  line-height:1.5;
+  letter-spacing:.19em!important;
+  color:#f2d49c!important;
+  text-shadow:0 3px 14px #05110c;
+}
+.hero h1{
+  margin:12px auto 14px!important;
+  max-width:830px;
+  font-size:clamp(46px,5.4vw,81px)!important;
+  line-height:1.065!important;
+  letter-spacing:-.049em!important;
+}
+.hero .hero-description{
+  max-width:630px!important;
+  font-size:15px!important;
+  line-height:1.8!important;
+  font-weight:500!important;
+  text-wrap:pretty;
+}
+.hero .hero-actions{margin-top:27px!important}
+.hero .hero-metrics{margin-top:36px!important;width:min(100%,640px)!important}
+.hero .hero-metrics div{padding:10px 12px!important}
+.hero .hero-metrics b{font-size:15px}
+.hero .edge{font-size:10px}
+@keyframes polShield{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+/* Chapter bridge becomes one consistent transition into the war-camp */
+.veteran-duo{margin-top:46px!important;margin-bottom:75px!important;padding-top:42px!important}
+.dad-heading{max-width:770px!important;margin-bottom:37px!important}
+.dad-heading>p:last-child{font-size:15px!important;line-height:1.9!important;color:#d8d1bc!important}
+.dad-cards{gap:24px!important}
+.dad-card{border-width:2px!important;box-shadow:inset 0 0 0 5px #0b110d,0 20px 42px #000a!important}
+.dad-card .dad-visual{height:clamp(280px,28vw,360px);min-height:0}
+.dad-card .dad-photo{height:100%!important;max-height:none!important;min-height:0!important}
+.dad-card-copy{padding:20px 30px 30px!important}
+.dad-card .dad-one-liner{margin-top:19px!important;line-height:1.65!important}
+.dad-card.alliance-dad .dad-card-copy{border-top:2px solid #7d9fc271}
+.dad-card.horde-dad .dad-card-copy{border-top:2px solid #c6775571}
+.dad-flag{opacity:.86}
+/* STORY — editorial rhythm, readable line width, a stronger chapter marker */
+.forge-story{margin-top:48px!important;margin-bottom:80px!important}
+.story-frame{grid-template-columns:minmax(260px,.74fr) minmax(0,1.62fr)!important;align-items:stretch}
+.story-keepsake{min-height:0!important;justify-content:flex-start!important;padding:80px 27px 70px!important}
+.story-keepsake .story-crest{width:83px!important;height:83px!important}
+.story-years{margin:7px 0}
+.story-years strong{font-size:clamp(80px,8.5vw,135px)!important}
+.story-manuscript{
+  padding:clamp(40px,4.5vw,72px) clamp(35px,5vw,86px) 72px!important;
+  background:linear-gradient(150deg,#222821f7,#111914f8 78%)!important;
+}
+.story-manuscript h2{margin:15px 0 29px!important;line-height:1.19!important}
+.story-manuscript p:not(.story-kicker){
+  max-width:63ch!important;
+  font-size:16px!important;
+  line-height:1.83!important;
+  letter-spacing:.007em;
+  color:#d7d5c5!important;
+  margin-bottom:18px!important;
+  text-wrap:pretty;
+}
+.story-manuscript .story-opening{
+  font-size:clamp(20px,2vw,26px)!important;
+  line-height:1.45!important;
+  max-width:30ch!important;
+  margin-top:11px!important;
+  margin-bottom:25px!important;
+}
+.story-manuscript .story-chapter-mark{
+  display:flex;align-items:center;gap:11px;
+  padding:12px 0 12px;
+  margin:26px 0 17px;
+  border-top:1px solid rgba(197,158,97,.28);
+  font:800 10px/1.5 "Outfit",sans-serif;
+  letter-spacing:.21em;
+  color:#d7b278;
+}
+.story-manuscript .story-chapter-mark:before{content:"✦";font-size:14px;color:#e2b46e}
+.story-manuscript .story-callout{
+  max-width:690px!important;
+  padding:17px 22px!important;
+  margin:29px 0 26px!important;
+  border:1px solid rgba(202,160,95,.43);
+  border-left:4px solid #daa765;
+  background:linear-gradient(100deg,rgba(91,64,37,.42),rgba(18,27,20,.3));
+  font:700 clamp(19px,2vw,25px)/1.5 "Cinzel",serif!important;
+  color:#f4d19a!important;
+}
+.story-manuscript .story-promise{
+  padding:17px 20px;
+  border-left:3px solid #8ea5ae;
+  background:#2130275c;
+  color:#eed7a8!important;
+  font-weight:700!important;
+}
+.story-manuscript .story-signoff{margin-top:37px!important;font-size:20px!important}
+/* The archive and feature list should read as real artifacts, not bland tiles. */
+.collection,.systems,.development,.questions{margin-block:0!important}
+.registry{gap:23px!important}
+.registry-item{transition:transform .23s ease,border-color .23s ease}
+.registry-item.featured:hover{transform:translateY(-3px)}
+.registry-item h3{font-size:clamp(26px,2.6vw,36px)!important}
+.registry-item p{line-height:1.8!important}
+.registry-item .registry-icon{box-shadow:0 0 0 5px #141b16,inset 0 0 17px #000b,0 10px 20px #0006!important}
+.realm-bridge{margin-top:40px!important;margin-bottom:40px!important}
+/* LIFE FORGE — one cohesive heading/description/relic composition */
+.section.spotlight{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(265px,320px);
+  column-gap:clamp(20px,4vw,58px);
+  row-gap:0;
+  align-items:start;
+}
+.section.spotlight .spotlight-heading{
+  grid-column:1;grid-row:1;
+  display:flex;flex-direction:column;align-items:flex-start;gap:12px;
+  min-width:0;margin:0 0 13px!important;
+}
+.section.spotlight .spotlight-heading h2{
+  font-size:clamp(42px,4.8vw,69px)!important;
+  line-height:1.18!important;
+}
+.section.spotlight .version{
+  position:relative!important;
+  margin:9px 0 6px!important;
+  display:inline-flex!important;flex-direction:row!important;
+  align-items:center!important;gap:12px!important;
+  padding:10px 13px!important;
+  border:1px solid #aa85545b!important;
+  background:#101810bf!important;
+}
+.section.spotlight .version .signal{margin:0!important}
+.section.spotlight .version strong{font-size:15px!important}
+.section.spotlight .version small{font-size:10px!important;white-space:nowrap}
+.section.spotlight .lifeforge-intro{display:contents!important}
+.section.spotlight .spotlight-lead{
+  grid-column:1;grid-row:2;align-self:start;
+  max-width:62ch!important;margin:0 0 29px!important;
+  font-size:16px!important;line-height:1.9!important;
+  color:#d8d3c0!important;
+}
+.section.spotlight .lifeforge-relic-art{
+  grid-column:2;grid-row:1/span 2;
+  place-self:center;
+  width:min(100%,318px);
+  margin:0 0 20px!important;
+  padding:27px 22px 25px!important;
+  border:3px ridge #aa8249;
+  border-radius:3px;
+  background:
+    radial-gradient(ellipse at 50% 42%,rgba(45,89,160,.2),transparent 62%),
+    linear-gradient(138deg,#2f2922,#141c18 60%,#352719)!important;
+  box-shadow:inset 0 0 0 5px #0e1412,inset 0 0 0 6px #ad87504a,0 23px 44px #0009;
+}
+.section.spotlight .lifeforge-relic-art:before{
+  content:"";position:absolute;inset:14px!important;
+  background:none!important;
+  border:1px solid #d6ae725c;
+  filter:none!important;
+}
+.section.spotlight .lifeforge-relic-art:after{
+  content:"✦";position:absolute;z-index:2;top:-7px;left:50%;transform:translateX(-50%);
+  padding:0 9px;background:#2e2921;color:#d8b477;font-size:16px;
+}
+.section.spotlight .lifeforge-relic-art img{
+  width:100%!important;
+  max-width:240px;
+  height:auto!important;
+  aspect-ratio:1;
+  margin:0 auto 10px;
+  border:1px solid #a88a5b54;
+  border-radius:50%;
+  -webkit-mask-image:radial-gradient(circle,#000 55%,rgba(0,0,0,.89) 73%,transparent 92%);
+  mask-image:radial-gradient(circle,#000 55%,rgba(0,0,0,.89) 73%,transparent 92%);
+  filter:drop-shadow(0 4px 20px #286ed450);
+}
+.section.spotlight .lifeforge-relic-art figcaption{
+  font-size:9px!important;
+  line-height:1.65!important;
+  letter-spacing:.12em;
+  max-width:225px;
+}
+.section.spotlight .preview-shell{grid-column:1/-1;grid-row:3;margin-top:17px!important}
+.section.spotlight .development-note{grid-column:1/-1;grid-row:4}
+.section.spotlight .spotlight-actions{grid-column:1/-1;grid-row:5}
+/* Graphic within the illustrative addon interface */
+.preview-shell{overflow:hidden}
+.preview-toolbar{gap:16px!important}
+.preview-toolbar span{line-height:1.6}
+.preview-content{min-width:0}
+.preview-head h3{line-height:1.34}
+.preview-stats>div{min-width:0}
+.preview-stats strong{font-size:clamp(18px,2vw,25px)!important}
+.preview-timeline .timeline-row{min-width:0}
+.preview-timeline .timeline-row>span{min-width:0}
+.preview-timeline .timeline-row small{line-height:1.65}
+/* Across the remaining chapters: one visual rhythm and quieter decoration */
+.faction-pennants{margin-top:6px!important;margin-bottom:8px!important}
+.faction-pennants b{font-size:10px!important;letter-spacing:.16em!important}
+.systems .feature{min-height:256px!important;padding:32px 27px!important}
+.systems .feature h3{margin-top:60px!important;margin-bottom:13px!important;line-height:1.32}
+.systems .feature p{line-height:1.8!important}
+.systems .feature:hover{transform:translateY(-3px)!important}
+.release-rail{gap:14px!important;grid-template-columns:repeat(4,minmax(0,1fr))}
+.release-rail:before{display:none!important}
+.release-rail .rail-step{min-width:0;padding:24px 20px 26px!important}
+.release-rail .rail-no{margin-bottom:22px!important}
+.release-rail .rail-step h3{margin-top:9px!important}
+.release-rail .rail-step p{line-height:1.75!important}
+.repo-strip{align-items:center!important}
+.questions .faq-list{padding:13px 28px!important}
+.questions .faq-list summary{font-size:clamp(16px,1.45vw,20px)!important;line-height:1.55!important}
+.questions .faq-list details p{max-width:72ch;color:#d0cbba!important;font-size:15px!important}
+.outro{margin-top:60px!important;padding-top:85px!important}
+.outro p:not(.kicker){line-height:1.9!important}
+.footer{gap:20px 44px}
+.footer>div:first-child{max-width:510px}
+.footer p{font-size:13px!important;line-height:1.85!important}
+.footer small{line-height:1.9!important}
+/* Balance laptop layouts and no-overflow mobile stacks */
+@media(max-width:1100px){
+  .topbar nav{gap:9px!important}
+  .topbar nav a{font-size:9px!important}
+  .story-frame{grid-template-columns:minmax(230px,.7fr) minmax(0,1.55fr)!important}
+  .story-manuscript{padding:42px 40px 55px!important}
+  .section.spotlight{grid-template-columns:minmax(0,1fr) 260px;column-gap:19px}
+  .section.spotlight .lifeforge-relic-art{width:260px;padding:21px 17px 23px!important}
+  .section.spotlight .lifeforge-relic-art img{max-width:200px}
+  .release-rail{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:880px){
+  .topbar nav{gap:0!important}
+  .topbar nav a{font-size:12px!important}
+  .story-frame{grid-template-columns:1fr!important}
+  .story-keepsake{padding:36px 24px!important}
+  .story-manuscript{padding:43px 37px 52px!important;border-top:0!important;border-left:1px solid #6d553a!important}
+  .section.spotlight{grid-template-columns:minmax(0,1fr) 225px}
+  .section.spotlight .lifeforge-relic-art{width:225px}
+}
+@media(max-width:700px){
+  .hero .wowforge-crest{width:min(100%,215px)!important}
+  .hero h1{font-size:clamp(38px,8.7vw,57px)!important}
+  .hero .hero-description{font-size:13px!important}
+  .hero .hero-metrics{margin-top:30px!important}
+  .dad-card .dad-visual{height:290px}
+  .dad-card .dad-photo{height:100%!important}
+  .story-manuscript{padding:37px 25px 43px!important}
+  .story-manuscript p:not(.story-kicker){font-size:15px!important;line-height:1.78!important}
+  .section.spotlight{display:grid!important;grid-template-columns:1fr!important}
+  .section.spotlight .spotlight-heading{grid-column:1;grid-row:1;margin-bottom:16px!important}
+  .section.spotlight .lifeforge-relic-art{grid-column:1;grid-row:2;width:min(100%,263px);margin:2px auto 26px!important;padding:20px 18px 20px!important}
+  .section.spotlight .spotlight-lead{grid-column:1;grid-row:3;margin:0 0 17px!important;font-size:14px!important}
+  .section.spotlight .preview-shell{grid-column:1;grid-row:4;margin:19px 0 0!important}
+  .section.spotlight .development-note{grid-row:5}
+  .section.spotlight .spotlight-actions{grid-row:6}
+  .section.spotlight .lifeforge-relic-art img{max-width:198px}
+  .systems .feature{min-height:218px!important}
+}
+@media(max-width:620px){
+  .hero .hero-seal.wowforge-identity{width:min(100%,285px)!important}
+  .hero .wowforge-crest{width:min(100%,192px)!important}
+  .hero .wowforge-identity-subline{font-size:8px!important}
+  .hero .hero-metrics{width:100%!important}
+  .hero .hero-metrics div{padding:8px 5px!important}
+  .hero .hero-metrics b{font-size:11px!important}
+  .dad-heading{margin-bottom:25px!important}
+  .dad-card-copy{padding:17px 21px 25px!important}
+  .dad-card .dad-visual{height:250px}
+  .forge-story{margin-top:22px!important}
+  .story-keepsake{padding:30px 18px!important}
+  .story-manuscript{padding:34px 21px 39px!important}
+  .story-manuscript h2{font-size:clamp(32px,8.1vw,46px)!important}
+  .story-manuscript .story-callout{padding:14px 15px!important;font-size:19px!important}
+  .story-manuscript .story-chapter-mark{font-size:9px!important;letter-spacing:.13em}
+  .section.spotlight .version{flex-wrap:wrap!important;gap:7px!important}
+  .section.spotlight .version small{font-size:9px!important}
+  .preview-toolbar{padding:12px!important}
+  .preview-content{padding:13px!important}
+  .preview-stats{gap:5px!important}
+  .preview-stats>div{padding:12px 7px!important}
+  .preview-stats strong{font-size:16px!important}
+  .release-rail{grid-template-columns:1fr!important;gap:13px!important;margin-left:0!important;border:0!important}
+  .release-rail .rail-step{padding:20px 17px 20px 24px!important}
+  .release-rail .rail-no{position:relative!important;left:auto!important;top:auto!important;margin-bottom:15px!important}
+  .questions .faq-list{padding:7px 12px!important}
+  .outro{padding:55px 20px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero .wowforge-crest,.dad-card,.systems .feature,.registry-item{animation:none!important;transition:none!important}
+}

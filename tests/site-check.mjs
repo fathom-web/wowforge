@@ -33,11 +33,21 @@ assert.ok(html.includes("AN INDEPENDENT NOVYX FORGE PROJECT"),"No claim of offic
 for(const oldAsset of ["wowforge-crest-original.webp","wowforge-header-first.webp","wowforge-logo.webp","azeroth-cinematic.webp"]){
  assert.ok(!html.includes(oldAsset),"Legacy brand imagery must not appear in HTML: "+oldAsset);
 }
-assert.ok(html.includes("./assets/wf-shield-dadbods.webp"),"Forged shield image must load");
-assert.equal(count(html,/src="\.\/assets\/wf-shield-dadbods\.webp"/g),1,"Hero shield used once");
+assert.ok(html.includes("./assets/wf-crest-polished.webp"),"Standalone isolated shield must load");
+assert.ok(!html.includes('src="./assets/wf-shield-dadbods.webp"'),"Old rectangular crest must not be rendered");
+assert.ok(html.includes('forge-polish-v12.css?v=1'),"V12 polish stylesheet must load");
+assert.ok(html.indexOf('forge-polish-v12.css?v=1')>html.indexOf('faction-dads.css?v=1'),"Polish must override all previous styles");
+const polish=get("forge-polish-v12.css");
+assert.equal(polish.split("{").length,polish.split("}").length,"Polish CSS brace balance");
+for(const selector of [".hero .wowforge-crest",".dad-card",".story-manuscript",".story-chapter-mark",".section.spotlight",".lifeforge-relic-art",".preview-shell",".systems .feature",".release-rail",".faq-list",".footer"]){
+ assert.ok(polish.includes(selector),"Polish section missing "+selector);
+}
+assert.ok(polish.includes("@media(max-width:620px)")&&polish.includes("prefers-reduced-motion:reduce"),"Polish responsive and reduced motion");
+assert.equal(count(html,/class="story-chapter-mark"/g),3,"Editorial story chapter breaks must exist");
+assert.equal(count(html,/src="\.\/assets\/wf-crest-polished\.webp"/g),1,"Isolated hero shield used exactly once");
 assert.equal(count(html,/src="\.\/assets\/wf-shield-icon\.webp"/g),2,"Compact shield in navbar and story");
 assert.ok(html.includes('rel="icon" href="./assets/wf-shield-icon.webp" type="image/webp"'),"Matching shield favicon");
-for(const name of ["wf-shield-dadbods.webp","wf-shield-icon.webp","dadbod-human.webp","dadbod-orc.webp"]){
+for(const name of ["wf-crest-polished.webp","wf-shield-icon.webp","dadbod-human.webp","dadbod-orc.webp"]){
  const bytes=readFileSync(resolve(root,"assets",name));
  assert.ok(bytes.length>25000 && bytes.toString("ascii",0,4)==="RIFF" && bytes.toString("ascii",8,12)==="WEBP","Valid original WebP "+name);
 }
@@ -111,4 +121,4 @@ for(const tag of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)){
  assert.ok(tag[0].includes('rel="noopener noreferrer"'),"Unprotected external tab");
 }
 execFileSync(process.execPath,["--check",resolve(root,"site.js")]);
-console.log("PASS WoW Forge v11: landscape, UI, links, addon status, mobile, accessibility and distribution.");
+console.log("PASS WoW Forge v12: landscape, UI, links, addon status, mobile, accessibility and distribution.");
