@@ -4,6 +4,22 @@
 **GitHub repository:** https://github.com/fathom-web/wowforge  
 **Purpose:** Standalone showcase for original World of Warcraft addon projects, with LifeForge first.
 
+## Forest Frontier 2.0 — visual direction
+
+**Inspired by the atmosphere of Elwynn Forest and Durotar — never copied from the game.**
+
+- Original illustrated woodland and red-rock frontier: `assets/forest-frontier.svg`.
+- Original carved stone portal with roots and magic: `assets/ancient-runegate.svg`.
+- Forest/wood/stone/parchment redesign: `forest-theme.css`, loaded over the base stylesheet.
+- Original crest `favicon.svg`; green woodland light gradually becomes rugged ochre and firelight toward the bottom of the site.
+- The addon archive is a quest-board, LifeForge lives in an ironbound codex, the six features are relic tablets, and the release process follows a trail of waystones.
+- Graceful mobile/touch behavior and `prefers-reduced-motion` support. Subtle scroll reveals are decorative, not required for navigation.
+- No Blizzard-owned images, textures, screenshots, icons, or trademarks used as design assets.
+
+Keep the content accurate: Build 7 `0.8.0-alpha` is **not** an approved release. The preview is **illustrative**.
+
+**Testing:** `node tests/site-check.mjs` and `node tests/forest-theme-check.mjs`. The Forest Frontier GitHub Actions workflow also runs Playwright Chromium at desktop (1440px), tablet (834px) and mobile (390px) widths and keeps full-page screenshots as CI artifacts.
+
 ## Deployment with MijnHost / DirectAdmin
 
 This is a **standalone static website**: no PHP, database, hosting backend, build command or paid API is needed.
