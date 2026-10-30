@@ -28,10 +28,13 @@ assert.ok(css.includes("prefers-reduced-motion:reduce"));
 assert.ok(css.includes("./assets/azeroth-landscape.svg"), "Fantasy landscape must be used");
 assert.ok(html.includes('class="hero-seal wowforge-identity"'), "Distinct WoW Forge crest must replace generic hero type");
 assert.ok(html.includes("THE NOVYX REALMS PRESENT"),"Original first mockup subtitle must appear");
+assert.ok(html.includes("WORLD OF WARCRAFT ADDONS"), "Header subtitle matches first mockup");
 assert.ok(!html.includes("AN ADVENTURE THROUGH AZEROTH"),"Remove duplicate hero eyebrow");
 assert.ok(html.includes('class="brand wow-brand"'), "Dedicated WoW header brand required");
 assert.ok(html.includes('./assets/wowforge-crest-original.webp'), "Dedicated crest image required");
 assert.ok(html.includes('./assets/wowforge-header-first.webp'), "Dedicated header crest required");
+const navCrest=readFileSync(resolve(root,"assets/wowforge-header-first.webp"));
+assert.ok(navCrest.length>4000 && navCrest.toString("ascii",0,4)==="RIFF" && navCrest.toString("ascii",8,12)==="WEBP","A valid header W emblem is required");
 const crest=readFileSync(resolve(root,"assets/wowforge-crest-original.webp"));
 assert.ok(crest.length>30000 && crest.toString("ascii",0,4)==="RIFF" && crest.toString("ascii",8,12)==="WEBP","Optimized original WoW Forge logo must be a real WebP");
 
