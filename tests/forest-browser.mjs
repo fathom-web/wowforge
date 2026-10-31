@@ -44,8 +44,19 @@ try {
   assert.ok(results.forestBackground,scenario.name+" missing landscape");
   assert.ok(results.stonePortal,scenario.name+" missing retained original rune gate asset");
   assert.ok(results.artInside,scenario.name+" hidden portal or art clips "+JSON.stringify(results));
-  assert.equal(results.faq,4);
+  assert.equal(results.faq,5);
   assert.equal(results.features,6);
+  assert.equal(await page.locator("[data-dadmode-id]").count(),12,"Dad Mode shows all twelve reasons");
+  await page.locator('[data-dadmode-id="tech"]').click();
+  assert.equal(await page.locator('[data-dadmode-id="tech"]').getAttribute("aria-pressed"),"true");
+  assert.match(await page.locator("#dadmode-reply").textContent(),/Family Wi-Fi is down/);
+  await page.locator("#dadmode-silent").click();
+  assert.equal(await page.locator("#dadmode-silent").getAttribute("aria-pressed"),"true");
+  assert.match(await page.locator("#dadmode-group").textContent(),/group announcement skipped/);
+  assert.match(await page.locator("#dadmode-reply").textContent(),/Family Wi-Fi is down/,
+    "Silent Mode must preserve native AFK whisper preview");
+  await page.locator("#dadmode-silent").click();
+  assert.equal(await page.locator("#dadmode-silent").getAttribute("aria-pressed"),"false");
   assert.ok(parseFloat(results.reducedAnimation)<=0.01,scenario.name+" reduced motion animation should be disabled: "+results.reducedAnimation);
   // The current v3 site intentionally removed this optional control.
   // Retain support only if a theme switcher is added again in the future.
