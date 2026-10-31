@@ -110,5 +110,33 @@ assert.ok(!html.includes('href="https://www.curseforge.com/wow/addons/lifeforge"
 for(const tag of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)){
  assert.ok(tag[0].includes('rel="noopener noreferrer"'),"Unprotected external tab");
 }
+// Second addon / Dad Mode must be prominent, accurate and fully separated from distribution.
+const dadCss=get("dad-mode-showcase.css");
+const dadJS=get("dad-mode-demo.js");
+assert.ok(html.includes('./dad-mode-showcase.css?v=1') && html.includes('./dad-mode-demo.js?v=1'),
+  "Dad Mode CSS and demo script must be loaded");
+assert.equal(count(html,/id="dadmode"/g),1,"Dad Mode has exactly one section anchor");
+assert.ok(html.includes('href="#dadmode"') && html.includes('id="dadmode-title"'),
+  "Dad Mode must be discoverable through the archive and navigation");
+assert.equal(count(html,/data-dadmode-id="/g),12,"Exactly twelve real-life AFK reasons displayed");
+for (const id of ["kid","partner","pet","toilet","phone","snack","doorbell","sleep","work","coffee","delivery","tech"]) {
+ assert.ok(html.includes('data-dadmode-id="'+id+'"'),"Missing Dad Mode reason "+id);
+}
+assert.ok(html.includes("1.0.0-beta.2") && html.includes("Client testing pending"),
+  "Dad Mode must be clearly labeled as an unverified beta");
+assert.ok(html.includes("ILLUSTRATIVE WEB DEMO") && html.includes("NOT A GAME SCREENSHOT"),
+  "No deceptive screenshot claims");
+assert.ok(html.includes("No download is available here."),
+  "CurseForge-only distribution policy must be explicit");
+assert.ok(html.includes("https://github.com/fathom-web/forge-afk-dad-mode"),
+  "Real source repository link required");
+assert.equal(count(dadCss,/\{/g),count(dadCss,/\}/g),"Dad Mode CSS braces must balance");
+assert.ok(dadCss.includes("@media(max-width:620px)") && dadCss.includes("prefers-reduced-motion:reduce"),
+  "Dad Mode must support mobile and reduced motion");
+assert.ok(!dadJS.includes("innerHTML") && !dadJS.includes("fetch("),
+  "Website demo must not inject HTML or make requests");
+assert.ok(dadJS.includes('aria-pressed') && dadJS.includes('textContent'),
+  "Demo must keep accessible button state and write plain text");
+execFileSync(process.execPath,["--check",resolve(root,"dad-mode-demo.js")]);
 execFileSync(process.execPath,["--check",resolve(root,"site.js")]);
-console.log("PASS WoW Forge v11: landscape, UI, links, addon status, mobile, accessibility and distribution.");
+console.log("PASS WoW Forge: two addons, Dad Mode demo, landscape, links, accessibility and distribution.");
