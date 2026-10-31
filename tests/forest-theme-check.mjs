@@ -50,8 +50,8 @@ assert.ok(html.includes('faction-dads.css?v=1')&&html.indexOf('faction-dads.css?
 assert.ok(html.includes('id="veterans"')&&html.includes('Two factions.'),"Human and orc dads chapter required");
 assert.ok(html.includes('id="story"'),"Missing veteran dads story");
 assert.ok(html.indexOf('cinematic-hero.css?v=4')<html.indexOf('forge-story.css?v=1'),"New story styles come after cinematic hero");
-assert.ok(html.includes('src="./assets/wf-shield-dadbods.webp"'),"Original NOVYX WF emblem required");
-assert.ok(html.includes('src="./assets/wf-shield-icon.webp"'),"Matching compact WF logo required");
+assert.ok(html.includes('src="./assets/wowforge-logo-2026.webp"'),"Creator-approved main emblem required");
+assert.ok(html.includes('src="./assets/wowforge-icon-2026.webp"'),"Matching new compact logo required");
 assert.ok(file("cinematic-hero.css").includes('novyx-realm-hero.webp'),"Cinematic background must reference approved image");
 assert.ok(html.includes('./site.css?v=4')&&html.includes('./site.js?v=4'),"Keep latest v3 base asset versions");
 for(const id of ["main","addons","lifeforge","systems","development","questions"])assert.ok(html.includes('id="'+id+'"'));

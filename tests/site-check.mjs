@@ -7,7 +7,7 @@ const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const get=f=>readFileSync(resolve(root,f),"utf8");
 const html=get("index.html"),css=get("site.css"),js=get("site.js");
 const count=(text,regex)=>[...text.matchAll(regex)].length;
-for(const href of ["./site.css?v=4","./site.js?v=4","./assets/wf-shield-dadbods.webp","./assets/wf-shield-icon.webp"])
+for(const href of ["./site.css?v=4","./site.js?v=4","./assets/wowforge-logo-2026.webp","./assets/wowforge-icon-2026.webp"])
  assert.ok(html.includes(href),"Missing root-relative asset: "+href);
 assert.ok(html.includes('rel="canonical" href="https://wow.novyxforge.com/"'));
 assert.ok(html.includes("<title>WoW Forge — NOVYX FORGE</title>"));
@@ -33,11 +33,11 @@ assert.ok(html.includes("AN INDEPENDENT NOVYX FORGE PROJECT"),"No claim of offic
 for(const oldAsset of ["wowforge-crest-original.webp","wowforge-header-first.webp","wowforge-logo.webp","azeroth-cinematic.webp"]){
  assert.ok(!html.includes(oldAsset),"Legacy brand imagery must not appear in HTML: "+oldAsset);
 }
-assert.ok(html.includes("./assets/wf-shield-dadbods.webp"),"Forged shield image must load");
-assert.equal(count(html,/src="\.\/assets\/wf-shield-dadbods\.webp"/g),1,"Hero shield used once");
-assert.equal(count(html,/src="\.\/assets\/wf-shield-icon\.webp"/g),2,"Compact shield in navbar and story");
-assert.ok(html.includes('rel="icon" href="./assets/wf-shield-icon.webp" type="image/webp"'),"Matching shield favicon");
-for(const name of ["wf-shield-dadbods.webp","wf-shield-icon.webp","dadbod-human.webp","dadbod-orc.webp"]){
+assert.ok(html.includes("./assets/wowforge-logo-2026.webp"),"Creator-approved WoW Forge crest must load");
+assert.equal(count(html,/src="\.\/assets\/wowforge-logo-2026\.webp"/g),1,"New hero crest used once");
+assert.equal(count(html,/src="\.\/assets\/wowforge-icon-2026\.webp"/g),2,"Compact supplied logo in navbar and story");
+assert.ok(html.includes('rel="icon" href="./assets/wowforge-icon-2026.webp" type="image/webp"'),"Matching new favicon");
+for(const name of ["wowforge-logo-2026.webp","wowforge-icon-2026.webp","forge-afk-logo-2026.webp","life-forge-logo-2026.webp","dadbod-human.webp","dadbod-orc.webp"]){
  const bytes=readFileSync(resolve(root,"assets",name));
  assert.ok(bytes.length>25000 && bytes.toString("ascii",0,4)==="RIFF" && bytes.toString("ascii",8,12)==="WEBP","Valid original WebP "+name);
 }
@@ -69,8 +69,8 @@ assert.ok(html.includes("./forge-grit.css?v=9"),"War-camp design patch must be p
 assert.ok(html.includes("./lifeforge-brand.css?v=1"),"LifeForge identity stylesheet required");
 assert.ok(html.indexOf("lifeforge-brand.css?v=1")>html.indexOf("forge-grit.css?v=9"),"LifeForge styling must load after veteran visual theme");
 assert.ok(html.includes('class="lifeforge-relic-art"') && /class="[^"]*\blifeforge-registry-icon\b[^"]*"/.test(html) && html.includes('class="preview-logo lifeforge-preview-mark"'),"LifeForge emblem should appear in project card, project section and interface mockup");
-assert.equal(count(html,/src="\.\/assets\/lifeforge-arcane-emblem\.webp"/g),3,"Exactly three LifeForge logo placements");
-const lifeLogo=readFileSync(resolve(root,"assets/lifeforge-arcane-emblem.webp"));
+assert.equal(count(html,/src="\.\/assets\/life-forge-logo-2026\.webp"/g),3,"Exactly three supplied LifeForge logo placements");
+const lifeLogo=readFileSync(resolve(root,"assets/life-forge-logo-2026.webp"));
 assert.ok(lifeLogo.length>100000&&lifeLogo.toString("ascii",0,4)==="RIFF"&&lifeLogo.toString("ascii",8,12)==="WEBP","User-provided LifeForge emblem must be a valid optimized WebP");
 const lifeCss=get("lifeforge-brand.css");
 assert.equal(lifeCss.split("{").length,lifeCss.split("}").length,"LifeForge CSS balanced");
@@ -111,6 +111,12 @@ for(const tag of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)){
  assert.ok(tag[0].includes('rel="noopener noreferrer"'),"Unprotected external tab");
 }
 // Second addon / Dad Mode must be prominent, accurate and fully separated from distribution.
+assert.equal(count(html,/src="\.\/assets\/forge-afk-logo-2026\.webp"/g),2,"Supplied AFK crest appears in registry and Dad Mode showcase");
+assert.ok(html.includes('href="./logo-identity-v13.css?v=1"'),"Small scoped logo stylesheet loaded");
+assert.ok(html.indexOf("logo-identity-v13.css?v=1")>html.indexOf("dad-mode-showcase.css?v=1"),"Logo overrides load after Dad Mode styles");
+const logoCss=get("logo-identity-v13.css");
+assert.equal(count(logoCss,/\{/g),count(logoCss,/\}/g),"Logo stylesheet braces balanced");
+assert.ok(logoCss.includes("@media(max-width:620px)")&&logoCss.includes("prefers-reduced-motion:reduce"),"Responsive accessible logo styles");
 const dadCss=get("dad-mode-showcase.css");
 const dadJS=get("dad-mode-demo.js");
 assert.ok(html.includes('./dad-mode-showcase.css?v=1') && html.includes('./dad-mode-demo.js?v=1'),

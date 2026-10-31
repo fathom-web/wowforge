@@ -1,3 +1,5 @@
+**Identity update (31 October 2026):** The website now uses the three exact creator-supplied emblems: `assets/wowforge-logo-2026.webp` (WoW Forge), `assets/forge-afk-logo-2026.webp` (Forge AFK / Dad Mode), and `assets/life-forge-logo-2026.webp` (LifeForge). A compact `assets/wowforge-icon-2026.webp` is used in the navigation, favicon and story. All are optimized WebP with softly feathered edges, so the square studio backgrounds do not make visible hard rectangles. A small last-loaded CSS file (`logo-identity-v13.css`) changes only logo containers, without altering the site's sections or Dad Mode demo. Existing beta/alpha testing and non-affiliation disclaimers remain.
+
 # WoW Forge — NOVYX FORGE
 
 **Website:** https://wow.novyxforge.com/  

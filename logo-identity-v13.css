@@ -1,0 +1,82 @@
+/* Logo identity v13 — supplied by the creator, scoped updates only.
+   All other website sections and the interactive Dad Mode demo are unchanged. */
+.topbar .brand.wow-brand .brand-mark img {
+  display:block;
+  width:52px!important;
+  height:52px!important;
+  object-fit:contain!important;
+  filter:drop-shadow(0 3px 5px #000b)!important;
+}
+.hero .hero-seal.wowforge-identity {
+  width:min(100%,385px)!important;
+  min-height:0!important;
+  margin:0 auto 3px!important;
+}
+.hero .wowforge-crest {
+  display:block!important;
+  width:min(100%,302px)!important;
+  height:auto!important;
+  aspect-ratio:1/1!important;
+  object-fit:contain!important;
+  filter:drop-shadow(0 5px 12px #0009)!important;
+  margin:0 auto!important;
+}
+.hero .wowforge-identity-subline {margin-top:0!important}
+.story-keepsake .story-crest {
+  width:78px!important;
+  height:78px!important;
+  aspect-ratio:1!important;
+  object-fit:contain!important;
+}
+.dadmode-registry-icon {
+  overflow:visible!important;
+  width:112px!important;
+  height:124px!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.dadmode-registry-icon::before,.dadmode-registry-icon::after {display:none!important}
+.dadmode-registry-icon img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  filter:drop-shadow(0 5px 9px #0009);
+}
+.dadmode-crest {
+  width:185px!important;
+  height:185px!important;
+  padding:0!important;
+  clip-path:none!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  transform:none!important;
+}
+.dadmode-crest:before,.dadmode-crest:after {display:none!important}
+.dadmode-crest img {
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:contain;
+  filter:drop-shadow(0 9px 17px #000a);
+}
+@media(max-width:880px) {
+  .hero .wowforge-crest {width:min(100%,284px)!important}
+  .dadmode-crest {width:154px!important;height:154px!important}
+}
+@media(max-width:620px) {
+  .topbar .brand.wow-brand .brand-mark img {width:41px!important;height:41px!important}
+  .hero .wowforge-crest {width:min(100%,244px)!important}
+  .hero .hero-seal.wowforge-identity {width:min(100%,305px)!important}
+  .story-keepsake .story-crest {width:68px!important;height:68px!important}
+  .dadmode-registry-icon {width:78px!important;height:88px!important}
+  .dadmode-crest {display:none!important}
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero .wowforge-crest {animation:none!important}
+}
