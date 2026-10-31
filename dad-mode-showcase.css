@@ -1,0 +1,105 @@
+/* WoW Forge / Forge AFK — Dad Mode project showcase.
+   Original WAR-CAMP inspired interface, scoped to the second addon chapter.
+   All demonstration content is illustrative, not an actual WoW screenshot. */
+.collection .registry{grid-template-columns:repeat(2,minmax(0,1fr))}
+.collection .registry .registry-item{min-width:0;min-height:258px}
+.registry-item.dadmode-registry{background:radial-gradient(ellipse at 92% 0%,rgba(222,157,83,.23),transparent 65%),linear-gradient(135deg,#2d2b22,#111d18 85%);border-color:#a58a56;box-shadow:0 18px 42px rgba(19,22,12,.35),inset 0 0 0 4px rgba(208,157,88,.10)}
+.registry-item.dadmode-registry:before{background:radial-gradient(ellipse at 100% 0%,rgba(208,165,91,.2),transparent 58%)}
+.registry-item.dadmode-registry:hover{transform:translateY(-5px);border-color:#d9ba7b;box-shadow:0 26px 54px rgba(18,19,12,.47)}
+.registry-item.dadmode-registry .micro{color:#d9b879}
+.registry-item.dadmode-registry h3{color:#f5dcad;text-shadow:0 2px 12px rgba(0,0,0,.48);font-size:clamp(24px,2.8vw,35px)}
+.registry-item.dadmode-registry p{color:#d7d3bc}
+.registry-item.dadmode-registry .pill{background:rgba(166,109,58,.18);border-color:#9c7845;color:#f1d39b}
+.registry-item.dadmode-registry .registry-arrow{color:#e5ca8a}
+.dadmode-registry-icon{position:relative;flex:0 0 112px;display:grid;place-items:center;width:112px;height:124px;border:3px double #b58b4f;border-radius:24px 24px 38px 38px;background:linear-gradient(145deg,#5b492e,#202720 40%,#121915);box-shadow:inset 0 0 0 5px #0c1510,inset 0 0 0 7px #98784c,0 16px 28px #02040366;transform:rotate(-5deg)}
+.dadmode-registry-icon:before,.dadmode-registry-icon:after{content:"✦";position:absolute;top:7px;font-size:9px;color:#d4b679}
+.dadmode-registry-icon:before{left:15px}.dadmode-registry-icon:after{right:15px}
+.dadmode-registry-icon span{font:800 31px Cinzel,serif;letter-spacing:-.07em;color:#f6e4b9;text-shadow:0 2px 9px #c5873e55}
+.dadmode-registry-icon small{position:absolute;bottom:19px;font:800 10px "DM Sans",sans-serif;letter-spacing:.12em;color:#e6b879}
+.dadmode-showcase{width:min(1290px,calc(100% - 36px));margin:54px auto 70px;padding:clamp(23px,4.8vw,66px);color:#e6ddc7;scroll-margin-top:96px;border:1px solid rgba(190,148,81,.74);box-shadow:0 27px 80px #101c17a3,0 0 0 6px #79623927,inset 0 0 0 5px #0d171350;background:radial-gradient(ellipse at 3% 3%,rgba(185,120,57,.17),transparent 52%),radial-gradient(ellipse at 98% 8%,rgba(65,89,56,.4),transparent 52%),linear-gradient(145deg,#253127 0%,#121b16 54%,#1c251d 100%);position:relative;isolation:isolate;overflow:hidden}
+.dadmode-showcase:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.14;background:repeating-linear-gradient(35deg,transparent 0,transparent 31px,#c0a0700b 32px,#c0a0700b 33px)}
+.dadmode-showcase>*{position:relative;z-index:1}
+.dadmode-overline{display:flex;align-items:center;gap:13px;margin-bottom:30px;color:#d1b175;font:800 10px Cinzel,serif;letter-spacing:.22em}
+.dadmode-overline:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,#8f723e,transparent)}
+.dadmode-head{display:grid;grid-template-columns:minmax(0,1fr) 178px;gap:24px;align-items:center}
+.dadmode-showcase .kicker{margin:0 0 12px;color:#d3ad6d;letter-spacing:.17em}
+.dadmode-head h2{font:800 clamp(30px,4.3vw,58px)/1.12 Cinzel,Georgia,serif;letter-spacing:-.045em;color:#f7ead0;margin:0 0 18px;text-wrap:balance}
+.dadmode-head h2 em{font-style:normal;color:#e9b967;text-shadow:0 0 18px rgba(181,125,48,.2)}
+.dadmode-lead{color:#d4cdbd;line-height:1.8;max-width:650px;font-size:clamp(13px,1.25vw,16px)}
+.dadmode-metrics{display:flex;flex-wrap:wrap;gap:10px;margin-top:19px}
+.dadmode-metrics span{padding:7px 11px;border:1px solid #a587506b;background:#a5875012;color:#ecd8b5;font-size:10px;letter-spacing:.06em}
+.dadmode-crest{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:175px;height:194px;transform:rotate(4deg);clip-path:polygon(5% 0,95% 0,100% 73%,50% 100%,0 73%);background:radial-gradient(circle at 50% 36%,#87632f,#2d3529 51%,#141f18 78%);border:0;filter:drop-shadow(0 15px 18px #060a0880)}
+.dadmode-crest:before{content:"";position:absolute;inset:7px;clip-path:inherit;border:2px solid #bd934d;background:linear-gradient(160deg,#2e3428,#101a15);z-index:-1}
+.dadmode-crest strong{font:800 51px Cinzel,serif;letter-spacing:-.07em;color:#eec990;text-shadow:0 2px 3px #070c08}
+.dadmode-crest small{color:#daba82;font:800 10px "DM Sans",sans-serif;letter-spacing:.18em}
+.dadmode-crest .star{font-size:12px;color:#d1aa67;margin-bottom:8px}
+.dadmode-demo{margin-top:36px;border:1px solid #8b7349;background:#0c1311;box-shadow:inset 0 0 0 5px #1d2a22,0 15px 42px #0005}
+.dadmode-demo-header{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:15px 22px;background:linear-gradient(90deg,#4b3926,#23291e);border-bottom:1px solid #7f603a;color:#f4d4a1;font:700 11px Cinzel,serif;letter-spacing:.08em}
+.dadmode-demo-header span:last-child{font:700 10px "DM Sans",sans-serif;color:#d5c7a7;letter-spacing:.05em}
+.dadmode-demo-columns{display:grid;grid-template-columns:1.1fr .9fr}
+.dadmode-console{padding:25px 23px;border-right:1px solid #534732}
+.dadmode-console h3{margin:0 0 7px;color:#f1d49c;font:700 16px Cinzel,serif}
+.dadmode-console>p{color:#bbb5a6;margin:0 0 18px;font-size:12px;line-height:1.6}
+.dadmode-reasons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.dadmode-reason{position:relative;min-width:0;min-height:50px;padding:9px 11px;text-align:left;background:#292720;border:1px solid #6e5739;color:#f2dbb0;font:700 10px "DM Sans",sans-serif;letter-spacing:.06em;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.dadmode-reason:hover,.dadmode-reason:focus-visible{background:#3f3324;border-color:#d4ac6b}
+.dadmode-reason[aria-pressed="true"]{background:#67502e;border-color:#f0ce91;box-shadow:inset 0 0 0 1px #cda5617d;color:#fff0cb}
+.dadmode-reason[aria-pressed="true"]:before{content:"◆";color:#ffe7a5;margin-right:6px;font-size:8px}
+.dadmode-setting{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap;margin-top:17px}
+.dadmode-silent{cursor:pointer;min-height:39px;border:1px solid #977b4d;background:#25281f;padding:9px 13px;color:#e6d2a9;font-weight:700;font-size:11px}
+.dadmode-silent[aria-pressed="true"]{border-color:#9ac48a;background:#24432b;color:#e5f3d7}
+.dadmode-timer{font:700 15px Cinzel,serif;color:#f1cb8c;font-variant-numeric:tabular-nums}
+.dadmode-chat{padding:25px 22px;display:flex;flex-direction:column;min-width:0}
+.dadmode-chat h3{margin:0 0 11px;color:#f1d49c;font:700 16px Cinzel,serif}
+.dadmode-chat-log{flex:1;padding:17px 16px;border:1px solid #35483a;background:linear-gradient(140deg,#0b1715,#152219);overflow-wrap:anywhere}
+.dadmode-chat-line{margin:0 0 16px;font-size:12px;line-height:1.75;color:#d6ddc8}
+.dadmode-chat-line span{display:block;margin-bottom:3px;font:800 10px "DM Sans",sans-serif;letter-spacing:.13em;color:#b2a482}
+.dadmode-chat-line.reply{color:#c6ebac}.dadmode-chat-line.reply span{color:#b0c99c}
+.dadmode-chat-line.party{color:#edc68d}.dadmode-chat-line.party span{color:#bd9e73}
+.dadmode-chat-line.comeback{color:#f4d89e;margin-bottom:0}
+.dadmode-chat-line.comeback span{color:#d4b574}
+.dadmode-restore{display:block;margin-top:14px;padding:13px 10px;text-align:center;background:#483720;border:1px solid #b58a4b;color:#f9e3ba;font:800 12px Cinzel,serif;letter-spacing:.045em}
+.dadmode-smallprint{margin:13px 0 0;color:#aeb5a5;font-size:11px;line-height:1.65}
+.dadmode-foot{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:18px;margin-top:26px}
+.dadmode-feature-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.dadmode-feature-list article{padding:20px 15px;border:1px solid #6f603e;background:#1c2a22}
+.dadmode-feature-list b{display:block;color:#eed6a8;font:700 13px Cinzel,serif;margin-bottom:8px}
+.dadmode-feature-list p{font-size:11px;color:#c0bdad;line-height:1.75;margin:0}
+.dadmode-release{display:flex;flex-direction:column;align-items:flex-start;padding:19px;border:1px solid #947448;background:#2e281e}
+.dadmode-release .state{display:block;font:800 10px "DM Sans",sans-serif;letter-spacing:.12em;color:#f2cc8b}
+.dadmode-release p{color:#e4d7bd;font-size:12px;line-height:1.75;margin:12px 0 20px}
+.dadmode-release .button{margin-top:auto;text-align:center;min-height:42px}
+.dadmode-endline{margin:26px 0 0;text-align:center;color:#d1b57b;font:700 14px Cinzel,serif;letter-spacing:.02em}
+@media(max-width:1000px){
+ .dadmode-head{grid-template-columns:minmax(0,1fr) 134px}
+ .dadmode-crest{width:130px;height:153px}.dadmode-crest strong{font-size:40px}
+ .dadmode-demo-columns,.dadmode-foot{grid-template-columns:1fr}
+ .dadmode-console{border-right:0;border-bottom:1px solid #534732}
+ .dadmode-feature-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:880px){
+ .collection .registry{grid-template-columns:1fr}
+ .registry-item.dadmode-registry .registry-icon{flex:0 0 112px}
+}
+@media(max-width:620px){
+ .registry-item.dadmode-registry{gap:15px;padding:19px}
+ .registry-item.dadmode-registry .registry-icon{width:76px;height:94px;flex-basis:76px;border-radius:17px 17px 26px 26px}
+ .dadmode-registry-icon span{font-size:23px}.dadmode-registry-icon small{bottom:12px;font-size:8px}
+ .registry-item.dadmode-registry h3{font-size:23px}
+ .dadmode-showcase{width:calc(100% - 20px);padding:25px 13px;margin:34px auto}
+ .dadmode-head{grid-template-columns:1fr}
+ .dadmode-crest{display:none}
+ .dadmode-overline{font-size:9px;letter-spacing:.10em}
+ .dadmode-head h2{font-size:clamp(29px,8vw,40px)}
+ .dadmode-demo-header{padding:14px 11px;font-size:10px}
+ .dadmode-console,.dadmode-chat{padding:18px 12px}
+ .dadmode-reasons{gap:7px}
+ .dadmode-reason{font-size:9px;padding:9px 8px;line-height:1.5;min-height:49px}
+ .dadmode-feature-list{grid-template-columns:1fr}
+ .dadmode-setting{gap:8px}.dadmode-timer{font-size:13px}
+ .dadmode-release .button{width:100%}
+ .dadmode-endline{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .registry-item.dadmode-registry,.dadmode-reason{transition:none}
+}
