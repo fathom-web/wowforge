@@ -25,8 +25,10 @@
   <link rel="stylesheet" href="./lifeforge-brand.css?v=1">
   <link rel="stylesheet" href="./wowforge-arcane.css?v=1">
   <link rel="stylesheet" href="./faction-dads.css?v=1">
+  <link rel="stylesheet" href="./dad-mode-showcase.css?v=1">
   <script src="./site.js?v=4" defer></script>
   <script src="./forest-effects.js?v=1" defer></script>
+  <script src="./dad-mode-demo.js?v=1" defer></script>
   <title>WoW Forge — NOVYX FORGE</title>
 </head>
 <body>
@@ -38,7 +40,7 @@
       <span class="brand-wordmark">WoW <strong>FORGE</strong><small>INDEPENDENT GAME ADDONS</small></span>
     </a>
     <nav id="navigation" aria-label="Forge navigation">
-      <a href="#story">Our Story</a><a href="#veterans">The Dads</a><a href="#addons">The Archive</a><a href="#lifeforge">LifeForge</a><a href="#systems">Relics</a><a href="#development">The Journey</a><a href="#questions">Traveler’s Notes</a>
+      <a href="#story">Our Story</a><a href="#veterans">The Dads</a><a href="#addons">The Archive</a><a href="#lifeforge">LifeForge</a><a href="#dadmode">Dad Mode</a><a href="#systems">Relics</a><a href="#development">The Journey</a><a href="#questions">Traveler’s Notes</a>
     </nav>
     <a class="return-link" href="https://novyxforge.com/">Forge Universe <span aria-hidden="true">↗</span></a>
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -60,8 +62,8 @@
           <a class="button outline" href="#lifeforge">Discover LifeForge <span aria-hidden="true">↓</span></a>
         </div>
         <div class="hero-metrics" aria-label="Forge information">
-          <div><b>01</b><span>Addon in development</span></div>
-          <div><b>ALPHA</b><span>Client testing pending</span></div>
+          <div><b>02</b><span>Addons in development</span></div>
+          <div><b>ALPHA + BETA</b><span>Client testing pending</span></div>
           <div><b>CURSEFORGE</b><span>Planned release channel</span></div>
         </div>
       </div>
@@ -138,14 +140,18 @@
 
     <div class="signal-seam" aria-hidden="true"><span>THE ARCHIVE / CHAPTER 001</span></div>
     <section class="section collection" id="addons" aria-labelledby="collection-title">
-      <div class="section-heading"><div><p class="kicker">THE GUILD ARCHIVE</p><h2 id="collection-title">Tales of the <em>forge.</em></h2></div><p>One addon currently being built, with room for more experiments. No fake downloads, no unfinished releases disguised as finished products.</p></div>
+      <div class="section-heading"><div><p class="kicker">THE GUILD ARCHIVE</p><h2 id="collection-title">Tales of the <em>forge.</em></h2></div><p>Two addons are now taking shape: one preserves your adventures, the other helps you survive real-life aggro. Neither is publicly released yet.</p></div>
       <div class="registry">
         <a href="#lifeforge" class="registry-item featured">
           <div class="registry-icon lifeforge-registry-icon" aria-hidden="true"><img src="./assets/lifeforge-arcane-emblem.webp" width="900" height="900" alt="" loading="lazy" decoding="async"></div>
           <div class="registry-copy"><span class="micro">FORGE / 001 · WORLD OF WARCRAFT: FOREVER</span><h3>LifeForge</h3><p>Your character. Your journey. Your legend.</p><span class="pill alpha">0.8.0-alpha · Unverified client build</span></div>
           <span class="registry-arrow" aria-hidden="true">↗</span>
         </a>
-        <div class="registry-item future"><span class="plus" aria-hidden="true">+</span><div><span class="micro">FORGE / NEXT</span><h3>Another story awaits.</h3><p>More creations will appear on this quest board when their development is real and ready to share.</p></div></div>
+        <a href="#dadmode" class="registry-item featured dadmode-registry">
+          <div class="dadmode-registry-icon" aria-hidden="true"><span>AFK</span><small>DAD</small></div>
+          <div class="registry-copy"><span class="micro">FORGE / 002 · WORLD OF WARCRAFT: FOREVER</span><h3>FORGE AFK — DAD MODE</h3><p>Azeroth can wait. Dad duty can't.</p><span class="pill alpha">1.0.0-beta.2 · Client testing pending</span></div>
+          <span class="registry-arrow" aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
 
@@ -192,21 +198,91 @@
       </div>
     </section>
 
+    <div class="signal-seam" aria-hidden="true"><span>THE SECOND ARTIFACT / DAD MODE</span></div>
+    <section class="section dadmode-showcase" id="dadmode" aria-labelledby="dadmode-title">
+      <div class="dadmode-overline">NOVYX FORGE / ARTIFACT 002 / REAL-LIFE AGGRO</div>
+      <div class="dadmode-head">
+        <div>
+          <p class="kicker">FORGE AFK / DAD MODE</p>
+          <h2 id="dadmode-title">THE RAID NEVER ENDS.<br><em>IT JUST MOVES HOME.</em></h2>
+          <p class="dadmode-lead">You survived twenty years of Azeroth. But can you survive a hungry kid, a doorbell pull and a family Wi-Fi outage? FORGE AFK is a tiny, unapologetically ridiculous in-game addon for veteran players, parents and everyone dealing with real-life boss encounters.</p>
+          <div class="dadmode-metrics" aria-label="Dad Mode project details">
+            <span>12 REAL-LIFE AFK REASONS</span><span>ONE-CLICK DAD MODE</span><span>v1.0.0-beta.2 / CLIENT TEST PENDING</span>
+          </div>
+        </div>
+        <div class="dadmode-crest" aria-hidden="true"><span class="star">✦ ✦ ✦</span><strong>AFK</strong><small>DAD MODE</small></div>
+      </div>
+
+      <div class="dadmode-demo" aria-label="Interactive illustration of the Dad Mode interface">
+        <div class="dadmode-demo-header"><span>FORGE AFK / DAD MODE / UI CONCEPT</span><span>ILLUSTRATIVE WEB DEMO · NOT A GAME SCREENSHOT</span></div>
+        <div class="dadmode-demo-columns">
+          <div class="dadmode-console">
+            <h3>WHAT PULLED DAD AWAY?</h3>
+            <p>Pick a real-life boss below to preview the addon’s funny AFK message and comeback. These buttons are a website demo; they do not interact with WoW.</p>
+            <div class="dadmode-reasons" role="group" aria-label="Preview all twelve AFK reasons">
+              <button type="button" class="dadmode-reason" data-dadmode-id="kid" data-dadmode-label="KID AGGRO" data-dadmode-reply="[Forge AFK] KID AGGRO! Tiny raid boss needs Dad. Bedtime encounter in progress. BRB!" data-dadmode-group="[Forge AFK] Kid aggro! Real-life boss fight. BRB." data-dadmode-back="Dad survived Kid Aggro. Bedtime boss defeated." aria-pressed="false" title="Real-life boss encounter">KID AGGRO</button>
+              <button type="button" class="dadmode-reason" data-dadmode-id="partner" data-dadmode-label="PARTNER AGGRO" data-dadmode-reply="[Forge AFK] PARTNER AGGRO! Real-life raid leader called. This encounter has priority. BRB!" data-dadmode-group="[Forge AFK] Partner aggro. This raid has priority. BRB." data-dadmode-back="Partner raid cleared. Relationship reputation +10." aria-pressed="false" title="This raid has priority">PARTNER AGGRO</button>
+              <button type="button" class="dadmode-reason" data-dadmode-id="pet" data-dadmode-label="PET EMERGENCY" data-dadmode-reply="[Forge AFK] PET EMERGENCY! Four-legged companion needs an escort quest. BRB!" data-dadmode-group="[Forge AFK] Pet emergency! No hearthstone available. BRB." data-dadmode-back="Pet escort quest complete. Paw patrol survived." aria-pressed="false" title="No hearthstone available">PET EMERGENCY</button>
+              <button type="button" class="dadmode-reason" data-dadmode-id="toilet" data-dadmode-label="TOILET RAID" data-dadmode-reply="[Forge AFK] TOILET RAID! Nature called a ready check. Dad is fighting a real-life boss. BRB!" data-dadmode-group="[Forge AFK] Toilet raid! Nature called a ready check. BRB." data-dadmode-back="Dad survived the Toilet Raid. No loot dropped." aria-pressed="true" title="Nature calls. No ready check.">TOILET RAID</button>
+              <button type="button" class="dadmode-reason" data-dadmode-id="phone" data-dadmode-label="PHONE AGGRO" data-dadmode-reply="[Forge AFK] PHONE AGGRO! Incoming real-life call. Can't put this boss on hold. BRB!" data-dadmode-group="[Forge AFK] Phone aggro! Can't silence this boss. BRB." data-dadmode-back="Phone boss defeated. Battery -5. Sanity -20." aria-pressed="false" title="Incoming real-life call">PHONE AGGRO</button>
+              <button type="button" class="dadmode-reason" data-dadmode-id="snack" data-dadmode-label="SNACK QUEST" data-dadmode-reply="[Forge AFK] SNACK QUEST! Restocking food buffs for the next encounter. BRB!" data-dadmode-group="[Forge AFK] Snack quest! Restocking supplies. BRB." data-dadmode-back="Snack quest complete. Inventory replenished." aria-pressed="false" title="Restocking supplies">SNACK QUEST</button>
+              <button type="button" class="dadmode-reason" data-dadmode-id="doorbell" data-dadmode-label="DOORBELL PULL" data-dadmode-reply="[Forge AFK] DOORBELL PULL! Unexpected NPC at the front door. BRB!" data-dadmode-group="[Forge AFK] Someone pulled the doorbell boss. BRB." data-dadmode-back="Doorbell boss handled. Unexpected NPC despawned." aria-pressed="false" title="Unexpected visitor encounter">DOORBELL PULL</button>
+              <button type="button" class="dadmode-reason" data-dadmode-id="sleep" data-dadmode-label="SLEEP DEBUFF" data-dadmode-reply="[Forge AFK] SLEEP DEBUFF! Dad has fallen asleep at the keyboard. Again. BRB!" data-dadmode-group="[Forge AFK] Dad fell asleep at the keyboard. Again. BRB." data-dadmode-back="Sleep debuff dispelled. Dad is operational." aria-pressed="false" title="Dad fell asleep. Again.">SLEEP DEBUFF</button>
+              <button type="button" class="dadmode-reason" data-dadmode-id="work" data-dadmode-label="WORK AGGRO" data-dadmode-reply="[Forge AFK] WORK AGGRO! Real-life employer entered combat. BRB!" data-dadmode-group="[Forge AFK] Real-life employer has entered combat. BRB." data-dadmode-back="Work aggro evaded. Back to the real endgame." aria-pressed="false" title="Employer has entered combat">WORK AGGRO</button>
+              <button type="button" class="dadmode-reason" data-dadmode-id="coffee" data-dadmode-label="COFFEE REFILL" data-dadmode-reply="[Forge AFK] COFFEE REFILL! Mana depleted. Brewing a fresh potion. BRB!" data-dadmode-group="[Forge AFK] Mana depleted. Brewing a fresh potion. BRB." data-dadmode-back="Coffee potion consumed. Mana restored +100." aria-pressed="false" title="Brewing a mana potion">COFFEE REFILL</button>
+              <button type="button" class="dadmode-reason" data-dadmode-id="delivery" data-dadmode-label="DELIVERY BOSS" data-dadmode-reply="[Forge AFK] DELIVERY BOSS! Legendary loot at the door. BRB!" data-dadmode-group="[Forge AFK] Legendary loot delivery at the front door. BRB." data-dadmode-back="Delivery boss down. Package looted." aria-pressed="false" title="Legendary loot at the door">DELIVERY BOSS</button>
+              <button type="button" class="dadmode-reason" data-dadmode-id="tech" data-dadmode-label="DAD TECH SUPPORT" data-dadmode-reply="[Forge AFK] DAD TECH SUPPORT! Family Wi-Fi is down. Dad has been summoned. BRB!" data-dadmode-group="[Forge AFK] Family Wi-Fi is down. Dad has been summoned. BRB." data-dadmode-back="Wi-Fi boss defeated. Family reputation restored +100." aria-pressed="false" title="Family Wi-Fi boss fight">DAD TECH SUPPORT</button>
+            </div>
+            <div class="dadmode-setting">
+              <button type="button" class="dadmode-silent" id="dadmode-silent" aria-pressed="false">SILENT MODE / OFF</button>
+              <span class="dadmode-timer">AFK TIMER 06:42*</span>
+            </div>
+          </div>
+          <div class="dadmode-chat">
+            <h3>PREVIEW / <span id="dadmode-preview-title">TOILET RAID</span></h3>
+            <div class="dadmode-chat-log" aria-live="polite" aria-atomic="true">
+              <p class="dadmode-chat-line"><span>INCOMING WHISPER / FRIEND</span>Hey Dadbod, are you coming to the dungeon?</p>
+              <p class="dadmode-chat-line reply"><span>NATIVE WOW AFK REPLY / EXAMPLE</span><span id="dadmode-reply">[Forge AFK] TOILET RAID! Nature called a ready check. Dad is fighting a real-life boss. BRB!</span></p>
+              <p class="dadmode-chat-line party"><span>PARTY ANNOUNCEMENT / EXAMPLE</span><span id="dadmode-group">[Forge AFK] Toilet raid! Nature called a ready check. BRB.</span></p>
+              <p class="dadmode-chat-line comeback"><span>COMEBACK / EXAMPLE</span><span id="dadmode-back">Dad survived the Toilet Raid. No loot dropped. Back after 06:42!</span></p>
+            </div>
+            <div class="dadmode-restore">I'M BACK — RESUME ADVENTURE</div>
+            <p class="dadmode-smallprint">*Example time only. Silent Mode mutes group announcements, while WoW’s native AFK reply may still answer whispers. Client behavior will be verified after launch.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dadmode-foot">
+        <div class="dadmode-feature-list">
+          <article><b>REAL-LIFE AGGRO</b><p>Twelve gloriously familiar reasons to step away, from Toilet Raid to Dad Tech Support.</p></article>
+          <article><b>AFK WHISPERS</b><p>Distinct themed messages set through WoW’s native AFK status. No duplicate auto-whisper bot.</p></article>
+          <article><b>THE COMEBACK</b><p>AFK timer, minimap shortcut, Silent Mode and a unique comeback for every reason.</p></article>
+        </div>
+        <aside class="dadmode-release" aria-label="Dad Mode availability">
+          <span class="state">IN THE FORGE / BETA · NOT RELEASED</span>
+          <p>Source code and automated Lua checks are ready. Actual WoW Forever client testing is still pending. The public download will appear on CurseForge <strong>only after</strong> successful in-game verification. No download is available here.</p>
+          <a class="button gold" href="https://github.com/fathom-web/forge-afk-dad-mode" target="_blank" rel="noopener noreferrer">Explore development on GitHub ↗</a>
+        </aside>
+      </div>
+      <p class="dadmode-endline">AZEROTH CAN WAIT. DAD DUTY CAN'T.</p>
+    </section>
+
     <section class="section development" id="development" aria-labelledby="dev-title">
       <div class="section-heading"><div><p class="kicker">THE QUESTLINE / ROAD TO RELEASE</p><h2 id="dev-title">Every legend has <em>a path.</em></h2></div><p>Development is visible on GitHub. Public addon downloads and updates are reserved for CurseForge once the addon passes real-client acceptance.</p></div>
       <div class="release-rail">
         <div class="rail-step complete"><span class="rail-no">01</span><div><small>SOURCE & DESIGN</small><h3>Forge the idea</h3><p>Develop features, document decisions and maintain source on GitHub.</p></div></div>
-        <div class="rail-step complete"><span class="rail-no">02</span><div><small>AUTOMATED TESTS</small><h3>Prove the logic</h3><p>Build 7 has 67 passing headless Lua tests; these do not validate the actual game client.</p></div></div>
+        <div class="rail-step complete"><span class="rail-no">02</span><div><small>AUTOMATED TESTS</small><h3>Prove the logic</h3><p>LifeForge Build 7 has 67 passing headless Lua tests; Dad Mode also passes its Lua smoke tests. Neither validates the actual game client.</p></div></div>
         <div class="rail-step active"><span class="rail-no">03</span><div><small>IN-CLIENT ACCEPTANCE</small><h3>Test in Azeroth</h3><p>Verify frames, APIs, persistence and performance inside the correct client.</p></div></div>
         <div class="rail-step future"><span class="rail-no">04</span><div><small>PUBLIC RELEASE</small><h3>Publish on CurseForge</h3><p>Only after testing and approval. No download link until there is a real release page.</p></div></div>
       </div>
-      <div class="repo-strip"><span><b>DEVELOPMENT REPOSITORY</b> &nbsp; fathom-web / WoW-LifeForge</span><a href="https://github.com/fathom-web/WoW-LifeForge" target="_blank" rel="noopener noreferrer">View code & release history ↗</a></div>
+      <div class="repo-strip"><span><b>DEVELOPMENT REPOSITORIES</b> &nbsp; LifeForge + FORGE AFK / Dad Mode</span><span><a href="https://github.com/fathom-web/WoW-LifeForge" target="_blank" rel="noopener noreferrer">LifeForge source ↗</a> &nbsp; · &nbsp; <a href="https://github.com/fathom-web/forge-afk-dad-mode" target="_blank" rel="noopener noreferrer">Dad Mode source ↗</a></span></div>
     </section>
 
     <section class="section questions" id="questions" aria-labelledby="faq-title">
       <div class="section-heading"><div><p class="kicker">THE TRAVELER’S JOURNAL</p><h2 id="faq-title">Notes for <em>travelers.</em></h2></div></div>
       <div class="faq-list">
         <details><summary>Where do I download NOVYX addons?</summary><p>Once an addon is tested and approved for public release, the official download and update link will point to CurseForge. No NOVYX-hosted addon ZIPs are offered here.</p></details>
+        <details><summary>Does FORGE AFK already work in World of Warcraft?</summary><p>Its source and automated Lua checks are complete, but it has not yet been tested in the actual WoW Forever client. The example AFK and whisper texts on this website are illustrative, not recorded gameplay. Public downloads will follow only after client testing.</p></details>
         <details><summary>Does LifeForge already work in World of Warcraft?</summary><p>Build 7 is a development alpha. Automated Lua tests pass, but actual client compatibility, visual behavior and persistence have not yet been verified. It must not be treated as a released addon.</p></details>
         <details><summary>Does LifeForge need a website account?</summary><p>No. The intended product is a standalone in-game addon with local SavedVariables. This website is a project showcase, not a companion application or character-data service.</p></details>
         <details><summary>Is this an official Blizzard website?</summary><p>No. WoW Forge is an independent fan-made addon project from NOVYX FORGE. It is not affiliated with, sponsored by, approved by, or endorsed by Blizzard Entertainment. All site emblems are original NOVYX designs. World of Warcraft and related names are trademarks of Blizzard Entertainment.</p></details>
@@ -216,7 +292,7 @@
       <div class="outro-sigil" aria-hidden="true">✦</div>
       <p class="kicker">THE CAMPFIRE / THE NEXT CHAPTER</p>
       <h2 id="outro-title">The fires of adventure<br><em>never fade.</em></h2>
-      <p>One addon today. More stories when they're ready. Follow the source and return to the Forge as the next chapter takes shape.</p>
+      <p>Two addons are now being forged: LifeForge to preserve your legend, and Dad Mode for the adventures interrupted by real life. Both await the trials of Azeroth before release.</p>
       <a class="button gold" href="https://github.com/fathom-web/WoW-LifeForge" target="_blank" rel="noopener noreferrer">Follow LifeForge development ↗</a>
     </section>
   </main>
