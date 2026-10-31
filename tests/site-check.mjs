@@ -68,7 +68,7 @@ assert.ok(html.includes("./brand-original.css?v=1"),"Brand-safe base styles reta
 assert.ok(html.includes("./forge-grit.css?v=9"),"War-camp design patch must be present");
 assert.ok(html.includes("./lifeforge-brand.css?v=1"),"LifeForge identity stylesheet required");
 assert.ok(html.indexOf("lifeforge-brand.css?v=1")>html.indexOf("forge-grit.css?v=9"),"LifeForge styling must load after veteran visual theme");
-assert.ok(html.includes('class="lifeforge-relic-art"') && html.includes('class="lifeforge-registry-icon"') && html.includes('class="preview-logo lifeforge-preview-mark"'),"LifeForge emblem should appear in project card, project section and interface mockup");
+assert.ok(html.includes('class="lifeforge-relic-art"') && /class="[^"]*\blifeforge-registry-icon\b[^"]*"/.test(html) && html.includes('class="preview-logo lifeforge-preview-mark"'),"LifeForge emblem should appear in project card, project section and interface mockup");
 assert.equal(count(html,/src="\.\/assets\/lifeforge-arcane-emblem\.webp"/g),3,"Exactly three LifeForge logo placements");
 const lifeLogo=readFileSync(resolve(root,"assets/lifeforge-arcane-emblem.webp"));
 assert.ok(lifeLogo.length>100000&&lifeLogo.toString("ascii",0,4)==="RIFF"&&lifeLogo.toString("ascii",8,12)==="WEBP","User-provided LifeForge emblem must be a valid optimized WebP");
