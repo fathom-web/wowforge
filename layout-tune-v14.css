@@ -1,0 +1,103 @@
+/* WoW Forge v14 / precise three-point layout correction.
+   Targets: hero emblem matte; LifeForge intro whitespace; Archive bottom gap.
+   All Dad Mode styles, markup and scripts intentionally untouched. */
+
+/* 1. Fade the baked-in dark rectangular matte at the perimeter of the
+   creator's exact logo; keep the gold shield, lettering and banners. */
+.hero .wowforge-crest {
+  -webkit-mask-image: radial-gradient(ellipse 58% 58% at 50% 48%,
+    #000 0%, #000 69%, rgba(0,0,0,.94) 77%,
+    rgba(0,0,0,.67) 86%, transparent 100%) !important;
+  mask-image: radial-gradient(ellipse 58% 58% at 50% 48%,
+    #000 0%, #000 69%, rgba(0,0,0,.94) 77%,
+    rgba(0,0,0,.67) 86%, transparent 100%) !important;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,.34)) !important;
+}
+
+/* 2. Let the LifeForge description begin near its heading instead of
+   vertically centering it against a 280px image. */
+.section.spotlight .spotlight-heading {
+  margin-bottom: 14px !important;
+}
+.section.spotlight .lifeforge-intro {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(190px,250px);
+  align-items: start;
+  gap: clamp(18px,3vw,38px);
+  margin: 0 0 21px !important;
+}
+.section.spotlight .lifeforge-intro .spotlight-lead {
+  align-self: start;
+  margin: 0 !important;
+  padding-top: 11px;
+  max-width: 720px;
+}
+.section.spotlight .lifeforge-relic-art {
+  align-self: start;
+  justify-content: flex-start;
+  padding: 0 !important;
+}
+.section.spotlight .lifeforge-relic-art img {
+  width: min(100%,218px) !important;
+}
+.section.spotlight .lifeforge-relic-art figcaption {
+  margin: 5px auto 0;
+}
+
+/* 3. Reduce only the dead space below the two Archive cards.
+   Preserve the faction pennants and the following realm bridge. */
+.section.collection {
+  padding-bottom: 25px !important;
+}
+.section.collection + .faction-pennants {
+  margin-top: 0 !important;
+  height: 56px;
+}
+.section.collection + .faction-pennants + .realm-bridge {
+  margin-top: 15px !important;
+}
+
+@media (max-width: 820px) {
+  .section.spotlight .lifeforge-intro {
+    grid-template-columns: minmax(0,1fr) minmax(160px,205px);
+    gap: 16px;
+  }
+  .section.spotlight .lifeforge-relic-art img {
+    width: min(100%,188px) !important;
+  }
+}
+@media (max-width: 620px) {
+  .section.spotlight .spotlight-heading {
+    margin-bottom: 17px !important;
+  }
+  .section.spotlight .lifeforge-intro {
+    grid-template-columns: minmax(0,1fr);
+    gap: 12px;
+    margin-bottom: 20px !important;
+  }
+  .section.spotlight .lifeforge-intro .spotlight-lead {
+    order: 1;
+    padding-top: 0;
+  }
+  .section.spotlight .lifeforge-relic-art {
+    order: 2;
+    justify-content: center;
+  }
+  .section.spotlight .lifeforge-relic-art img {
+    width: min(52vw,174px) !important;
+  }
+  .section.collection {
+    padding-bottom: 16px !important;
+  }
+  .section.collection + .faction-pennants {
+    height: 49px;
+  }
+  .section.collection + .faction-pennants + .realm-bridge {
+    margin-top: 9px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero .wowforge-crest {
+    animation: none !important;
+  }
+}

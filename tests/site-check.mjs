@@ -145,4 +145,17 @@ assert.ok(dadJS.includes('aria-pressed') && dadJS.includes('textContent'),
   "Demo must keep accessible button state and write plain text");
 execFileSync(process.execPath,["--check",resolve(root,"dad-mode-demo.js")]);
 execFileSync(process.execPath,["--check",resolve(root,"site.js")]);
+
+// Limited v14 layout tune: only the hero emblem, LifeForge intro and Archive gap.
+assert.ok(html.includes('./layout-tune-v14.css?v=1'),"Three-point layout tune stylesheet is present");
+assert.ok(html.indexOf('layout-tune-v14.css?v=1')>html.indexOf('logo-identity-v13.css?v=1'),"Tune is final stylesheet");
+const tune=get('layout-tune-v14.css');
+assert.equal(count(tune,/\{/g),count(tune,/\}/g),"Three-point CSS braces balance");
+for(const selector of [".hero .wowforge-crest",".section.spotlight .lifeforge-intro",".section.collection + .faction-pennants"]){
+ assert.ok(tune.includes(selector),"Expected isolated fix: "+selector);
+}
+assert.ok(tune.includes('align-items: start')&&tune.includes('padding-bottom: 25px'),"Whitespace fixes remain scoped");
+assert.ok(!tune.includes('.dadmode-'),"Dad Mode visual styling must not be changed");
+assert.ok(tune.includes('@media (max-width: 620px)')&&tune.includes('prefers-reduced-motion: reduce'),"Mobile and motion settings");
+
 console.log("PASS WoW Forge: two addons, Dad Mode demo, landscape, links, accessibility and distribution.");
