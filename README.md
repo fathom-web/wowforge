@@ -2,7 +2,9 @@
 
 **Website:** https://wow.novyxforge.com/  
 **GitHub repository:** https://github.com/fathom-web/wowforge  
-**Purpose:** Standalone showcase for original World of Warcraft addon projects, with LifeForge first.
+**Purpose:** Standalone showcase for original World of Warcraft addon projects, including LifeForge and FORGE AFK — DAD MODE.
+
+**FORGE AFK — DAD MODE showcase (31 October 2026):** Added the second real addon to the Guild Archive at `#dadmode`, updated the header/navigation and release copy, and introduced a standalone dark hammered-brass showcase with the twelve actual v1.0.0-beta.2 AFK reasons. The interactive `dad-mode-demo.js` previews example party announcements, native WoW AFK whisper replies, comebacks and Silent Mode in an explicitly illustrative browser mockup. No user data or real game connection; no fabricated download or CurseForge link. Original art and the LifeForge project remain unchanged. Files: `dad-mode-showcase.css`, `dad-mode-demo.js`, `index.html`. Source: https://github.com/fathom-web/forge-afk-dad-mode. Game client testing is still pending; do not label the addon as released. Static and Playwright tests now cover all twelve reasons and silent-mode preview.
 
 **Two Factions / One Dadbod (30 October 2026):** Full-page integration of a weathered human-and-orc veteran guild aesthetic. A substantial hammered gold/blue gem WF shield `assets/wf-shield-dadbods.webp` replaces the too-modern circular WF lettering, with a separate shield icon for favicon/navbar/story. Original generated human/orc dadbod artworks appear directly after the hero in `#veterans`; two new custom azure-gold and ember-black cloth banners appear in repeated visual transitions and throughout the page in `faction-dads.css`, loaded last. Alliance/Horde names describe the fan art only; the pennants are original custom heraldry, NOT copies of Blizzard official faction insignia. Original cinematic scenery, LF project logo, release disclaimer and independent fan-project status are preserved. Only `wow.novyxforge.com` changes.
 
@@ -71,6 +73,7 @@ Future changes: sync `main` and deploy. Automatic webhooks can be enabled later,
 
 - **WoW Forge** (`fathom-web/wowforge`): the website, addon showcases and development updates.
 - **LifeForge** (`fathom-web/WoW-LifeForge`): actual in-game addon Lua code, its tests and history.
+- **FORGE AFK — DAD MODE** (`fathom-web/forge-afk-dad-mode`): second addon, native AFK whisper replies, twelve reasons, tests and versioned code.
 - **CurseForge**: the only future public addon download and update channel, after an approved release.
 - **NOVYX FORGE** (`fathom-web/novyxforge`): central universe linking to this site.
 
