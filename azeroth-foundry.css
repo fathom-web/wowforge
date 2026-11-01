@@ -137,3 +137,10 @@ body.realm-durotar .wf-quest-grid article{background:linear-gradient(135deg,#4b2
 .wf-azeroth-hero .forest-fireflies{opacity:.36;pointer-events:none}
 .realm-durotar .wf-azeroth-hero .forest-fireflies{filter:sepia(1) saturate(1.8) hue-rotate(-38deg)}
 @media(prefers-reduced-motion:reduce){.wf-azeroth-hero .forest-fireflies{display:none}}
+
+.wf-crest-medallion{display:block;width:170px;height:170px;max-width:100%;margin:0 0 12px;background-size:contain;background-repeat:no-repeat;background-position:center;-webkit-mask-image:radial-gradient(ellipse closest-side,#000 66%,transparent 100%);mask-image:radial-gradient(ellipse closest-side,#000 66%,transparent 100%);filter:drop-shadow(0 5px 11px #000a)}
+.wf-lifeforge-medallion{background-image:url("./assets/life-forge-logo-2026.webp")}
+.wf-afk-medallion{background-image:url("./assets/forge-afk-logo-2026.webp")}
+.wf-wow-medallion{width:150px;height:150px;margin:0;background-image:url("./assets/wowforge-logo-2026.webp")}
+.wf-inn-grid .wf-crest-medallion{margin:auto}
+@media(max-width:650px){.wf-crest-medallion{width:125px;height:125px}.wf-inn-grid .wf-wow-medallion{width:120px;height:120px}}
