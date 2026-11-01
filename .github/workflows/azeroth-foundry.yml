@@ -1,0 +1,25 @@
+name: Azeroth Foundry QA
+on:
+  push:
+    branches: ["feature/azeroth-foundry-2"]
+  pull_request:
+    paths:
+      - "index.html"
+      - "azeroth-foundry.css"
+      - "azeroth-foundry.js"
+      - "tests/azeroth-foundry.test.mjs"
+      - ".github/workflows/azeroth-foundry.yml"
+permissions:
+  contents: read
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax
+        run: node --check azeroth-foundry.js && node --check site.js && node --check dad-mode-demo.js
+      - name: Theme and content contracts
+        run: node tests/azeroth-foundry.test.mjs
