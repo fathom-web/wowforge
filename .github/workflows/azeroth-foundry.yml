@@ -23,3 +23,14 @@ jobs:
         run: node --check azeroth-foundry.js && node --check site.js && node --check dad-mode-demo.js
       - name: Theme and content contracts
         run: node tests/azeroth-foundry.test.mjs
+
+      - name: Package standalone website
+        run: |
+          mkdir -p dist
+          zip -qr dist/wowforge-source.zip . -x ".git/*" "dist/*" "node_modules/*" "qa-screenshots/*"
+      - name: Attach website package for final art integration
+        uses: actions/upload-artifact@v4
+        with:
+          name: wowforge-azeroth-source
+          path: dist/wowforge-source.zip
+          retention-days: 7
