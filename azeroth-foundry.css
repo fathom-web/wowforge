@@ -107,3 +107,33 @@ header.topbar nav a{white-space:nowrap}
 @media(max-width:650px){.hero.wf-azeroth-hero{padding:40px 14px 90px!important;min-height:710px!important}.hero.wf-azeroth-hero .wowforge-crest{max-width:240px!important}.wf-faction-switch{gap:7px;margin-top:19px}.wf-faction-switch button{min-width:0;flex:1 1 28%;font-size:9px;padding:12px 6px;min-height:45px}.wf-world-crossroads,.wf-addon-armory,.wf-quest-log{width:calc(100% - 24px);padding:16px;margin:28px auto 47px}.wf-world-grid{grid-template-columns:1fr}.wf-realm-card{min-height:370px;padding:22px}.wf-armory-stage,.wf-armory-content{min-height:390px}.wf-armory-content{padding:20px}.wf-armory-links a{width:100%;justify-content:center}.wf-addon-display{width:calc(100% - 24px);padding:11px;margin-bottom:48px}.wf-addon-display .wf-addon-copy{padding:12px}.wf-addon-display .wf-addon-image img{max-height:450px}.wf-quest-grid{grid-template-columns:1fr}.wf-site-note{padding:0 15px}.hero.wf-azeroth-hero .hero-description{font-size:13px!important}}
 @media(prefers-reduced-motion:reduce){.wf-realm-card,.wf-armory-links a,.wf-faction-switch button{transition:none!important;animation:none!important}.wf-realm-card:hover,.wf-faction-switch button:hover{transform:none!important}}
 body.wf-motion-off *,body.wf-motion-off *:before,body.wf-motion-off *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+
+/* Background fallback is always locally available while newly supplied art is being staged. */
+.wf-armory-stage{background-image:url("./assets/addon-armory.webp"),url("./assets/novyx-realm-hero.webp");background-size:cover,cover;background-position:center 46%,center!important}
+.wf-armory-stage:after{display:none}
+/* Extended faction atmosphere: not just the home hero. */
+body.realm-elwynn .wf-world-crossroads,body.realm-elwynn .wf-addon-armory,body.realm-elwynn .wf-quest-log{background:linear-gradient(140deg,#162c21,#0e1b17)!important}
+body.realm-durotar .wf-world-crossroads,body.realm-durotar .wf-addon-armory,body.realm-durotar .wf-quest-log{background:linear-gradient(140deg,#312016,#1d1712)!important}
+body.realm-durotar .topbar{border-bottom-color:#b8774b!important}
+body.realm-durotar .wf-section-head .kicker,body.realm-durotar .wf-quest-grid article span{color:#eeb17c!important}
+body.realm-elwynn .wf-section-head .kicker,body.realm-elwynn .wf-quest-grid article span{color:#add4a0!important}
+body.realm-elwynn .wf-armory-links a:first-child{background:linear-gradient(135deg,#d7e4ae,#9baf86)}
+body.realm-durotar .wf-armory-links a:first-child{background:linear-gradient(135deg,#f4d2a0,#d59365)}
+body.realm-elwynn .wf-quest-grid article{background:linear-gradient(135deg,#233e2d,#1a251c)}
+body.realm-durotar .wf-quest-grid article{background:linear-gradient(135deg,#4b2c1c,#241b16)}
+/* Prevent enormous crests from forcing gallery and registry cards offscreen. */
+.hero .wowforge-identity .wowforge-crest,.lifeforge-relic-art img,.dadmode-crest img,.dadmode-registry-icon img,.lifeforge-registry-icon img{display:block;max-width:100%;object-fit:contain!important;object-position:center!important}
+.dadmode-registry-icon,.lifeforge-registry-icon{min-width:0!important;max-width:100%!important}
+.dadmode-crest,.lifeforge-relic-art{max-width:100%;isolation:isolate}
+.wf-inn{position:relative;width:min(1320px,calc(100% - 38px));margin:20px auto 80px;padding:32px;border:1px solid rgba(243,183,101,.46);border-radius:12px;background:linear-gradient(110deg,#281b15ef,#141d18f0);box-shadow:0 20px 60px #0007}
+.wf-inn-grid{display:grid;grid-template-columns:160px minmax(0,1fr);align-items:center;gap:24px}
+.wf-inn-grid img{width:150px;height:150px;object-fit:contain;-webkit-mask-image:radial-gradient(ellipse,#000 58%,transparent 75%);mask-image:radial-gradient(ellipse,#000 58%,transparent 75%)}
+.wf-inn h2{font:700 clamp(23px,3vw,38px) Cinzel,Georgia,serif;color:#f9dfb0;margin:0 0 12px}
+.wf-inn p{font-size:14px;color:#ddcbb0;line-height:1.7;margin:0 0 17px}
+.wf-inn-links{display:flex;gap:10px;flex-wrap:wrap}.wf-inn-links a{display:inline-flex;align-items:center;min-height:44px;border:1px solid #ab8551;background:#231e17;color:#ffe6b4;padding:10px 14px;border-radius:5px;font:700 11px Cinzel,Georgia,serif}
+.wf-inn-links a:hover{text-decoration:underline;border-color:#f1ce8b}
+@media(max-width:650px){.wf-inn{width:calc(100% - 24px);padding:19px}.wf-inn-grid{grid-template-columns:1fr;text-align:center}.wf-inn-grid img{width:120px;height:120px;margin:0 auto}.wf-inn-links{justify-content:center}.wf-inn-links a{flex:1;justify-content:center}}
+/* Hero atmosphere is ornamental, not interactive and not a layout layer. */
+.wf-azeroth-hero .forest-fireflies{opacity:.36;pointer-events:none}
+.realm-durotar .wf-azeroth-hero .forest-fireflies{filter:sepia(1) saturate(1.8) hue-rotate(-38deg)}
+@media(prefers-reduced-motion:reduce){.wf-azeroth-hero .forest-fireflies{display:none}}
