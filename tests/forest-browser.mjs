@@ -4,7 +4,10 @@ import {mkdirSync} from "node:fs";
 import {resolve} from "node:path";
 
 const base="http://127.0.0.1:8777";
-const browser=await chromium.launch({headless:true});
+const browser=await chromium.launch({
+ headless:true,
+ ...(process.env.WOWFORGE_CHROME_PATH?{executablePath:process.env.WOWFORGE_CHROME_PATH}:{})
+});
 mkdirSync(resolve("qa-screenshots"),{recursive:true});
 const scenarios=[
   {name:"desktop-1440",width:1440,height:900},
@@ -30,7 +33,7 @@ try {
    const portalBox=im.getBoundingClientRect();
    return {
     scrollWidth:document.documentElement.scrollWidth,viewport:vp,
-    forestBackground:css.includes("novyx-realm-hero.webp"),
+    forestBackground:css.includes("novyx-realm-hero.webp")&&css.includes("azeroth-foundry-hero.webp"),
     stonePortal:im.complete&&im.naturalWidth>0,
     artInside:portalBox.width===0 || (portalBox.left>=-2&&portalBox.right<=vp+2),
     reducedAnimation:getComputedStyle(im).animationDuration,
@@ -47,6 +50,25 @@ try {
   assert.equal(results.faq,5);
   assert.equal(results.features,6);
   assert.equal(await page.locator("[data-dadmode-id]").count(),12,"Dad Mode shows all twelve reasons");
+  const artwork=await page.evaluate(async()=>{
+   const names=["azeroth-foundry-hero.webp","addon-armory.webp","elwynn-dad.webp","durotar-dad.webp","life-forge-chronicle.webp","forge-afk-dadmode.webp","forge-gateway.webp"];
+   return Promise.all(names.map(async name=>{
+    const response=await fetch("./assets/"+name);
+    return {name,status:response.status,type:response.headers.get("content-type"),bytes:(await response.arrayBuffer()).byteLength};
+   }));
+  });
+  for(const asset of artwork){
+   assert.equal(asset.status,200,scenario.name+" failed to load "+asset.name);
+   assert.match(asset.type||"",/image\/webp/,scenario.name+" wrong MIME type for "+asset.name);
+   assert.ok(asset.bytes>100000,scenario.name+" empty or truncated "+asset.name);
+  }
+  assert.equal(await page.locator('button[data-faction="crossroads"]').getAttribute("aria-pressed"),"true");
+  await page.locator('button[data-faction="durotar"]').click();
+  assert.equal(await page.locator('button[data-faction="durotar"]').getAttribute("aria-pressed"),"true");
+  assert.ok(await page.locator("body").evaluate(body=>body.classList.contains("realm-durotar")));
+  await page.locator('button[data-faction="elwynn"]').click();
+  assert.equal(await page.locator('button[data-faction="elwynn"]').getAttribute("aria-pressed"),"true");
+  assert.ok(await page.locator("body").evaluate(body=>body.classList.contains("realm-elwynn")));
   await page.locator('[data-dadmode-id="tech"]').click();
   assert.equal(await page.locator('[data-dadmode-id="tech"]').getAttribute("aria-pressed"),"true");
   assert.match(await page.locator("#dadmode-reply").textContent(),/Family Wi-Fi is down/);

@@ -13,7 +13,7 @@
 
 ## The artwork
 
-The **seven supplied illustrations** were optimized for web and delivered in a separate `WoWForge_2_Art_Assets.zip` package. Place all seven `.webp` files in the repository's `assets/` folder before production deploy:
+The **seven supplied illustrations** are optimized WebP assets stored in the repository's `assets/` folder:
 
 ```
 assets/azeroth-foundry-hero.webp
@@ -27,7 +27,7 @@ assets/forge-gateway.webp
 
 The existing correct three logo files are already in the GitHub repository, so no rebranding/renaming is required.
 
-**IMPORTANT:** The code branch uses the new images by their final repository paths. The connector used for the code changes cannot directly upload arbitrary binary files from the chat's local filesystem; the optimized artwork is therefore packaged separately until imported. The homepage and faction cards have old-art fallbacks, and the feature images fall back to existing art on loading failure. Do not describe the new assets as deployed until those files actually exist in GitHub.
+The code uses every image by its final repository path. The homepage and faction cards retain local fallbacks, and the feature images fall back to existing art if a browser cannot load the new files.
 
 ## Validation
 

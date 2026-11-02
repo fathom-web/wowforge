@@ -8,8 +8,10 @@ for(const name of ['wowforge-logo-2026.webp','life-forge-logo-2026.webp','forge-
  assert.ok(html.includes(name),'approved logo not used: '+name);
  assert.ok(fs.existsSync(new URL('../assets/'+name,import.meta.url)),'logo missing: '+name);
 }
-for(const file of ['azeroth-foundry-hero.webp','addon-armory.webp','life-forge-chronicle.webp','forge-afk-dadmode.webp','elwynn-dad.webp','durotar-dad.webp']) {
+for(const file of ['azeroth-foundry-hero.webp','addon-armory.webp','life-forge-chronicle.webp','forge-afk-dadmode.webp','elwynn-dad.webp','durotar-dad.webp','forge-gateway.webp']) {
  assert.ok(html.includes(file)||css.includes(file),'new illustration not referenced: '+file);
+ const bytes=fs.readFileSync(new URL('../assets/'+file,import.meta.url));
+ assert.ok(bytes.length>100000 && bytes.toString('ascii',0,4)==='RIFF' && bytes.toString('ascii',8,12)==='WEBP','optimized WebP missing or invalid: '+file);
 }
 for(const href of ['#lifeforge','#dadmode','#armory','#worlds','#development']) assert.ok(html.includes('href="'+href+'"'));
 assert.ok(html.includes('onerror="this.onerror=null;this.src='),'image fallbacks should be provided');
