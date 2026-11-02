@@ -1,0 +1,36 @@
+name: Azeroth Foundry QA
+on:
+  push:
+    branches: ["feature/azeroth-foundry-2"]
+  pull_request:
+    paths:
+      - "index.html"
+      - "azeroth-foundry.css"
+      - "azeroth-foundry.js"
+      - "tests/azeroth-foundry.test.mjs"
+      - ".github/workflows/azeroth-foundry.yml"
+permissions:
+  contents: read
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax
+        run: node --check azeroth-foundry.js && node --check site.js && node --check dad-mode-demo.js
+      - name: Theme and content contracts
+        run: node tests/azeroth-foundry.test.mjs
+
+      - name: Package standalone website
+        run: |
+          mkdir -p dist
+          zip -qr dist/wowforge-source.zip . -x ".git/*" "dist/*" "node_modules/*" "qa-screenshots/*"
+      - name: Attach website package for final art integration
+        uses: actions/upload-artifact@v4
+        with:
+          name: wowforge-azeroth-source
+          path: dist/wowforge-source.zip
+          retention-days: 7

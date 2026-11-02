@@ -7,6 +7,7 @@
   <meta name="description" content="WoW Forge: built by veteran World of Warcraft players and dads after twenty years in Azeroth. Discover thoughtful addons designed to make every adventure easier.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="WoW Forge | NOVYX FORGE">
+  <meta property="og:image" content="https://wow.novyxforge.com/assets/wowforge-logo-2026.webp">
   <meta property="og:description" content="Independent NOVYX Forge fan project making game addons. Original art and emblems; not affiliated with Blizzard.">
   <meta property="og:url" content="https://wow.novyxforge.com/">
   <link rel="canonical" href="https://wow.novyxforge.com/">
@@ -28,9 +29,11 @@
   <link rel="stylesheet" href="./dad-mode-showcase.css?v=1">
   <link rel="stylesheet" href="./logo-identity-v13.css?v=1">
   <link rel="stylesheet" href="./layout-tune-v14.css?v=1">
+  <link rel="stylesheet" href="./azeroth-foundry.css?v=2">
   <script src="./site.js?v=4" defer></script>
   <script src="./forest-effects.js?v=1" defer></script>
   <script src="./dad-mode-demo.js?v=1" defer></script>
+  <script src="./azeroth-foundry.js?v=2" defer></script>
   <title>WoW Forge — NOVYX FORGE</title>
 </head>
 <body>
@@ -38,17 +41,17 @@
   <div class="global-atmosphere" aria-hidden="true"></div>
   <header class="topbar">
     <a class="brand wow-brand" href="https://wow.novyxforge.com/" aria-label="WoW Forge homepage">
-      <span class="brand-mark" aria-hidden="true"><img src="./assets/wowforge-icon-2026.webp" alt="" width="240" height="240"></span>
+      <span class="brand-mark" aria-hidden="true"><img src="./assets/wowforge-logo-2026.webp" alt="" width="240" height="240"></span>
       <span class="brand-wordmark">WoW <strong>FORGE</strong><small>INDEPENDENT GAME ADDONS</small></span>
     </a>
     <nav id="navigation" aria-label="Forge navigation">
-      <a href="#story">Our Story</a><a href="#veterans">The Dads</a><a href="#addons">The Archive</a><a href="#lifeforge">LifeForge</a><a href="#dadmode">Dad Mode</a><a href="#systems">Relics</a><a href="#development">The Journey</a><a href="#questions">Traveler’s Notes</a>
+      <a href="#story">Our Story</a><a href="#veterans">The Dads</a><a href="#worlds">Two Worlds</a><a href="#armory">Armory</a><a href="#lifeforge">LifeForge</a><a href="#dadmode">Dad Mode</a><a href="#systems">Relics</a><a href="#development">Journey</a>
     </nav>
     <a class="return-link" href="https://novyxforge.com/">Forge Universe <span aria-hidden="true">↗</span></a>
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false"><span></span><span></span><span></span></button>
   </header>
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero wf-azeroth-hero" aria-labelledby="hero-title">
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="forest-canopy" aria-hidden="true"></div>
       <div class="forest-fireflies" aria-hidden="true"></div>
@@ -57,12 +60,19 @@
           <img class="wowforge-crest" src="./assets/wowforge-logo-2026.webp" width="850" height="850" alt="WoW Forge: weathered gold fantasy crest with blue and red banners and blacksmith anvil" fetchpriority="high" decoding="async">
           <span class="wowforge-identity-subline">AN INDEPENDENT NOVYX FORGE PROJECT</span>
         </div>
-        <h1 id="hero-title">EVERY HERO<br>LEAVES A <em>LEGACY.</em></h1>
-        <p class="hero-description">A new world is calling. Explore original World of Warcraft addons crafted to remember the adventures, companions and stories that make your hero a legend.</p>
+        <p class="wf-hero-intro">ELWYNN FOREST · THE FOUNDRY · DUROTAR</p><h1 id="hero-title">TWO FACTIONS.<br>ONE <em>FORGE.</em></h1>
+        <p class="hero-description">From the green roads of Elwynn to the red earth of Durotar: welcome to a home for veteran adventurers, dadbod heroes and original World of Warcraft addons. Built for the moments that make Azeroth worth returning to.</p>
         <div class="hero-actions">
           <a class="button gold" href="#addons">Enter the Archive <span aria-hidden="true">↗</span></a>
           <a class="button outline" href="#lifeforge">Discover LifeForge <span aria-hidden="true">↓</span></a>
         </div>
+        <div class="wf-faction-switch" role="group" aria-label="Choose fantasy faction atmosphere">
+          <button type="button" data-faction="elwynn" aria-pressed="false">⚔ Alliance · Elwynn</button>
+          <button type="button" data-faction="crossroads" aria-pressed="true">✦ The Crossroads</button>
+          <button type="button" data-faction="durotar" aria-pressed="false">⚒ Horde · Durotar</button>
+        </div>
+        <p id="wf-faction-note" class="wf-faction-note" role="status" aria-live="polite"><strong>The Crossroads</strong> — two banners, one forge.</p>
+        <button type="button" id="wf-motion-toggle" class="wf-motion-toggle" aria-pressed="false">✦ Pause ambient motion</button>
         <div class="hero-metrics" aria-label="Forge information">
           <div><b>02</b><span>Addons in development</span></div>
           <div><b>ALPHA + BETA</b><span>Client testing pending</span></div>
@@ -79,6 +89,7 @@
       <div class="edge"><span>THROUGH FOREST AND FIRE</span><span>FOLLOW THE OLD PATH ↓</span></div>
     </section>
 
+<section class="wf-world-crossroads" id="worlds" aria-labelledby="wf-worlds-title"><div class="wf-section-head"><p class="kicker">THE ROAD TO AZEROTH · CHOOSE A BANNER</p><h2 id="wf-worlds-title">Two worlds. One adventure.</h2><p>Choose a realm to change the atmosphere across the Foundry, or return to the Crossroads to see both worlds together.</p></div><div class="wf-world-grid"><a class="wf-realm-card alliance" href="#hero-title" data-realm-select="elwynn" aria-label="Choose Alliance and Elwynn atmosphere"><span class="wf-glyph">THE ALLIANCE · GREENWOOD</span><h3>Elwynn Forest</h3><p>Warm taverns, weathered stone, blue banners and one dadbod hero who swears this is his final dungeon.</p><span class="wf-realm-action">Enter the woodland ✦</span></a><a class="wf-realm-card horde" href="#hero-title" data-realm-select="durotar" aria-label="Choose Horde and Durotar atmosphere"><span class="wf-glyph">THE HORDE · RED FRONTIER</span><h3>Durotar</h3><p>Red rock, ember-lit watchtowers, horned palisades and one comfortably broad orc who never misses dinner.</p><span class="wf-realm-action">Enter the frontier ✦</span></a></div><p class="wf-site-note">Realm switching changes the website atmosphere only. Independent fan project with original art, not official Blizzard faction artwork.</p></section>
     <section class="veteran-duo" id="veterans" aria-labelledby="veterans-title">
       <div class="dad-heading">
         <p class="kicker">THE TAVERN OF THE DADS / TWENTY YEARS IN AZEROTH</p>
@@ -106,7 +117,7 @@
         <aside class="story-keepsake" aria-label="Twenty years in Azeroth">
           <span class="story-corner top-left" aria-hidden="true">✧</span>
           <span class="story-corner top-right" aria-hidden="true">✧</span>
-          <img class="story-crest" src="./assets/wowforge-icon-2026.webp" alt="" width="240" height="240" loading="lazy">
+          <img class="story-crest" src="./assets/wowforge-logo-2026.webp" alt="" width="240" height="240" loading="lazy">
           <p class="story-mini">THE PEOPLE BEHIND WOW FORGE</p>
           <div class="story-years"><strong>20</strong><span>YEARS<br>IN AZEROTH</span></div>
           <div class="story-rule" aria-hidden="true"><span>✦</span></div>
@@ -141,6 +152,7 @@
     <div class="faction-pennants" aria-hidden="true"><span class="pennant-rule"></span><img src="./assets/banner-azure.svg" alt="" width="320" height="650" loading="lazy"><b>THE TWO BANNERS</b><img src="./assets/banner-ember.svg" alt="" width="320" height="650" loading="lazy"><span class="pennant-rule last"></span></div>
 
     <div class="signal-seam" aria-hidden="true"><span>THE ARCHIVE / CHAPTER 001</span></div>
+<section class="wf-addon-armory" id="armory" aria-labelledby="wf-armory-title"><div class="wf-armory-stage"><div class="wf-armory-content"><p class="kicker">THE ADDON ARMORY · INSIDE THE FOUNDRY</p><h2 id="wf-armory-title">Your next adventure awaits.</h2><p>One corner is filled with chronicles and maps. The other has a comfortable chair, cold coffee and another call from downstairs. Both were forged for the same adventurer.</p><div class="wf-armory-links"><a href="#lifeforge">Explore LifeForge ↗</a><a href="#dadmode">Explore Forge AFK ↗</a></div></div></div></section>
     <section class="section collection" id="addons" aria-labelledby="collection-title">
       <div class="section-heading"><div><p class="kicker">THE GUILD ARCHIVE</p><h2 id="collection-title">Tales of the <em>forge.</em></h2></div><p>Two addons are now taking shape: one preserves your adventures, the other helps you survive real-life aggro. Neither is publicly released yet.</p></div>
       <div class="registry">
@@ -166,6 +178,7 @@
     </section>
 
     <div class="signal-seam" aria-hidden="true"><span>THE FIRST ARTIFACT / LIFE.FORGE</span></div>
+<section class="wf-addon-display" aria-labelledby="wf-life-art-heading"><div class="wf-addon-image"><img src="./assets/life-forge-chronicle.webp" alt="Dadbod blacksmith in a bright forest village beneath the LifeForge emblem" loading="lazy" decoding="async" width="980" height="1225" onerror="this.onerror=null;this.src='./assets/dadbod-human.webp'"></div><div class="wf-addon-copy"><span class="wf-crest-medallion wf-lifeforge-medallion" role="img" aria-label="Original LifeForge LF crest"></span><p class="kicker">ARTIFACT 001 · THE LEGACY CHRONICLE</p><h3 id="wf-life-art-heading">Every adventure leaves a mark.</h3><p>Preserve the real memories, people and places behind your heroes. Your Chronicle is made of moments you actually lived.</p><ul class="wf-list"><li>Character and realm chronicles</li><li>Memory Vault, milestones and goals</li><li>Footprints across Azeroth</li><li>Local SavedVariables and export tools</li></ul><a href="https://github.com/fathom-web/WoW-LifeForge" target="_blank" rel="noopener noreferrer">Explore LifeForge source ↗</a><p class="wf-site-note">Development alpha; game-client compatibility is still unverified.</p></div></section>
     <section class="section spotlight" id="lifeforge" aria-labelledby="life-title">
       <div class="spotlight-heading"><div><p class="kicker">ARTIFACT 001 / THE LEGACY CHRONICLE</p><h2 id="life-title">Your character.<br><em>Your legend.</em></h2></div><div class="version"><span class="signal"></span><strong>BUILD 7</strong><small>0.8.0-alpha / Development</small></div></div>
       <div class="lifeforge-intro">
@@ -201,6 +214,7 @@
     </section>
 
     <div class="signal-seam" aria-hidden="true"><span>THE SECOND ARTIFACT / DAD MODE</span></div>
+<section class="wf-addon-display orc" aria-labelledby="wf-afk-art-heading"><div class="wf-addon-copy"><span class="wf-crest-medallion wf-afk-medallion" role="img" aria-label="Original Forge AFK Dad Mode crest"></span><p class="kicker">ARTIFACT 002 · REAL-LIFE AGGRO</p><h3 id="wf-afk-art-heading">Azeroth can wait. Dad duty can't.</h3><p>Toilet Raid? Phone Aggro? Kid Aggro? Built for the inevitable interruptions of parenthood, with a bit more humor than your average status message.</p><ul class="wf-list"><li>Twelve quick AFK reasons</li><li>Native in-game AFK whisper replies</li><li>Return messages and session timer</li><li>Silent Mode for party announcements</li></ul><a href="https://github.com/fathom-web/forge-afk-dad-mode" target="_blank" rel="noopener noreferrer">Explore Forge AFK source ↗</a><p class="wf-site-note">Beta source available. Client testing still pending.</p></div><div class="wf-addon-image"><img src="./assets/forge-afk-dadmode.webp" alt="Smiling dadbod orc blacksmith beneath Forge AFK Dad Mode crest" loading="lazy" decoding="async" width="980" height="1225" onerror="this.onerror=null;this.src='./assets/dadbod-orc.webp'"></div></section>
     <section class="section dadmode-showcase" id="dadmode" aria-labelledby="dadmode-title">
       <div class="dadmode-overline">NOVYX FORGE / ARTIFACT 002 / REAL-LIFE AGGRO</div>
       <div class="dadmode-head">
@@ -269,6 +283,7 @@
       <p class="dadmode-endline">AZEROTH CAN WAIT. DAD DUTY CAN'T.</p>
     </section>
 
+<section class="wf-quest-log" id="quest-log" aria-labelledby="wf-quests-title"><div class="wf-section-head wf-quest-head"><p class="kicker">THE ADVENTURE CHRONICLE</p><h2 id="wf-quests-title">The Quest Log</h2><p>A living development journey: verified milestones, actual tests and meaningful next steps.</p></div><div class="wf-quest-grid"><article><span>QUEST 01 · COMPLETE</span><h3>The Foundry Awakes</h3><p>The WoW Forge site and first two addon projects have a place to call home.</p></article><article><span>QUEST 02 · IN PROGRESS</span><h3>Trial by Azeroth</h3><p>Test addons in the actual WoW Forever client, document issues and correct behavior.</p></article><article><span>QUEST 03 · PLANNED</span><h3>The Public Release</h3><p>Link verified downloads when in-client acceptance is completed. <a href="#development">Follow development ↗</a></p></article></div></section>
     <section class="section development" id="development" aria-labelledby="dev-title">
       <div class="section-heading"><div><p class="kicker">THE QUESTLINE / ROAD TO RELEASE</p><h2 id="dev-title">Every legend has <em>a path.</em></h2></div><p>Development is visible on GitHub. Public addon downloads and updates are reserved for CurseForge once the addon passes real-client acceptance.</p></div>
       <div class="release-rail">
@@ -290,6 +305,7 @@
         <details><summary>Is this an official Blizzard website?</summary><p>No. WoW Forge is an independent fan-made addon project from NOVYX FORGE. It is not affiliated with, sponsored by, approved by, or endorsed by Blizzard Entertainment. All site emblems are original NOVYX designs. World of Warcraft and related names are trademarks of Blizzard Entertainment.</p></details>
       </div>
     </section>
+<section class="wf-inn" id="inn" aria-labelledby="wf-inn-title"><div class="wf-inn-grid"><span class="wf-crest-medallion wf-wow-medallion" role="img" aria-label="WoW Forge original fantasy shield logo"></span><div><p class="kicker">THE INN · REST BETWEEN ADVENTURES</p><h2 id="wf-inn-title">Pull up a chair, adventurer.</h2><p>Some nights the dungeon wins. Some nights the bedtime boss wins. Either way, the Forge is still here — building thoughtful tools for veteran players with lives beyond Azeroth.</p><nav class="wf-inn-links" aria-label="WoW Forge resources"><a href="#questions">Traveler's notes</a><a href="https://github.com/fathom-web/WoW-LifeForge" target="_blank" rel="noopener noreferrer">LifeForge GitHub ↗</a><a href="https://github.com/fathom-web/forge-afk-dad-mode" target="_blank" rel="noopener noreferrer">Forge AFK GitHub ↗</a></nav></div></div></section>
     <section class="outro" aria-labelledby="outro-title">
       <div class="outro-sigil" aria-hidden="true">✦</div>
       <p class="kicker">THE CAMPFIRE / THE NEXT CHAPTER</p>
@@ -298,7 +314,7 @@
       <a class="button gold" href="https://github.com/fathom-web/WoW-LifeForge" target="_blank" rel="noopener noreferrer">Follow LifeForge development ↗</a>
     </section>
   </main>
-  <footer class="footer">
+  <footer class="footer"><p class="wf-site-note">Made for Azeroth veterans with original NOVYX Forge fantasy artwork. World of Warcraft is a trademark of Blizzard Entertainment; this site is not affiliated.</p>
     <div><strong>NOVYX FORGE / WOW FORGE</strong><p>Made by veteran players and fathers. Twenty years in Azeroth, still finding time for one more adventure. Independent, unofficial addon showcase.</p></div>
     <div class="footer-links"><a href="#main">Back to top ↑</a><a href="https://novyxforge.com/">Forge Universe ↗</a><a href="https://github.com/fathom-web/WoW-LifeForge" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
     <small>© <span id="year">2026</span> NOVYX FORGE. World of Warcraft® and Blizzard Entertainment® are trademarks of Blizzard Entertainment, Inc. Independent fan project. Not affiliated with or endorsed by Blizzard. Original fantasy artwork by NOVYX FORGE.</small>

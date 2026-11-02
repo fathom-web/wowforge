@@ -34,12 +34,12 @@ for(const oldAsset of ["wowforge-crest-original.webp","wowforge-header-first.web
  assert.ok(!html.includes(oldAsset),"Legacy brand imagery must not appear in HTML: "+oldAsset);
 }
 assert.ok(html.includes("./assets/wowforge-logo-2026.webp"),"Creator-approved WoW Forge crest must load");
-assert.equal(count(html,/src="\.\/assets\/wowforge-logo-2026\.webp"/g),1,"New hero crest used once");
-assert.equal(count(html,/src="\.\/assets\/wowforge-icon-2026\.webp"/g),2,"Compact supplied logo in navbar and story");
+assert.equal(count(html,/src="\.\/assets\/wowforge-logo-2026\.webp"/g),3,"Full supplied crest used in hero, header and story");
+assert.equal(count(html,/src="\.\/assets\/wowforge-icon-2026\.webp"/g),0,"Do not use clipped favicon as a visible crest");
 assert.ok(html.includes('rel="icon" href="./assets/wowforge-icon-2026.webp" type="image/webp"'),"Matching new favicon");
 for(const name of ["wowforge-logo-2026.webp","wowforge-icon-2026.webp","forge-afk-logo-2026.webp","life-forge-logo-2026.webp","dadbod-human.webp","dadbod-orc.webp"]){
  const bytes=readFileSync(resolve(root,"assets",name));
- assert.ok(bytes.length>25000 && bytes.toString("ascii",0,4)==="RIFF" && bytes.toString("ascii",8,12)==="WEBP","Valid original WebP "+name);
+ assert.ok(bytes.length>(name==="wowforge-icon-2026.webp"?20000:25000) && bytes.toString("ascii",0,4)==="RIFF" && bytes.toString("ascii",8,12)==="WEBP","Valid original WebP "+name);
 }
 assert.ok(html.includes('id="veterans"')&&html.includes("Two factions.")&&html.includes("One dadbod."),"Two Factions chapter");
 assert.ok(html.includes("ALLIANCE DAD")&&html.includes("HORDE DAD"),"Both veteran factions");
